@@ -28,8 +28,8 @@ while ($data = mysql_fetch_array($hasil)) {
 			<a class='btn btn-primary dropdown-toggle' data-toggle='dropdown'><span class='caret'></span></a>
 				<ul class='dropdown-menu'></center>
 					<li>
-						<a href=log_view_detail_BANK.php?id=$data[NO_TRANSAKSI_BANK]><i class='icon-tags'></i> Detail</a>
-						<a href=log_delete_nama_tim.php?id=$data[NO_TRANSAKSI_BANK]><i class='icon-trash'></i> Delete</a>
+						<a href=log_view_detail_bank.php?id=$data[NO_TRANSAKSI_BANK]><i class='icon-tags'></i> Detail</a>
+						<a href=log_delete_pemasukan_bank.php?id=$data[NO_TRANSAKSI_BANK]><i class='icon-trash'></i> Delete</a>
 					</li>
 				</ul>
 		</div>
