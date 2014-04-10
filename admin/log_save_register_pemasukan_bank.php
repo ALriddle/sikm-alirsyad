@@ -55,7 +55,17 @@ $set= true;
 			'$keterangan')";
 			$result=@mysql_query($query)or die(mysql_error());
 			$result2=@mysql_query($query2)or die(mysql_error());
-			if($result && $result2){
+			if($result){
+			?>
+			<script language = "JavaScript">
+			document.location='form_transaksi.php';
+			alert('Data Berhasil Disimpan.');
+			</script>
+			<?php
+			}else{
+					echo '<h2>Error!! Can not save data to database!</h2>';
+				}
+			if($result2){
 			?>
 			<script language = "JavaScript">
 			document.location='form_transaksi.php';
