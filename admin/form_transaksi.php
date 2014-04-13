@@ -39,9 +39,10 @@
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		
-									<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
-									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL KAS</center></b></td>
+									<!--<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL KAS</center></b></td> -->
 									<td rowspan="1" valign="middle"><b><center>KETERANGAN</center></b></td>	
+									<td rowspan="1" valign="middle"><b><center>ACTION</center></b></td>	
 								</td>
 									</tr>
 						  </thead> 
@@ -60,7 +61,7 @@ include"log_view_pemasukan_kas.php";
 				<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-plus"></i> Daftar Transaksi BANK</h2>
+						<h2><i class="icon-plus"></i> Daftar Transaksi Bank</h2>
 						<div class="box-icon">
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 						</div>
@@ -84,9 +85,10 @@ include"log_view_pemasukan_kas.php";
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		
-									<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
-									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL BANK</center></b></td>
+									<!--<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL BANK</center></b></td>-->
 									<td rowspan="1" valign="middle"><b><center>KETERANGAN</center></b></td>	
+									<td rowspan="1" valign="middle"><b><center>ACTION</center></b></td>	
 								</td>
 									</tr>
 						  </thead> 
