@@ -18,9 +18,10 @@ while ($data = mysql_fetch_array($hasil)) {
 	<td><center>$data[KODE_BANK]</center></td>
 	<td><center>$data[TANGGAL_BANK]</center></td>
 	<td><center>$data[MASUK_BANK]</center></td>
-	<td><center>$data[KELUAR_BANK]</center></td>
-	<td><center>$data[SALDO_BANK]</center></td>
-	<td><center>$data[SALDO_TOTAL_BANK]</center></td>
+	<td><center>$data[KELUAR_BANK]</center></td>";
+	//<td><center>$data[SALDO_BANK]</center></td>
+	//<td><center>$data[SALDO_TOTAL_BANK]</center></td>
+	echo "
 	<td><center>$data[KETERANGAN]</center></td>
 	<td align=center>
 		<div class='btn-group' >

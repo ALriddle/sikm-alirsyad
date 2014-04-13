@@ -47,24 +47,6 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="KELUAR_BANK">KELUAR :</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="KELUAR_BANK" type="text" value="">
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="SALDO_BANK">SALDO :</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="SALDO_BANK" type="text" value="">
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="SALDO_TOTAL_BANK">SALDO TOTAL BANK :</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="SALDO_TOTAL_BANK" type="text" value="">
-								</div>
-							  </div>
-							  <div class="control-group">
 								<label class="control-label" for="KETERANGAN">KETERANGAN :</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="">

@@ -17,10 +17,10 @@
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Form Input Data Tambah Pemasukan</h2>
+						<h2><i class="icon-edit"></i> Form Input Data Tambah Pengeluaran</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="log_save_register_pemasukan_kas.php" method="post">
+						<form class="form-horizontal" action="log_save_register_pengeluaran_kas.php" method="post">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_KAS">NO TRANSAKSI :</label>
@@ -41,9 +41,9 @@
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="MASUK_KAS">MASUK :</label>
+								<label class="control-label" for="KELUAR_KAS">KELUAR :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="MASUK_KAS" type="text" value="">
+								  <input class="input-xlarge focused" name="KELUAR_KAS" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">

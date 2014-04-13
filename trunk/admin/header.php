@@ -12,8 +12,8 @@ $u = $_SESSION['USERNAME_PEGAWAI'];
         <meta charset="utf-8">
         <title>SIKM - Sistem Informasi Keuangan Masjid Al-Irsyad</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Sistem Information Sales Activity">
-        <meta name="author" content="First Team ITS">
+        <meta name="description" content="Sistem Informasi Keuangan Masjid Al-Irsyad">
+        <meta name="author" content="MF">
 
         <!-- The styles -->
         <link id="bs-css" href="../css/bootstrap-cerulean.css" rel="stylesheet">
