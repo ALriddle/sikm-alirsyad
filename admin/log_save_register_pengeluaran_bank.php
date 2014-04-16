@@ -27,19 +27,7 @@ $set= true;
 			'$keluar_bank', 
 			'$keterangan')";
 		
-	$query2="INSERT INTO data_transaksi_kas(
-			NO_TRANSAKSI_KAS,
-			KODE_KAS,
-			TANGGAL_KAS,
-			KELUAR_KAS,
-			KETERANGAN) VALUES
-			('$no_transaksi_kas',
-			'$kode_kas',
-			'$tanggal_kas',					
-			'$keluar_kas', 
-			'$keterangan')";
-			$result=@mysql_query($query)or die(mysql_error());
-			$result2=@mysql_query($query2)or die(mysql_error());
+	$result=@mysql_query($query)or die(mysql_error());
 			if($result){
 			?>
 			<script language = "JavaScript">
@@ -50,16 +38,6 @@ $set= true;
 			}else{
 					echo '<h2>Error!! Can not save data to database!</h2>';
 				}
-			if($result2){
-			?>
-			<script language = "JavaScript">
-			document.location='form_transaksi.php';
-			alert('Data Berhasil Disimpan.');
-			</script>
-			<?php
-			}else{
-					echo '<h2>Error!! Can not save data to database!</h2>';
-				}
+			
 			}
-	
 ?>
