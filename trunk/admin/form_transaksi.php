@@ -79,7 +79,7 @@ include"log_view_pemasukan_kas.php";
 					<form method=POST action=log_view_pemasukan_bank.php>
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
 						  <thead>
-							  <tr>
+							 <tr>
 									<td rowspan="1" valign="middle"><b><center>NO. TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
@@ -89,8 +89,7 @@ include"log_view_pemasukan_kas.php";
 									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL BANK</center></b></td>-->
 									<td rowspan="1" valign="middle"><b><center>KETERANGAN</center></b></td>	
 									<td rowspan="1" valign="middle"><b><center>ACTION</center></b></td>	
-								</td>
-									</tr>
+							</tr>
 						  </thead> 
 
 
