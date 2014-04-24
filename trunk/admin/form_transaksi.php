@@ -12,6 +12,16 @@
 				</ul>
 			</div>
 			
+			<label class="control-label" for="appendedPrependedInput"><h4>Saldo Total:</h4></label>
+				<div class="input-prepend input-append">
+					<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="sementara 100000000000000" readonly=readonly><span class="add-on">.00</span>
+					</div>
+			<?php 
+			include('DB_driver.php');
+				$query = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) from data_transaksi_kas") or die(mysql_error());
+				$data_pemasukan_kas = mysql_fetch_array($query);
+				{ 
+			?>
 			<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -21,10 +31,21 @@
 						</div>
 					</div>
 					
-					
 					<div class="box-content">
-					<div class="span5"><a class="btn btn-success" href="../admin/form_register_pemasukan_kas.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
+				    <div class="span12">
+					<div class="span6"><a class="btn btn-success" href="../admin/form_register_pemasukan_kas.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
 					<a class="btn btn-danger" href="../admin/form_register_pengeluaran_kas.php"><i class="icon icon-white icon-add"></i> Tambah Pengeluaran</a>
+					</div>
+					<div class="span6">
+					<div class="control-group">
+								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Kas:</h4></label>
+								<div class="controls">
+								  <div class="input-prepend input-append">
+									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo $query ; } ?>" readonly=readonly><span class="add-on">.00</span>
+								  </div>
+								</div>
+					</div>
+					</div>
 					</div>
 					
 					<div class="box-content">
@@ -58,6 +79,13 @@ include"log_view_pemasukan_kas.php";
 			
 			</div><!--/row-->
 			</div>
+			
+			<?php 
+			include('DB_driver.php');
+				$query = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) from data_transaksi_bank") or die(mysql_error());
+				$data_pemasukan_bank = mysql_fetch_array($query);
+				{ 
+			?>
 				<div class="row-fluid sortable">
 				<div class="box span12">
 					<div class="box-header well" data-original-title>
@@ -69,15 +97,25 @@ include"log_view_pemasukan_kas.php";
 					
 					
 					<div class="box-content">
-					<div class="span5"><a class="btn btn-success" href="../admin/form_register_pemasukan_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
-					<a class="btn btn-danger" href="../admin/form_register_pengeluaran_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pengeluaran</a>
+					<div class="span6"><a class="btn btn-success" href="../admin/form_register_pemasukan_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
+					<a class="btn btn-danger" href="../admin/form_register_pengeluaran_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pengeluaran</a> 
+					</div>
+					<div class="span6">
+					<div class="control-group">
+								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Bank:</h4></label>
+								<div class="controls">
+								  <div class="input-prepend input-append">
+									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo $data_pemasukan_bank ; } ?>" readonly=readonly><span class="add-on">.00</span>
+								  </div>
+								</div>
+					</div>
 					</div>
 					
 					<div class="box-content">
 					<div class="box span12">
 					<div class="box-content">
 					<form method=POST action=log_view_pemasukan_bank.php>
-						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
+						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="5">
 						  <thead>
 							 <tr>
 									<td rowspan="1" valign="middle"><b><center>NO. TRANSAKSI</center></b></td>
@@ -91,7 +129,6 @@ include"log_view_pemasukan_kas.php";
 									<td rowspan="1" valign="middle"><b><center>ACTION</center></b></td>	
 							</tr>
 						  </thead> 
-
 
 <?php
 include"log_view_pemasukan_bank.php";
