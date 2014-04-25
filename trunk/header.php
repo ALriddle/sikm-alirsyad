@@ -6,13 +6,13 @@ session_start();
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SARS - Sales Activity Record Systems</title>
+	<title>SIKM - Sistem Informasi Keuangan Masjid</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Sales Activity, a fully featured, responsive, HTML5, Bootstrap admin template.">
-	<meta name="author" content="KP First Media">
+	<meta name="description" content="Finance System of Mosque, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Sistem Informasi Keuangan Masjid">
 
 	<!-- The styles -->
-	<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+	<link id="bs-css" href="css/bootstrap-redy.css" rel="stylesheet">
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -37,7 +37,7 @@ session_start();
 	<link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
 	<link href='css/opa-icons.css' rel='stylesheet'>
 	<link href='css/uploadify.css' rel='stylesheet'>
-<link href='css/bootstrap-datetimepicker.min.css' rel='stylesheet'>
+	<link href='css/bootstrap-datetimepicker.min.css' rel='stylesheet'>
 <script src="js/datetimepicker.min.js"></script>
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -60,7 +60,7 @@ session_start();
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img src="first-media2.png" alt="First Media Logo" width="132" height="74" /> <span>Sales Activity Record Systems</span></a>
+				<a class="brand" href="index.html"> <img src="img/logo20.png" alt="Masjid Al Irsyad Surabaya" width="132" height="74" /> <span>Sistem Informasi Keuangan Masjid</span></a>
 				
 				<!-- theme selector starts -->
 <div class="btn-group pull-right theme-container" >
