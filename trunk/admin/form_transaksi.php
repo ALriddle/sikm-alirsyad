@@ -12,13 +12,19 @@
 				</ul>
 			</div>
 			
+			<?php 
+			include('DB_driver.php');
+				$query = mysql_query("Select sum(MASUK_KAS)+sum(MASUK_BANK) as saldototal from data_transaksi_kas, data_transaksi_bank") or die(mysql_error());
+				$data_pemasukan_kas = mysql_fetch_array($query);
+				{ 
+			?>
 			<label class="control-label" for="appendedPrependedInput"><h4>Saldo Total:</h4></label>
 				<div class="input-prepend input-append">
-					<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="sementara 100000000000000" readonly=readonly><span class="add-on">.00</span>
+					<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo $data_pemasukan_kas["saldototal"]; } ?>" readonly><span class="add-on">.00</span>
 					</div>
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as total1 from data_transaksi_kas") or die(mysql_error());
 				$data_pemasukan_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -41,7 +47,7 @@
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Kas:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo $query ; } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo $data_pemasukan_kas["total1"]; } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
@@ -82,7 +88,7 @@ include"log_view_pemasukan_kas.php";
 			
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) from data_transaksi_bank") or die(mysql_error());
+				$query = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as total2 from data_transaksi_bank") or die(mysql_error());
 				$data_pemasukan_bank = mysql_fetch_array($query);
 				{ 
 			?>
@@ -105,7 +111,7 @@ include"log_view_pemasukan_kas.php";
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Bank:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo $data_pemasukan_bank ; } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo $data_pemasukan_bank["total2"] ; } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
