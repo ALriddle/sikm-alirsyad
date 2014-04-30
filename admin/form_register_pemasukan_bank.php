@@ -14,6 +14,14 @@
 					</li>
 				</ul>
 			</div>
+			
+			<?php 
+				include('DB_driver.php');
+				$id = $_GET['id'];
+				$query = mysql_query("select max(NO_TRANSAKSI_BANK)+1 as ID_KAS from data_transaksi_bank") or die(mysql_error());
+				$data_pemasukan_bank = mysql_fetch_array($query);
+				{ 
+			?>
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
@@ -25,7 +33,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_BANK">NO TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="<?php echo $data_pengeluaran_bank['ID_BANK']; }?>">
 								</div>
 							  </div>
 							 <div class="control-group">
