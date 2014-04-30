@@ -364,8 +364,7 @@ $(document).ready(function() {
                                                 <li><a class="ajax-link" href="form_kat_pemasukan.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Kategori Pemasukan</span></a></li>
                                                 <li><a class="ajax-link" href="form_kat_pengeluaran.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Kategori Pengeluaran</span></a></li>
                                                 <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet"> Data Transaksi</span></a></li>
-                                                <li><a class="ajax-link" href="form_pengeluaran.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Data Pengeluaran</span></a></li>
-                                                <li><a class="ajax-link" href="form_penjadwalan.php"><i class="icon32 icon-color icon-date"></i><span class="hidden-tablet"> Penjadwalan Sales</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Data Donatur</span></a></li>
                                                 <li><a class="ajax-link" href="grafik.php"><i class="icon32 icon-color icon-document"></i><span class="hidden-tablet"> Graphics</span></a></li>
 												<li><a class="ajax-link" href="laporan.php"><i class="icon32 icon-color icon-document"></i><span class="hidden-tablet"> Laporan</span></a></li>
                                                 <li><a class="ajax-link" href="logout.php"><i class="icon32 icon-color icon-replyall"></i><span class="hidden-tablet"> Exit</span></a></li>
