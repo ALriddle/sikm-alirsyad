@@ -29,7 +29,7 @@ while ($data = mysql_fetch_array($hasil)) {
 			<a class='btn btn-primary dropdown-toggle' data-toggle='dropdown'><span class='caret'></span></a>
 				<ul class='dropdown-menu'></center>
 					<li>
-						<a href=log_view_detail_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-tags'></i> Detail</a>
+						<a href=form_detail_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-tags'></i> Detail</a>
 						<a href=log_delete_pemasukan_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-trash'></i> Delete</a>
 					</li>
 				</ul>
