@@ -3,7 +3,7 @@
 include 'DB_driver.php';
 
 $no_transaksi_bank= $_POST['NO_TRANSAKSI_BANK'];
-$kode_bank= $_POST['KODE_BANK'];
+$kode_bank= $_POST['KODE_PENGELUARAN'];
 $tanggal_bank= $_POST['TANGGAL_BANK'];
 $keluar_bank= $_POST['KELUAR_BANK'];
 $keterangan= $_POST['KETERANGAN'];
