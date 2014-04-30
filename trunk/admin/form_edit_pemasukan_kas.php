@@ -11,20 +11,11 @@
 					</li>
 				</ul>
 			</div>
-			
-			<div class="row-fluid sortable">
-				<div class="box span12">
-					<div class="box-header well" data-original-title>
-						<h2><i class="icon-plus"></i> Daftar Transaksi Kas</h2>
-						<div class="box-icon">
-							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						</div>
-					</div>
 					
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Edit Data Pemasukan Kas</h2>
+						<h2><i class="icon-edit"></i> Edit Data Pemasukan dan Pengeluaran Kas</h2>
 					</div>
 					<?php 
 					include('DB_driver.php');
@@ -51,13 +42,19 @@
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL PEMASUKAN</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="TANGGAL_KAS" name="TANGGAL_KAS" type="text" value="<?php echo $data_pemasukan_kas['TANGGAL_KAS'];?>">
+								  <input class="input-xlarge focused" id="TANGGAL_KAS" name="TANGGAL_KAS" type="date" value="<?php echo $data_pemasukan_kas['TANGGAL_KAS'];?>">
 								</div>
 							  </div>
 							 <div class="control-group">
 								<label class="control-label" for="MASUK_KAS">MASUK</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" id="MASUK_KAS" name="MASUK_KAS" type="text" value="<?php echo $data_pemasukan_kas['MASUK_KAS'];?>">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="KELUAR_KAS">KELUAR</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" id="KELUAR_KAS" name="KELUAR_KAS" type="text" value="<?php echo $data_pemasukan_kas['KELUAR_KAS'];?>">
 								</div>
 							  </div>
 							 <div class="control-group">
