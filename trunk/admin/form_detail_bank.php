@@ -15,17 +15,17 @@
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
-						<h2><i class="icon-edit"></i> Edit Data Pemasukan dan Pengeluaran Bank</h2>
+						<h2><i class="icon-edit"></i>Detail Data Pemasukan Bank</h2>
 					</div>
 					<?php 
 					include('DB_driver.php');
 					$id = $_GET['id'];
-					$query = mysql_query("select * from data_transaksi_bank where NO_TRANSAKSI_BANK='$id' LIMIT 1") or die(mysql_error());
+					$query = mysql_query("select * from data_transaksi_BANK where NO_TRANSAKSI_BANK='$id' LIMIT 1") or die(mysql_error());
 					$data_pemasukan_bank = mysql_fetch_array($query);
 					{ 
 					?>
 					<div class="box-content">
-						<form class="form-horizontal" action="log_edit_data_pemasukan_bank.php" method="post">
+					<form class="form-horizontal" action="form_transaksi.php" method="post">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_BANK">NO. TRANSAKSI</label>
@@ -42,33 +42,32 @@
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_BANK">TANGGAL PEMASUKAN</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="TANGGAL_BANK" name="TANGGAL_BANK" type="date" value="<?php echo $data_pemasukan_bank['TANGGAL_BANK'];?>">
+								  <input class="input-xlarge focused" id="TANGGAL_BANK" name="TANGGAL_BANK" type="date" value="<?php echo $data_pemasukan_bank['TANGGAL_BANK'];?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">
 								<label class="control-label" for="MASUK_BANK">MASUK</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="MASUK_BANK" name="MASUK_BANK" type="text" value="<?php echo $data_pemasukan_bank['MASUK_BANK'];?>">
+								  <input class="input-xlarge focused" id="MASUK_BANK" name="MASUK_BANK" type="text" value="<?php echo $data_pemasukan_bank['MASUK_BANK'];?>" readonly="readonly">
 								</div>
 							  </div>
-							  <div class="control-group">
+							   <div class="control-group">
 								<label class="control-label" for="KELUAR_BANK">KELUAR</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="KELUAR_BANK" name="KELUAR_BANK" type="text" value="<?php echo $data_pemasukan_bank['KELUAR_BANK'];?>">
+								  <input class="input-xlarge focused" id="KELUAR_BANK" name="KELUAR_BANK" type="text" value="<?php echo $data_pemasukan_bank['KELUAR_BANK'];?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">
 								<label class="control-label" for="KETERANGAN">KETERANGAN</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="<?php echo $data_pemasukan_bank['KETERANGAN'];?>">
+								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="<?php echo $data_pemasukan_bank['KETERANGAN'];?>" readonly="readonly">
 								</div>
 							  </div>
 							  <div class="form-actions" align="right" >
-							  <button type="submit" class="btn btn-primary" name="edit">Simpan Perubahan</button>
-							  <a class="btn btn-danger" href="../admin/form_transaksi.php"><i class="icon icon-white icon-cross "></i> Batal</a>
+							  <a class="btn btn-danger" href="../admin/form_transaksi.php"><i class="icon icon-white icon-cross "></i> Kembali</a>
 							  </div>
 							</fieldset>
-						  </form>
+							</form>
 					<?php
 					}
 					?>
