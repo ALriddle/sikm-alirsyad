@@ -12,7 +12,7 @@ include("header.php"); ?>
 			<div>
             <div class="row-fluid">
 				<div class="span8 center login-header">
-					<h1>SALES ACTIVITY RECORD SYSTEMS</h1>
+					<h1>SISTEM INFORMASI KEUANGAN MASJID AL-IRSYAD SURABAYA</h1>
 				</div><!--/span-->
 			</div><!--/row-->
 			
