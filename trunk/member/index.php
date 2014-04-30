@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-
+<div>
 			<div>
 				<ul class="breadcrumb">
 					<li>
@@ -18,11 +18,12 @@
 						<h2><i class="icon-info-sign"></i> Introduction</h2>
 					</div>
 					<div class="box-content">
-						<h1>SARS - Sales Activity Record Systems <small></small></h1>
-						<p>Sistem ini merupakan sebuah integrasi informasi untuk departemen Sales dalam melakukan pengelolaan data informasi pelanggan, pegawai sales dan target sales</p>
-						<p><b>Provided for First Media Surabaya by First Team ITS</b></p>
+						<h1>SIKM - Sistem Informasi Keuangan Masjid<small></small></h1>
+						<p>Sistem ini merupakan sebuah integrasi informasi untuk Masjid Al-Irsyad dalam melakukan pengelolaan keuangan masjid</p>
+						<p><b>Provided for Masjid Al-Irsyad Surabaya</b></p>
 						<div class="clearfix"></div>
 					</div>
 				</div>
+			</div>
 			</div>
 <?php include('footer.php'); ?>

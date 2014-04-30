@@ -4,21 +4,19 @@ session_start();
 include 'session.php';
 include 'DB_driver.php';
 $u = $_SESSION['USERNAME_PEGAWAI'];
-$qgetsalesid = mysql_query("SELECT SALES_ID FROM pegawai WHERE USERNAME_PEGAWAI='$u'");
-$hgetsalesid = mysql_fetch_array($qgetsalesid);
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
         <meta charset="utf-8">
-        <title>SARS - Sales Activity Record Systems</title>
+        <title>SIKM - Sistem Informasi Keuangan Masjid Al-Irsyad</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Sistem Information Sales Activity">
-        <meta name="author" content="First Team ITS">
+        <meta name="description" content="Sistem Informasi Keuangan Masjid Al-Irsyad">
+        <meta name="author" content="MF">
 
         <!-- The styles -->
-        <link id="bs-css" href="../css/bootstrap-cerulean.css" rel="stylesheet">
+        <link id="bs-css" href="../css/bootstrap-redy.css" rel="stylesheet">
         <style type="text/css">
           body {
                 padding-bottom: 40px;
@@ -303,7 +301,7 @@ $(document).ready(function() {
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                 </a>
-                                <a class="brand" href="../admin/index.php"> <img alt="Charisma Logo" src="../img/logo20.png" /> <span>SALES ACTIVITY RECORD SYSTEMS</span></a>
+                                <a class="brand" href="../admin/index.php"> <img alt="Charisma Logo" src="../img/logo20.png" /> <span>Sistem Informasi Keuangan Masjid Al Irsyad</span></a>
                                 
                                 <!-- theme selector starts
                                 <div class="btn-group pull-right theme-container" >
@@ -332,7 +330,6 @@ $(document).ready(function() {
                                                 <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                                <?php echo "<li><a href='form_edit_data_pegawai.php?id=$hgetsalesid[SALES_ID]'>Profile</a></li>"; ?>
                                                 <li class="divider"></li>
                                                 <li><a href="logout.php">Logout</a></li>
                                         </ul>
@@ -363,8 +360,8 @@ $(document).ready(function() {
                                         <ul class="nav nav-tabs nav-stacked main-menu">
                                                 <li class="nav-header hidden-tablet">Main</li>
                                                 <li><a class="ajax-link" href="index.php"><i class="icon32 icon-color icon-home"></i><span class="hidden-tablet"> Home</span></a></li>
-                                                <li><a class="ajax-link" href="form_report_customer.php"><i class="icon32 icon-color icon-compose"></i><span class="hidden-tablet"> Report Sales</span></a></li>
-                                                <li><a class="ajax-link" href="form_penjadwalan.php"><i class="icon32 icon-color icon-date"></i><span class="hidden-tablet"> Lihat Jadwal</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet"> Data Transaksi</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Data Donatur</span></a></li>
                                                 <li><a class="ajax-link" href="logout.php"><i class="icon32 icon-color icon-replyall"></i><span class="hidden-tablet"> Exit</span></a></li>
                                         </ul>
                                 
