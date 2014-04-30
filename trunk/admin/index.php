@@ -1,8 +1,6 @@
 <?php 
 include('header.php'); 
 ?>
-
-
 			<div>
 				<ul class="breadcrumb">
 					<li>

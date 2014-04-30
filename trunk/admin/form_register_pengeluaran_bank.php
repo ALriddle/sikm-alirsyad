@@ -31,8 +31,16 @@
 							 <div class="control-group">
 								<label class="control-label" for="KODE_BANK">KODE BANK:</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_BANK" type="text" value="">
-								</div>
+								  <select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="choosen">
+									<?php
+									//mengambil nama-nama propinsi yang ada di database
+										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, ID_KAT_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY NAMA_PENGELUARAN");
+										while($p=mysql_fetch_array($CITY)){
+										echo "<option value=\"$p[KODE_PENGELUARAN]\">$p[NAMA_PENGELUARAN]</option>\n";
+										}
+									?>
+                                </select>
+					</div>
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_BANK">TANGGAL PENGELUARAN :</label>

@@ -10,7 +10,7 @@
 						<a href="#####">Manajemen Pendaftaran Pemasukan</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#####">Input Data Kategori Pengeluaran</a>
+						<a href="#####">Input Data Kategori Pemasukan</a>
 					</li>
 				</ul>
 			</div>
@@ -31,11 +31,19 @@
 							 <div class="control-group">
 								<label class="control-label" for="KODE_KAS">KODE KAS:</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_KAS" type="text" value="">
-								</div>
+								  <select id="KODE_KAS" name="KODE_KAS" data-rel="choosen">
+									<?php
+									//mengambil nama-nama propinsi yang ada di database
+										$CITY = mysql_query("SELECT DISTINCT NAMA_PEMASUKAN,ID_KAT_PEMASUKAN, KODE_PEMASUKAN FROM kategory_pemasukan ORDER BY NAMA_PEMASUKAN");
+										while($p=mysql_fetch_array($CITY)){
+										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[NAMA_PEMASUKAN]</option>\n";
+										}
+									?>
+                                </select>
+					</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="TANGGAL_KAS">TANGGAL PEMASUKAN :</label>
+								<label class="control-label" for="TANGGAL_KAS">TANGGAL MASUK:</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="TANGGAL_KAS" type="date" value="">
 								</div>

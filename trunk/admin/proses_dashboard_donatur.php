@@ -52,21 +52,21 @@
     include('DB_driver.php');
 	$tgl_awal=$_POST['tgl_awal'];
 	$tgl_akhir=$_POST['tgl_akhir'];
-	$NAMA_TEAM=$_POST['NAMA_TEAM'];
+	$MONTH=$_POST['MONTH'];
         //QUERY AMBIL DATA KELAS
-    $query_kelas = "SELECT * FROM dim_tim";
+    $query_kelas = "SELECT * FROM dim_time";
     $result_kelas = mysql_query($query_kelas);
     $count_kelas = mysql_num_rows($result_kelas);
 
     while ($data = mysql_fetch_array($result_kelas)) {
-        $kode_kelas = $data['ID_TEAM'];
+        $kode_kelas = $data['ALTERNATE_DATE'];
                 //QUERY MENGHITUNG JUMLAH SISWA SESUAI DENGAN KODE KELAS
-        $query_siswa = "SELECT COUNT(*) AS jumlah_siswa FROM fact_report_customer1 WHERE ID_TEAM='$kode_kelas' AND DATE_ACT between '$tgl_awal' and '$tgl_akhir'";
+        $query_siswa = "SELECT SUM(MASUK_KAS) AS jumlah_siswa FROM data_transaksi_kas WHERE TANGGAL_KAS='$kode_kelas' AND TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'";
         $result_siswa = mysql_query($query_siswa);
         $data_siswa = mysql_fetch_array($result_siswa);
 
         echo "<tr bgcolor='#D5F35B' style='display:none;'>
-              <td>Tim $data[NAMA_TEAM]</td>
+              <td>Tim $data[MONTH]</td>
               <td align='center'>$data_siswa[jumlah_siswa]</td>
               </tr>";
     }

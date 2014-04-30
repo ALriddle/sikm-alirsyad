@@ -330,7 +330,6 @@ $(document).ready(function() {
                                                 <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                                <?php echo "<li><a href='form_edit_data_pegawai.php?id=$hgetsalesid[SALES_ID]'>Profile</a></li>"; ?>
                                                 <li class="divider"></li>
                                                 <li><a href="logout.php">Logout</a></li>
                                         </ul>
