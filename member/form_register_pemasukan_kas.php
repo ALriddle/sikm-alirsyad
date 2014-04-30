@@ -10,7 +10,7 @@
 						<a href="#####">Manajemen Pendaftaran Pemasukan</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#####">Input Data Kategori Pengeluaran</a>
+						<a href="#####">Input Data Kategori Pemasukan</a>
 					</li>
 				</ul>
 			</div>

@@ -20,16 +20,16 @@
 						<h2><i class="icon-edit"></i> Form Input Data Tambah Pengeluaran</h2>
 					</div>
 					<div class="box-content">
-						<form class="form-horizontal" action="log_save_register_pengeluaran_kas.php" method="post">
+						<form class="form-horizontal" action="log_save_register_pengeluaran_bank.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="NO_TRANSAKSI_KAS">NO TRANSAKSI :</label>
+								<label class="control-label" for="NO_TRANSAKSI_BANK">NO TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="">
 								</div>
 							  </div>
-								<div class="control-group">
-								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
+							 <div class="control-group">
+								<label class="control-label" for="KODE_BANK">KODE BANK:</label>
 								<div class="controls">
 								  <select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="choosen">
 									<?php
@@ -43,15 +43,15 @@
 					</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="TANGGAL_KAS">TANGGAL KELUAR:</label>
+								<label class="control-label" for="TANGGAL_BANK">TANGGAL PENGELUARAN :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="TANGGAL_KAS" type="date" value="">
+								  <input class="input-xlarge focused" name="TANGGAL_BANK" type="date" value="">
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="KELUAR_KAS">KELUAR :</label>
+								<label class="control-label" for="KELUAR_BANK">KELUAR :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KELUAR_KAS" type="text" value="">
+								  <input class="input-xlarge focused" name="KELUAR_BANK" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
