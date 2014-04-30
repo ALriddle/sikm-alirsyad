@@ -16,7 +16,7 @@ $u = $_SESSION['USERNAME_PEGAWAI'];
         <meta name="author" content="MF">
 
         <!-- The styles -->
-        <link id="bs-css" href="../css/bootstrap-redy.css" rel="stylesheet">
+        <link id="bs-css" href="../css/bootstrap-cerulean.css" rel="stylesheet">
         <style type="text/css">
           body {
                 padding-bottom: 40px;
