@@ -45,11 +45,12 @@
 					<div>
 					<label for="tgl_awal" name="tgl_awal"> Dari Tanggal </label><input type="date" id="tgl_awal" name="tgl_awal">
 					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir" name="tgl_akhir">
+					</div>
 					<br>
 					<input type="submit" value="Print Dashboard">
 					</div>
 					</form>
 					</div>
 					</div>
-					</div>
+					
 <?php include('footer.php'); ?>

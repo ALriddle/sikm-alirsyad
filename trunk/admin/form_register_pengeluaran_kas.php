@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(NO_TRANSAKSI_KAS)+1 as ID_KAS from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select max(NO_TRANSAKSI_KAS)+2 as ID_KAS from data_transaksi_kas") or die(mysql_error());
 				$data_pengeluaran_kas = mysql_fetch_array($query);
 				{ 
 			?>

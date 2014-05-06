@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(NO_TRANSAKSI_KAS)+2 as ID_KAS from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select MAX(NO_TRANSAKSI_KAS)+2 as ID_KAS from data_transaksi_kas") or die(mysql_error());
 				$data_pemasukan_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -27,6 +27,7 @@
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Tambah Pemasukan</h2>
 					</div>
+					
 					<div class="box-content">
 						<form class="form-horizontal" action="log_save_register_pemasukan_kas.php" method="post">
 							<fieldset>

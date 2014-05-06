@@ -19,13 +19,20 @@
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Donatur</h2>
 					</div>
+			<?php 
+				include('DB_driver.php');
+				$id = $_GET['id'];
+				$query = mysql_query("select max(ID_TRANSAKSI)+1 as ID_DONATUR from data_transaksi_donatur") or die(mysql_error());
+				$data_pemasukan_donatur = mysql_fetch_array($query);
+				{ 
+			?>
 					<div class="box-content">
 						<form class="form-horizontal" action="log_save_register_donasi.php" method="post">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="ID_TRANSAKSI">ID TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="">
+								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_donatur['ID_DONATUR']; }?>" readonly="readonly">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -62,7 +69,7 @@
 							  </div>
 							  <div class="form-actions"  >
 								<button type="submit" class="btn btn-primary">Save Data</button>
-								<a class="btn btn-danger" href="../admin/form_transaksi_donasi.php"><i class="icon icon-white icon-cross "></i> Cancel</a>
+								<a class="btn btn-danger" href="../admin/form_transaksi_donatur.php"><i class="icon icon-white icon-cross "></i> Cancel</a>
 							  </div>
 							</fieldset>
 						  </form>

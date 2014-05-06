@@ -2,9 +2,9 @@
 include 'DB_driver.php';
 
 $del=$_GET['id'];
-$query1 = mysql_query("DELETE FROM kategory_pemasukan where ID_KAT_PEMASUKAN = '$del'");			
+$query1 = mysql_query("DELETE FROM data_transaksi_donatur where ID_TRANSAKSI = '$del'");			
 ?>
 <script language = "JavaScript">
-			document.location='form_kat_pemasukan.php';
+			document.location='form_transaksi_donatur.php';
 			alert('Data Berhasil Dihapus.');
 </script>

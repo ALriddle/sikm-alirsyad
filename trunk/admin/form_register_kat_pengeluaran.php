@@ -14,6 +14,14 @@
 					</li>
 				</ul>
 			</div>
+			
+			<?php 
+				include('DB_driver.php');
+				$id = $_GET['id'];
+				$query = mysql_query("select MAX(ID_KAT_PENGELUARAN)+1 as ID_KATEGORI from kategory_pengeluaran") or die(mysql_error());
+				$data_pengeluaran_kategori = mysql_fetch_array($query);
+				{ 
+			?>
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
@@ -25,7 +33,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="ID_KAT_PENGELUARAN">ID KATEGORI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_KAT_PENGELUARAN" type="text" value="">
+								  <input class="input-xlarge focused" name="ID_KAT_PENGELUARAN" type="text" value="<?php echo $data_pengeluaran_kategori['ID_KATEGORI']; }?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">
