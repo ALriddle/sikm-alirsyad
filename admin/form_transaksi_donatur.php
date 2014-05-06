@@ -30,7 +30,7 @@
 					<div class="box-content">
 					<div class="box span12">
 					<div class="box-content">
-					<form method=POST action=log_view_pemasukan_kas.php>
+					<form method=POST action=log_view_data_donatur.php>
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
 						  <thead>
 							  <tr>

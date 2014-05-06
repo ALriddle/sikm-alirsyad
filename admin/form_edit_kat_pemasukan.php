@@ -31,7 +31,7 @@
 							<fieldset>
 							  
 							 <div class="control-group">
-								<label class="control-label" for="ID_KAT_PEMASUKAN">ID_KAT_PEMASUKAN</label>
+								<label class="control-label" for="ID_KAT_PEMASUKAN">ID KAT. PEMASUKAN</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="ID_KAT_PEMASUKAN" type="text" value="<?php echo $data_tim['ID_KAT_PEMASUKAN'];?>" readonly="readonly">
 								</div>

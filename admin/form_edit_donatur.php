@@ -1,6 +1,5 @@
 <?php include('header.php'); ?>
 
-
 			<div>
 				<ul class="breadcrumb">
 					<li>
@@ -9,11 +8,9 @@
 					<li>
 						<a href="form_tim.php">Manajemen Pendaftaran Donatur</a> <span class="divider">/</span>
 					</li>
-					<li>
-						<a href="#">Form Edit Donatur/a>
-					</li>
 				</ul>
 			</div>
+			
 			<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well" data-original-title>
@@ -49,13 +46,13 @@
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="JUMLAH_DONASI">JUMLAH DONATUR</label>
+								<label class="control-label" for="JUMLAH_DONASI">JUMLAH DONASI</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="JUMLAH_DONASI" type="text" value="<?php echo $data_tim['JUMLAH_DONASI'];?>">
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="STATUS_DONATUR">STATUS_DONATUR</label>
+								<label class="control-label" for="STATUS_DONATUR">STATUS DONATUR</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="STATUS_DONATUR" type="text" value="<?php echo $data_tim['STATUS_DONATUR'];?>">
 								</div>
@@ -72,8 +69,4 @@
 					?>
 					</div>
 				</div><!--/span-->
-</table>
-</form>
-</div>
-</div>
 <?php include('footer.php'); ?>

@@ -17,10 +17,10 @@ while ($data = mysql_fetch_array($hasil)) {
 	<td><center>$data[JUMLAH_DONASI]</center></td>
 	<td><center>$data[STATUS_DONATUR]</center></td>
 	<td align=center>
-	<a class='btn btn-primary' href=form_edit_donatur.php?id=$data[ID_TRANSAKSI]><i class='icon-book icon-white'></i>Edit</a></div>
+	<a class='btn btn-primary' href=form_edit_donatur.php?id=$data[ID_TRANSAKSI]><i class='icon-book icon-white'></i>Edit</a>
 	<a class='btn btn-danger' href=log_delete_donatur.php?id=$data[ID_TRANSAKSI]><i class='icon-trash icon-white'></i>Delete</a>
 	</td>
-	";
+	</tr>";
 }
 echo "</table>";
 ?>

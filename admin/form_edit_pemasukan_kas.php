@@ -40,7 +40,7 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="TANGGAL_KAS">TANGGAL PEMASUKAN</label>
+								<label class="control-label" for="TANGGAL_KAS">TANGGAL TRANSAKSI</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" id="TANGGAL_KAS" name="TANGGAL_KAS" type="date" value="<?php echo $data_pemasukan_kas['TANGGAL_KAS'];?>">
 								</div>

@@ -1,8 +1,8 @@
 <?php
 $host ="localhost";
 $user="root";
-$password="hereforgood";
-$database="sales_act";
+$password="";
+$database="sales_act2";
 include('fungsi_indotgl.php');
 $tgl_awal=$_POST['tgl_awal'];
 $tgl_akhir=$_POST['tgl_akhir'];
