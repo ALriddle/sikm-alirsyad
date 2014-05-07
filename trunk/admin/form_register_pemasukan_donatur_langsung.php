@@ -27,7 +27,7 @@
 				{ 
 			?>
 					<div class="box-content">
-						<form class="form-horizontal" action="log_save_register_donasi.php" method="post">
+						<form class="form-horizontal" action="log_save_register_pemasukan_donatur_langsung.php" method="post">
 							<fieldset>
 							  <div class="control-group">
 								<label class="control-label" for="ID_TRANSAKSI">ID TRANSAKSI :</label>
@@ -48,24 +48,30 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="JUMLAH_DONASI">JUMLAH DONASI :</label>
+								<label class="control-label" for="JUMLAH_DONASI_L">JUMLAH DONASI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="JUMLAH_DONASI" type="text" value="">
+								  <input class="input-xlarge focused" name="JUMLAH_DONASI_L" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="STATUS_DONATUR">STATUS DONATUR :</label>
+								<label class="control-label" for="KODE_DONATUR">KODE DONATUR :</label>
 								<div class="controls">
-								  <select id="STATUS_DONATUR" name="STATUS_DONATUR" data-rel="choosen">
+								  <select id="KODE_DONATUR" name="KODE_DONATUR" data-rel="choosen">
 									<?php
 									//mengambil nama-nama propinsi yang ada di database
-										$CITY = mysql_query("SELECT DISTINCT NAMA_PEMASUKAN, ID_KAT_PEMASUKAN, KODE_PEMASUKAN FROM kategory_pemasukan WHERE NAMA_PEMASUKAN LIKE '%Donatur%'");
+										$CITY = mysql_query("SELECT DISTINCT NAMA_DONATUR, ID_KAT_DONATUR, KODE_DONATUR FROM kategory_donatur "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'
 										while($p=mysql_fetch_array($CITY)){
-										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[NAMA_PEMASUKAN]</option>\n";
+										echo "<option value=\"$p[KODE_DONATUR]\">$p[NAMA_DONATUR]</option>\n";
 										}
 									?>
                                 </select>
-					</div>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="KETERANGAN">KETERANGAN</label>
+								<div class="controls">
+								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="">
+								</div>
 							  </div>
 							  <div class="form-actions"  >
 								<button type="submit" class="btn btn-primary">Save Data</button>
