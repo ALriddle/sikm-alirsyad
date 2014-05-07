@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 06, 2014 at 08:54 PM
+-- Generation Time: May 07, 2014 at 09:16 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -154,8 +154,10 @@ CREATE TABLE IF NOT EXISTS `data_transaksi_donatur` (
   `ID_TRANSAKSI` varchar(20) NOT NULL,
   `TANGGAL_TRANSAKSI` date NOT NULL,
   `NAMA_DONATUR` varchar(50) NOT NULL,
-  `JUMLAH_DONASI` int(11) NOT NULL,
-  `STATUS_DONATUR` varchar(50) NOT NULL,
+  `JUMLAH_DONASI_L` bigint(20) NOT NULL,
+  `JUMLAH_DONASI_TL` bigint(20) NOT NULL,
+  `KODE_DONATUR` varchar(50) NOT NULL,
+  `KETERANGAN` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_TRANSAKSI`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -163,9 +165,10 @@ CREATE TABLE IF NOT EXISTS `data_transaksi_donatur` (
 -- Dumping data for table `data_transaksi_donatur`
 --
 
-INSERT INTO `data_transaksi_donatur` (`ID_TRANSAKSI`, `TANGGAL_TRANSAKSI`, `NAMA_DONATUR`, `JUMLAH_DONASI`, `STATUS_DONATUR`) VALUES
-('1', '2014-04-02', 'Muhammad', 100000000, 'IDT'),
-('2', '2014-05-09', 'Isa', 9000000, 'IDT');
+INSERT INTO `data_transaksi_donatur` (`ID_TRANSAKSI`, `TANGGAL_TRANSAKSI`, `NAMA_DONATUR`, `JUMLAH_DONASI_L`, `JUMLAH_DONASI_TL`, `KODE_DONATUR`, `KETERANGAN`) VALUES
+('1', '2014-04-02', 'Muhammad', 100000000, 0, 'IDT', 'coba'),
+('4', '2014-05-06', 'Dian', 100000000, 0, 'Donatur Tetap', 'akhir Bulan'),
+('5', '2014-05-07', 'Muhammad', 0, 4000, 'MHD', 'awal Bulan');
 
 -- --------------------------------------------------------
 
@@ -274,7 +277,6 @@ INSERT INTO `data_transaksi_kas` (`NO_TRANSAKSI_KAS`, `KODE_KAS`, `TANGGAL_KAS`,
 ('4', 'KB', '2014-04-13', 0, 150000, 0, 0, 'Kajian Bulanan'),
 ('3', 'DT', '2014-04-13', 2000000, 0, 0, 0, 'Donatur Tetap'),
 ('2', 'DT', '2014-04-11', 0, 100000, 0, 0, 'Donatur Tetap'),
-('1', 'IB', '2014-04-11', 1000000, 0, 0, 0, 'Infaq Bulanan'),
 ('86', 'KB', '2014-10-04', 0, 514000, 0, 0, 'Kajian Bulanan'),
 ('87', 'IB', '2014-10-04', 36350000, 0, 0, 0, 'Infaq Bulanan'),
 ('88', 'CS', '2014-10-06', 0, 524000, 0, 0, 'Cleaning Service'),
@@ -290,6 +292,28 @@ INSERT INTO `data_transaksi_kas` (`NO_TRANSAKSI_KAS`, `KODE_KAS`, `TANGGAL_KAS`,
 ('98', 'DT', '2014-10-22', 39950000, 0, 0, 0, 'Donatur Tetap'),
 ('99', 'KB', '2014-10-24', 40350000, 0, 0, 0, 'Kajian Bulanan'),
 ('100', 'CS', '2014-10-26', 40750000, 0, 0, 0, 'Cleaning Service');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategory_donatur`
+--
+
+CREATE TABLE IF NOT EXISTS `kategory_donatur` (
+  `ID_KAT_DONATUR` varchar(50) NOT NULL,
+  `NAMA_DONATUR` varchar(50) NOT NULL,
+  `JUMLAH_DONASI` int(20) NOT NULL,
+  `KODE_DONATUR` varchar(50) NOT NULL,
+  `KETERANGAN` varchar(100) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategory_donatur`
+--
+
+INSERT INTO `kategory_donatur` (`ID_KAT_DONATUR`, `NAMA_DONATUR`, `JUMLAH_DONASI`, `KODE_DONATUR`, `KETERANGAN`) VALUES
+('1', 'Muhammad', 90000, 'MHD', 'KETERANGAN'),
+('2', 'Dian', 40000000, 'Donatur Tetap', 'KETERANGAN');
 
 -- --------------------------------------------------------
 
