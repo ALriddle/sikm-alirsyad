@@ -1,6 +1,6 @@
 <?php include('header.php'); ?>
 
-<div>		
+		
 			<div>
 				<ul class="breadcrumb">
 					<li>
@@ -38,10 +38,6 @@
 					</div>
 					
 					<div class="box-content">
-				    <div class="span12">
-					<div class="span6"><a class="btn btn-success" href="../member/form_register_pemasukan_kas.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
-					<a class="btn btn-danger" href="../member/form_register_pengeluaran_kas.php"><i class="icon icon-white icon-add"></i> Tambah Pengeluaran</a>
-					</div>
 					<div class="span6">
 					<div class="control-group">
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Kas:</h4></label>
@@ -69,7 +65,6 @@
 									<!--<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL KAS</center></b></td> -->
 									<td rowspan="1" valign="middle"><b><center>KETERANGAN</center></b></td>	
-									<td rowspan="1" valign="middle"><b><center></center></b></td>	
 								</td>
 									</tr>
 						  </thead> 
@@ -103,9 +98,6 @@ include"log_view_pemasukan_kas.php";
 					
 					
 					<div class="box-content">
-					<div class="span6"><a class="btn btn-success" href="../member/form_register_pemasukan_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pemasukan</a>
-					<a class="btn btn-danger" href="../member/form_register_pengeluaran_bank.php"><i class="icon icon-white icon-add"></i> Tambah Pengeluaran</a> 
-					</div>
 					<div class="span6">
 					<div class="control-group">
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Bank:</h4></label>
@@ -132,7 +124,6 @@ include"log_view_pemasukan_kas.php";
 									<!--<td rowspan="1" valign="middle"><b><center>SALDO</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>SALDO TOTAL BANK</center></b></td>-->
 									<td rowspan="1" valign="middle"><b><center>KETERANGAN</center></b></td>	
-									<td rowspan="1" valign="middle"><b><center></center></b></td>	
 							</tr>
 						  </thead> 
 
@@ -146,7 +137,5 @@ include"log_view_pemasukan_bank.php";
 			
 			</div><!--/row-->
 			</div>
-
-</div>
-					
+		
 <?php include('footer.php'); ?>

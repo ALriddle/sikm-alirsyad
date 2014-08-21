@@ -23,7 +23,7 @@
 			'$NAMA_DONATUR',
 			'$JUMLAH_DONASI',
 			'$KODE_DONATUR',
-			'KETERANGAN')";
+			'$KETERANGAN')";
 			$result=@mysql_query($query)or die(mysql_error());
 			if($result){
 			?>
