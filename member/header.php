@@ -360,8 +360,8 @@ $(document).ready(function() {
                                         <ul class="nav nav-tabs nav-stacked main-menu">
                                                 <li class="nav-header hidden-tablet">Main</li>
                                                 <li><a class="ajax-link" href="index.php"><i class="icon32 icon-color icon-home"></i><span class="hidden-tablet"> Home</span></a></li>
-                                                <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet"> Data Transaksi</span></a></li>
-                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Data Donatur</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet"> Donatur Tidak Tetap</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Donatur Tetap</span></a></li>
                                                 <li><a class="ajax-link" href="logout.php"><i class="icon32 icon-color icon-replyall"></i><span class="hidden-tablet"> Exit</span></a></li>
                                         </ul>
                                 

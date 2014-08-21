@@ -18,12 +18,12 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(NO_TRANSAKSI_BANK)+2 as ID_BANK from data_transaksi_bank") or die(mysql_error());
+				$query = mysql_query("select max(NO_TRANSAKSI_BANK)+1 as ID_BANK from data_transaksi_bank") or die(mysql_error());
 				$data_pemasukan_bank = mysql_fetch_array($query);
 				{ 
 			?>
 			<div class="row-fluid sortable">
-				<div class="box span6">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Tambah Pemasukan</h2>
 					</div>
@@ -33,7 +33,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_BANK">NO TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="<?php echo $data_pemasukan_bank['ID_BANK']; }?>">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="<?php echo $data_pemasukan_bank['ID_BANK']; }?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">

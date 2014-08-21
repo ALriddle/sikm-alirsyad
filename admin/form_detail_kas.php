@@ -13,7 +13,7 @@
 			</div>
 					
 			<div class="row-fluid sortable">
-				<div class="box span6">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i>Detail Data Pemasukan Kas</h2>
 					</div>

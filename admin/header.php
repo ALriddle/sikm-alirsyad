@@ -359,13 +359,13 @@ $(document).ready(function() {
                                         <ul class="nav nav-tabs nav-stacked main-menu">
                                                 <li class="nav-header hidden-tablet">Main</li>
                                                 <li><a class="ajax-link" href="index.php"><i class="icon32 icon-color icon-home"></i><span class="hidden-tablet"> Home</span></a></li>
-                                                <li><a class="ajax-link" href="form_kat_pemasukan.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Kategori Pemasukan</span></a></li>
-                                                <li><a class="ajax-link" href="form_kat_pengeluaran.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Kategori Pengeluaran</span></a></li>
-												<li><a class="ajax-link" href="form_kat_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Kategori Donatur Tetap</span></a></li>
-                                                <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Donatur Tidak Tetap</span></a></li>
-                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-folder-open"></i><span class="hidden-tablet">Donatur Tetap</span></a></li>
-                                                <li><a class="ajax-link" href="grafik.php"><i class="icon32 icon-color icon-document"></i><span class="hidden-tablet"> Graphics</span></a></li>
-												<li><a class="ajax-link" href="laporan.php"><i class="icon32 icon-color icon-document"></i><span class="hidden-tablet"> Laporan</span></a></li>
+                                                <li><a class="ajax-link" href="form_kat_pemasukan.php"><i class="icon32 icon-color icon-square-plus"></i><span class="hidden-tablet">Kategori Pemasukan</span></a></li>
+                                                <li><a class="ajax-link" href="form_kat_pengeluaran.php"><i class="icon32 icon-color icon-square-minus"></i><span class="hidden-tablet">Kategori Pengeluaran</span></a></li>
+												<li><a class="ajax-link" href="form_kat_donatur.php"><i class="icon32 icon-color icon-suitcase"></i><span class="hidden-tablet">Kategori Donatur Tetap</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-envelope-open"></i><span class="hidden-tablet">Donatur Tidak Tetap</span></a></li>
+                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-envelope-closed"></i><span class="hidden-tablet">Donatur Tetap</span></a></li>
+                                                <li><a class="ajax-link" href="grafik.php"><i class="icon32 icon-color icon-image"></i><span class="hidden-tablet"> Graphics</span></a></li>
+												<li><a class="ajax-link" href="laporan.php"><i class="icon32 icon-color icon-pdf"></i><span class="hidden-tablet"> Laporan</span></a></li>
                                                 <li><a class="ajax-link" href="logout.php"><i class="icon32 icon-color icon-replyall"></i><span class="hidden-tablet"> Exit</span></a></li>
                                         </ul>
                                 
@@ -377,7 +377,7 @@ $(document).ready(function() {
                         
                         <noscript>
                                 <div class="alert alert-block span10">
-                                        <h4 class="alert-heading">Warning!</h4>S
+                                        <h4 class="alert-heading">Warning!</h4>
                                         <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
                                 </div>
                         </noscript>

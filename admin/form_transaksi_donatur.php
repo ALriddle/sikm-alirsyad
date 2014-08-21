@@ -86,7 +86,7 @@ include"log_view_pemasukan_donatur_langsung.php";
 			<?php 
 			include('DB_driver.php');
 				$query3 = mysql_query("Select sum(JUMLAH_DONASI_TL) as total2 from data_transaksi_donatur") or die(mysql_error());
-				$data_pemasukan_donantur3 = mysql_fetch_array($query3);
+				$data_pemasukan_donatur3 = mysql_fetch_array($query3);
 				{ 
 			?>
 				<div class="row-fluid sortable">

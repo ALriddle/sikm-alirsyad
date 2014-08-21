@@ -23,7 +23,7 @@
 				{ 
 			?>
 			<div class="row-fluid sortable">
-				<div class="box span6">
+				<div class="box span10">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Kategori Donatur</h2>
 					</div>
@@ -33,7 +33,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="ID_KAT_DONATUR">ID KATEGORI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_KAT_DONATUR" type="text" value="<?php echo $data_donatur_kategori['ID_KATEGORI']; }?>">
+								  <input class="input-xlarge focused" name="ID_KAT_DONATUR" type="text" value="<?php echo $data_donatur_kategori['ID_KATEGORI']; }?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">

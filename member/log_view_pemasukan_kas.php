@@ -23,8 +23,6 @@ while ($data = mysql_fetch_array($hasil)) {
 	//<td><center>$data[SALDO_TOTAL_KAS]</center></td>
 	echo "
 	<td><center>$data[KETERANGAN]</center></td>
-	<td align=center>
-	</td>
 	</tr>";
 }
 echo "</table>";

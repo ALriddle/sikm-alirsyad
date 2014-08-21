@@ -13,7 +13,7 @@
 			</div>
 			
 			<div class="row-fluid sortable">	
-				<div class="box span8">
+				<div class="box span12">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-plus"></i> Daftar Kategori Pemasukan</h2>
 					</div>
