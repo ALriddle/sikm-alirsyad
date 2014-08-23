@@ -6,6 +6,8 @@ $database="sales_act2";
 include('fungsi_indotgl.php');
 $tgl_awal=$_POST['tgl_awal'];
 $tgl_akhir=$_POST['tgl_akhir'];
+$kategori=$_POST['kategori'];
+
 $tgl1=tgl_indo($tgl_awal);
 $tgl2=tgl_indo($tgl_akhir);
 
@@ -22,8 +24,12 @@ $data_pemasukan_kas2 = mysql_fetch_array($query2);
 $query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas3 = mysql_fetch_array($query3);
 
+$query4 = mysql_query("Select sum(MASUK_KAS) as detail_pemasukan from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' LIKE '%$kategori%'") or die(mysql_error());
+$detail_pemasukan_kas = mysql_fetch_array($query4); //masih perlu dibenahi.
+
 $query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'";
 $db_query = mysql_query($query) or die("Query gagal");
+
 //Variabel untuk iterasi
 $i = 0;
 //Mengambil nilai dari query database
@@ -113,6 +119,20 @@ $pdf->Ln();
 $pdf->Cell(19,1,'Total Pengeluaran : Rp. '.$data_pemasukan_kas3[pengeluaran],'LBTR',0,'R');
 $pdf->Ln();
 $pdf->Cell(19,1,'Saldo Akhir : Rp. '.$data_pemasukan_kas1[saldototal],'LBTR',0,'R');
+$pdf->Ln();
+$pdf->Ln();
+$pdf->SetFont("Arial","B",11);
+$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL' + $kategori,0,0,'L'); //detil ditambahi "+" nama yang dipilih di laporan.php
+$pdf->Ln();
+$pdf->SetFont("Arial","B",10);
+$pdf->Cell(1,1,'No','LRTB',0,'C');
+$pdf->Cell(4,1,'Kode Trans.','LRTB',0,'C');
+$pdf->Cell(3,1,'Tanggal','LRTB',0,'C');
+$pdf->Cell(4,1,'Masuk','LRTB',0,'C');
+$pdf->Cell(7,1,'Keterangan','LRTB',0,'C');
+$pdf->Ln();
+$pdf->SetFont("Arial","B",12);
+$pdf->Cell(19,1,'Total Masuk : Rp. '.$data_pemasukan_kas1[saldototal],'LBTR',0,'R');
 $pdf->Ln();
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
