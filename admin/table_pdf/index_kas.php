@@ -24,8 +24,8 @@ $data_pemasukan_kas2 = mysql_fetch_array($query2);
 $query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas3 = mysql_fetch_array($query3);
 
-$query4 = mysql_query("Select sum(MASUK_KAS) as detail_pemasukan from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' LIKE '%$kategori%'") or die(mysql_error());
-$detail_pemasukan_kas = mysql_fetch_array($query4); //masih perlu dibenahi.
+$query4 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
+$detail_pemasukan_kas = mysql_fetch_array($query4); 
 
 $query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'";
 $db_query = mysql_query($query) or die("Query gagal");
@@ -46,6 +46,23 @@ $cell[$i][7] = $data[7];
 $cell[$i][8] = $data[8];
 $i++;
 }
+
+$i = 0;
+//Mengambil nilai dari query database
+while($data=mysql_fetch_array($query4))
+{
+$cell2[$i][0] = $data[0];
+$cell2[$i][1] = $data[1];
+$cell2[$i][2] = $data[2];
+$cell2[$i][3] = $data[3];
+$cell2[$i][4] = $data[4];
+$cell2[$i][5] = $data[5];
+$cell2[$i][6] = $data[6];
+$cell2[$i][7] = $data[7];
+$cell2[$i][8] = $data[8];
+$i++;
+}
+
 require('fpdf.php');
 
 class PDF extends FPDF
@@ -122,7 +139,7 @@ $pdf->Cell(19,1,'Saldo Akhir : Rp. '.$data_pemasukan_kas1[saldototal],'LBTR',0,'
 $pdf->Ln();
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL' + $kategori,0,0,'L'); //detil ditambahi "+" nama yang dipilih di laporan.php
+$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori,0,0,'L');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(1,1,'No','LRTB',0,'C');
@@ -131,8 +148,20 @@ $pdf->Cell(3,1,'Tanggal','LRTB',0,'C');
 $pdf->Cell(4,1,'Masuk','LRTB',0,'C');
 $pdf->Cell(7,1,'Keterangan','LRTB',0,'C');
 $pdf->Ln();
+$pdf->SetFont('Times','',10);
+for($j=0;$j<$i;$j++)
+{
+//menampilkan data dari hasil query database
+$pdf->Cell(1,1,$j+1,'LBTR',0,'C');
+$pdf->Cell(4,1,$cell2[$j][1],'LBTR',0,'C');
+$pdf->Cell(3,1,$cell2[$j][2],'LBTR',0,'C');
+$pdf->Cell(4,1,$cell2[$j][3],'LBTR',0,'C');
+$pdf->Cell(7,1,$cell2[$j][7],'LBTR',0,'C');
+$pdf->Ln();
+}
+
 $pdf->SetFont("Arial","B",12);
-$pdf->Cell(19,1,'Total Masuk : Rp. '.$data_pemasukan_kas1[saldototal],'LBTR',0,'R');
+$pdf->Cell(19,1,'Total Masuk : Rp. '.$detail_pemasukan_kas[detail_pemasukan],'LBTR',0,'R');
 $pdf->Ln();
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
