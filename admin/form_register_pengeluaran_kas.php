@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(NO_TRANSAKSI_KAS)+1 as ID_KAS from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select max(NO_TRANSAKSI_KAS) as ID_KAS from data_transaksi_kas") or die(mysql_error());
 				$data_pengeluaran_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -33,13 +33,13 @@
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_KAS">NO TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pengeluaran_kas['ID_KAS']; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pengeluaran_kas['ID_KAS']+1; }?>" readonly="readonly">
 								</div>
 							  </div>
 								<div class="control-group">
 								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
 								<div class="controls">
-								  <select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="choosen">
+								  <select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
 									<?php
 									//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, ID_KAT_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY NAMA_PENGELUARAN");
