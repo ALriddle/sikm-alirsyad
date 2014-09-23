@@ -43,9 +43,9 @@
 								  </select>
 								</div>
 					</div>
-					</div>
+				</div>
 					<br>
-					<input type="submit" value="Print Laporan">
+					<button type="submit" class="btn btn-primary">Print Laporan</button>
 					</div>
 					</form>
 					</div>
@@ -61,9 +61,24 @@
 					<div>
 					<label for="tgl_awal" name="tgl_awal"> Dari Tanggal </label><input type="date" id="tgl_awal1" name="tgl_awal1">
 					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir1" name="tgl_akhir1">
+					<label for="kategori2" name="kategori2"> Kategori</label>
+					<div class="control-group">
+								<div class="controls">
+								  <select id="kategori3" name="kategori3" data-rel="chosen">
+									<?php
+									//mengambil nama-nama propinsi yang ada di database
+										$CITY = mysql_query("SELECT DISTINCT NAMA_PEMASUKAN, ID_KAT_PEMASUKAN, KODE_PEMASUKAN FROM kategory_pemasukan ORDER BY NAMA_PEMASUKAN");
+										while($p=mysql_fetch_array($CITY)){
+										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[NAMA_PEMASUKAN]</option>\n";
+										}
+									?>
+								  </select>
+								</div>
+					</div>
+					
 					</div>
 					<br>
-					<input type="submit" value="Print Laporan">
+					<button type="submit" class="btn btn-primary">Print Laporan</button>
 					</div>
 					</form>
 					</div>

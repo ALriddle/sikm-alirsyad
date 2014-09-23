@@ -27,7 +27,7 @@
 					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir" name="tgl_akhir">
 					</div>
 					<br>
-					<input type="submit" value="Print Dashboard">
+					<button type="submit" class="btn btn-primary">Print Dashboard</button>
 					</div>
 					</form>
 					</div>
@@ -47,7 +47,7 @@
 					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir" name="tgl_akhir">
 					</div>
 					<br>
-					<input type="submit" value="Print Dashboard">
+					<button type="submit" class="btn btn-primary">Print Dashboard</button>
 					</div>
 					</form>
 					</div>
