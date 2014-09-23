@@ -23,8 +23,12 @@
 					<div class="box-content">
 					<form method="post" action="table_pdf/index_kas.php">
 					<div>
-					<label for="tgl_awal1" name="tgl_awal1"> Dari Tanggal </label><input type="date" id="tgl_awal" name="tgl_awal">
-					<label for="tgl_akhir1" name="tgl_akhir1"> Sampai Tanggal </label><input type="date" id="tgl_akhir" name="tgl_akhir">
+					
+					<label for="tgl_awal1" name="tgl_awal1"> Dari Tanggal </label>
+						<input type="date" id="tgl_awal" name="tgl_awal">
+					<label for="tgl_akhir1" name="tgl_akhir1"> Sampai Tanggal </label>
+						<input type="date" id="tgl_akhir" name="tgl_akhir">
+						
 					<label for="kategori1" name="kategori1"> Kategori</label>
 					<div class="control-group">
 								<div class="controls">
@@ -38,7 +42,7 @@
 									?>
 								  </select>
 								</div>
-							  </div>
+					</div>
 					</div>
 					<br>
 					<input type="submit" value="Print Laporan">

@@ -22,7 +22,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(ID_TRANSAKSI)+1 as ID_DONATUR from data_transaksi_donatur") or die(mysql_error());
+				$query = mysql_query("select max(ID_TRANSAKSI) as ID_DONATUR from data_transaksi_donatur") or die(mysql_error());
 				$data_pemasukan_donatur = mysql_fetch_array($query);
 				{ 
 			?>
@@ -32,7 +32,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="ID_TRANSAKSI">ID TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_donatur['ID_DONATUR']; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_donatur['ID_DONATUR']+1; }?>" readonly="readonly">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -56,7 +56,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="KODE_DONATUR">KODE DONATUR :</label>
 								<div class="controls">
-								  <select id="KODE_DONATUR" name="KODE_DONATUR" data-rel="choosen">
+								  <select id="KODE_DONATUR" name="KODE_DONATUR" data-rel="chosen">
 									<?php
 									//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT NAMA_DONATUR, ID_KAT_DONATUR, KODE_DONATUR FROM kategory_donatur "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'
