@@ -32,9 +32,9 @@
 						<form class="form-horizontal" action="log_save_register_pemasukan_kas.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="NO_TRANSAKSI_KAS">NO TRANSAKSI :</label>
+								<label class="control-label" for="NO_TRANSAKSI_KAS">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['ID_KAS']+1; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['ID_KAS']+1; }?>">
 								</div>
 							  </div>
 					<div class="control-group">

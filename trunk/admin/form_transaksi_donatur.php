@@ -60,7 +60,7 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
 						  <thead>
 							  <tr>
-									<td rowspan="1" valign="middle"><b><center>NO. TRANSAKSI</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>NAMA DONATUR</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>JUMLAH DONASI</center></b></td>
@@ -120,7 +120,7 @@ include"log_view_pemasukan_donatur_langsung.php";
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="5">
 						  <thead>
 							 <tr>
-									<td rowspan="1" valign="middle"><b><center>NO. TRANSAKSI</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>NAMA DONATUR</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>JUMLAH DONASI</center></b></td>
