@@ -31,9 +31,9 @@
 						<form class="form-horizontal" action="log_save_register_pemasukan_bank.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="NO_TRANSAKSI_BANK">NO TRANSAKSI :</label>
+								<label class="control-label" for="NO_TRANSAKSI_BANK">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="<?php echo $data_pemasukan_bank['ID_BANK']+1; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI_BANK" type="text" value="<?php echo $data_pemasukan_bank['ID_BANK']+1; }?>">
 								</div>
 							  </div>
 							 <div class="control-group">

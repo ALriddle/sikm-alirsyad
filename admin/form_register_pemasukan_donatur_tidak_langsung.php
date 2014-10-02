@@ -30,9 +30,9 @@
 						<form class="form-horizontal" action="log_save_register_pemasukan_donatur_tidak_langsung.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="ID_TRANSAKSI">ID TRANSAKSI :</label>
+								<label class="control-label" for="ID_TRANSAKSI">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_donatur['ID_DONATUR']+1; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="ID_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_donatur['ID_DONATUR']+1; }?>">
 								</div>
 							  </div>
 							  <div class="control-group">
