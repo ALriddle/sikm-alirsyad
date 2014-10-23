@@ -37,9 +37,8 @@
 								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['ID_KAS']+1; }?>">
 								</div>
 							  </div>
-					<div class="control-group">
-						<label class="control-label" for="KODE_KAS">KODE KAS:</label>
-							
+						<div class="control-group">
+							<label class="control-label" for="KODE_KAS">KODE KAS:</label>
 								<div class="controls">
 									<select id="KODE_KAS" name="KODE_KAS" data-rel="chosen">
 										<?php
@@ -51,7 +50,13 @@
 									?>
 									</select>
 								</div>
-				    </div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
+							<div class="controls">
+							    <input class="input-xlarge focused" name="NAMA_KODE" type="text" value="">
+							</div>
+						</div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL MASUK:</label>
 								<div class="controls">
