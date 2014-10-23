@@ -26,140 +26,9 @@ $u = $_SESSION['USERNAME_PEGAWAI'];
           }
         </style>
         <script type="text/javascript" src="jquery1.js"></script>
-        <script type="text/javascript">
-                var htmlobjek;
-                $(document).ready(function(){
-                  //apabila terjadi event onchange terhadap object <select id=propinsi>
-                  $("#NAMA_TEAM").change(function(){
-                        var NAMA_TEAM = $("#NAMA_TEAM").val();
-                        $.ajax({
-                                url: "log_get_tim.php",
-                                data: "NAMA_TEAM="+NAMA_TEAM,
-                                cache: false,
-                                success: function(msg){
-                                        //jika data sukses diambil dari server kita tampilkan
-                                        //di <select id=kota>
-                                        $("#SALES_ID").html(msg);
-                                }
-                        });
-                  });
-                });
-        </script>
         <script type="text/javascript" src="jquery-1.41.js"></script>
         <script type='text/javascript' src='jquery.autocomplete1.js'></script>
-<script type="text/javascript">
-$(document).ready(function() {  
-        $("#ACCOUNT_ID").autocomplete("log_proses_auto.php", {
-                width: 150
-        });
-        
-        $("#ACCOUNT_ID").result(function(event, data, formatted) {
-                var kode        = formatted;
-                $.ajax({
-                        type    : "POST",
-                        data    : "kode="+kode,
-                        url     : "log_cari_auto.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#EXTENSION_ADDRESS").val(data.EXTENSION_ADDRESS);
-                                $("#STREET").val(data.STREET);
-                                $("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
-                        }
-                });
-        });
-        $("#ACCOUNT_ID").keyup(function() {
-                var kode        = $('#ACCOUNT_ID').val();
-                $.ajax({
-                        type    : "POST",
-                        data    : "kode="+kode,
-                        url     : "log_cari_auto.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#EXTENSION_ADDRESS").val(data.EXTENSION_ADDRESS);
-                                $("#STREET").val(data.STREET);
-                                $("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
-                        }
-                });
-        });
-        
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function() {  
-        $("#SALES_ID").autocomplete("log_proses_auto_pegawai.php", {
-                width: 150
-        });
-        
-        $("#SALES_ID").result(function(event, data, formatted) {
-                var code        = formatted;
-                $.ajax({
-                        type    : "POST",
-                        data    : "code="+code,
-                        url     : "log_cari_auto_pegawai.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#NAMA_PEGAWAI").val(data.NAMA_PEGAWAI);
-                        }
-                });
-        });
-        $("#SALES_ID").keyup(function() {
-                var code        = $('#SALES_ID').val();
-                $.ajax({
-                        type    : "POST",
-                        data    : "code="+code,
-                        url     : "log_cari_auto_pegawai.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#NAMA_PEGAWAI").val(data.NAMA_PEGAWAI);
-                        }
-                });
-        });
-});
-</script>
-<script type="text/javascript">
-$().ready(function() {  
-        $("#supervisor").autocomplete("log_auto_supervisor.php", {
-                width: 150
-  });
 
-        $("#supervisor").result(function(event, data, formatted) {
-                                $('#pilihan').html("<p>Anda memilih Barang: " + formatted + "</p>"); 
-        });
-        
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function() {
-$("#TIM_ID").autocomplete("log_proses_auto_tim.php", {
-                width: 150
-        });
-        
-        $("#TIM_ID").result(function(event, data, formatted) {
-                var loko        = formatted;
-                $.ajax({
-                        type    : "POST",
-                        data    : "loko="+loko,
-                        url     : "log_cari_auto_tim.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#NAMA_TIM").val(data.NAMA_TEAM);
-                        }
-                });
-        });
-        $("#TIM_ID").keyup(function() {
-                var loko        = $('#TIM_ID').val();
-                $.ajax({
-                        type    : "POST",
-                        data    : "loko="+loko,
-                        url     : "log_cari_auto_tim.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#NAMA_TIM").val(data.NAMA_TEAM);
-                        }
-                });
-        });
-        });
-</script>
 <script type="text/javascript" src="js/jquery.fusioncharts.js"></script>
         <script type="text/javascript">
     $('#TableSiswa').convertToFusionCharts({
@@ -169,35 +38,36 @@ $("#TIM_ID").autocomplete("log_proses_auto_tim.php", {
         dataFormat: "HTMLTable"
     });
 </script>
+
 <script type="text/javascript">
 $(document).ready(function() {  
-        $("#ID_CITY").autocomplete("log_proses_auto_city.php", {
+        $("#ID_KAT_PEMASUKAN").autocomplete("log_proses_auto_kategory.php", {
                 width: 150
         });
         
-        $("#ID_CITY").result(function(event, data, formatted) {
+        $("#ID_KAT_PEMASUKAN").result(function(event, data, formatted) {
                 var kode        = formatted;
                 $.ajax({
                         type    : "POST",
                         data    : "kode="+kode,
-                        url     : "log_cari_auto_city.php",
+                        url     : "log_cari_auto_kategory.php",
                         dataType: "json",
                         success: function(data){
-                                $("#CITY").val(data.CITY);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
                 });
         });
-        $("#ID_CITY").keyup(function() {
-                var kode        = $('#ID_CITY').val();
+        $("#ID_KAT_PEMASUKAN").keyup(function() {
+                var kode        = $('#ID_KAT_PEMASUKAN').val();
                 $.ajax({
                         type    : "POST",
                         data    : "kode="+kode,
-                        url     : "log_cari_auto_city.php",
+                        url     : "log_cari_auto_kategory.php",
                         dataType: "json",
                         success: function(data){
-                                $("#CITY").val(data.CITY);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
@@ -206,59 +76,26 @@ $(document).ready(function() {
         
 });
 </script>
+
 <script type="text/javascript">
                 var htmlobjek;
                 $(document).ready(function(){
                   //apabila terjadi event onchange terhadap object <select id=propinsi>
-                  $("#CITY").change(function(){
-                        var CITY = $("#CITY").val();
+                  $("#NAMA_PEMASUKAN").change(function(){
+                        var NAMA_PEMASUKAN = $("#NAMA_PEMASUKAN").val();
                         $.ajax({
                                 //url: "log_get_city.php",
-                                data: "CITY="+CITY,
+                                data: "NAMA_PEMASUKAN="+NAMA_PEMASUKAN,
                                 cache: false,
                                 success: function(msg){
                                         //jika data sukses diambil dari server kita tampilkan
                                         //di <select id=kota>
-                                        $("#ID_CITY").html(msg);
+                                        $("#ID_KAT_PEMASUKAN").html(msg);
                                 }
                         });
                   });
                 });
         </script>
-
-<script type="text/javascript">
-$(document).ready(function() {  
-        $("#NAMA_TEAM").autocomplete("log_proses_auto_team.php", {
-                width: 150
-        });
-        
-        $("#NAMA_TEAM").result(function(event, data, formatted) {
-                var kode        = formatted;
-                $.ajax({
-                        type    : "POST",
-                        data    : "kode="+kode,
-                        url     : "log_cari_auto_team.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#ID_TEAM").val(data.ID_TEAM);
-                        }
-                });
-        });
-        $("#NAMA_TEAM").keyup(function() {
-                var kode        = $('#NAMA_TEAM').val();
-                $.ajax({
-                        type    : "POST",
-                        data    : "kode="+kode,
-                        url     : "log_cari_auto_team.php",
-                        dataType: "json",
-                        success: function(data){
-                                $("#ID_TEAM").val(data.ID_TEAM);
-                        }
-                });
-        });
-        
-});
-</script>
 		
         <link rel="stylesheet" type="text/css" href="jquery.autocomplete1.css" />
         <link rel="stylesheet" href="../css/main.css" type="text/css" />

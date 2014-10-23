@@ -27,6 +27,9 @@ $data_pemasukan_kas3 = mysql_fetch_array($query3);
 $query4 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
 $detail_pemasukan_kas = mysql_fetch_array($query4); 
 
+$query5 = mysql_query("Select sum(MASUK_KAS) as totaldetil from data_transaksi_kas, kategory_pemasukan WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
+$detail_pemasukan_kas1 = mysql_fetch_array($query5); 
+
 $query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'";
 $db_query = mysql_query($query) or die("Query gagal");
 
@@ -44,6 +47,8 @@ $cell1[$i][5] = $data[5];
 $cell1[$i][6] = $data[6];
 $cell1[$i][7] = $data[7];
 $cell1[$i][8] = $data[8];
+$cell1[$i][9] = $data[9];
+$cell1[$i][10] = $data[10];
 $i++;
 }
 
@@ -60,6 +65,7 @@ $cell2[$i][5] = $data[5];
 $cell2[$i][6] = $data[6];
 $cell2[$i][7] = $data[7];
 $cell2[$i][8] = $data[8];
+$cell2[$i][9] = $data[9];
 $i++;
 }
 
@@ -127,8 +133,8 @@ for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
 $pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell1[$j][2],'LBTR',0,'C');
-$pdf->Cell(2.3,1,$cell1[$j][1],'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell1[$j][4],'LBTR',0,'C');
+$pdf->Cell(2.3,1,$cell1[$j][3],'LBTR',0,'C');
 $pdf->Cell(7.5,1,$cell1[$j][5],'LBTR',0,'L');
 $pdf->Cell(2.5,1,$cell1[$j][3],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell1[$j][4],'LBTR',0,'C');
@@ -152,8 +158,9 @@ $pdf->SetFont("Arial","B",10);
 $pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
 $pdf->Cell(2.5,1,'Tanggal','LRTB',0,'C');
 $pdf->Cell(2.5,1,'Kode Trans.','LRTB',0,'C');
-$pdf->Cell(7.6,1,'Keterangan','LRTB',0,'C');
-$pdf->Cell(4,1,'Masuk','LRTB',0,'C');
+$pdf->Cell(7,1,'Keterangan','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Masuk','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Keluar','LRTB',0,'C');
 $pdf->Ln();
 $pdf->SetFont('Times','',10);
 for($j=0;$j<$i;$j++)
@@ -162,13 +169,14 @@ for($j=0;$j<$i;$j++)
 $pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell2[$j][2],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell2[$j][1],'LBTR',0,'C');
-$pdf->Cell(7.6,1,$cell2[$j][5],'LBTR',0,'L');
-$pdf->Cell(4,1,$cell2[$j][3],'LBTR',0,'C');
+$pdf->Cell(7,1,$cell2[$j][5],'LBTR',0,'L');
+$pdf->Cell(2.5,1,$cell2[$j][3],'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell2[$j][4],'LBTR',0,'C');
 $pdf->Ln();
 }
 
 $pdf->SetFont("Arial","B",12);
-$pdf->Cell(18.3,1,'Total Masuk : Rp. '.$detail_pemasukan_kas[detail_pemasukan],'LBTR',0,'R');
+$pdf->Cell(18.7,1,'Total Masuk : Rp. '.$detail_pemasukan_kas1[totaldetil],'LBTR',0,'R');
 $pdf->Ln();
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
