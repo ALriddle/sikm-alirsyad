@@ -25,8 +25,11 @@
 	include('DB_driver.php');
 	include("class/FusionCharts_Gen.php");
 	$tahun_laporan=$_POST['TAHUN_LAPORAN'];
+	$kode_kas=$_POST['KATEGORI_PEMASUKAN'];
+	$query="select NAMA_PEMASUKAN from kategory_pemasukan WHERE KODE_PEMASUKAN='$kode_kas'";
+	$result=mysql_query($query);
 	?>
-	<h2><center>Periode Dashboard Tahun : <?php echo"$tahun_laporan"; ?></h2>
+	<h2><center>Periode Dashboard Tahun : <?php echo"$tahun_laporan"?> Kategory : <?php echo mysql_result($result,0) ;?></h2>
 	
                                     </div> 
 <div class="box">
@@ -55,7 +58,7 @@
   $FC1->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam1="caption=Grafik Pemasukan Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam1="caption=Grafik Pemasukan Kas Per Kategory $; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC1->setChartParams($strParam1);
@@ -68,7 +71,7 @@
 	$counter1 = 0;
 			 //$total = mysql_num_rows(mysql_query("SELECT IdKat,TglTerjual FROM penjualan_buku WHERE IdKat='$kat' AND LEFT(TglTerjual,4)='2012' AND  MID(TglTerjual,6,2)='02'"));
 			 //$total = mysql_query("SELECT MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat'");
-			 $total_q = mysql_query("SELECT SUM(MASUK_KAS) AS MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan'");
+			 $total_q = mysql_query("SELECT SUM(MASUK_KAS) AS MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_KAS='$kode_kas'" );
 			 $counter1++;
     		
 
@@ -103,20 +106,20 @@
   $FC->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam="caption=Grafik Pemasukan Bank ; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam="caption=Grafik Pemasukan Bank Per Kategory ; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC->setChartParams($strParam);
   include('DB_driver.php');
-  $bulan= mysql_query(" SELECT ID_TIME, BULAN FROM dim_time ") or die(mysql_error());
+  $bulan1= mysql_query(" SELECT ID_TIME, BULAN FROM dim_time ") or die(mysql_error());
   //$tracking = mysql_query("SELECT Nama_Karyawan FROM master_karyawan WHERE Kode_Nama_Cabang='SRJ' AND Category_Tracking='sales'");
-	while ($r_kat = mysql_fetch_array($bulan)){
+	while ($r_kat = mysql_fetch_array($bulan1)){
 	$id_kat = $r_kat['ID_TIME'];
 	$kat = $r_kat['BULAN'];
 	$counter1 = 0;
 			 //$total = mysql_num_rows(mysql_query("SELECT IdKat,TglTerjual FROM penjualan_buku WHERE IdKat='$kat' AND LEFT(TglTerjual,4)='2012' AND  MID(TglTerjual,6,2)='02'"));
 			 //$total = mysql_query("SELECT MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat'");
-			 $total_q = mysql_query("SELECT SUM(MASUK_BANK) AS MASUK_BANK FROM data_transaksi_bank WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan'");
+			 $total_q = mysql_query("SELECT SUM(MASUK_BANK) AS MASUK_BANK FROM data_transaksi_bank WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_BANK='$kode_kas'" );
 			 $counter1++;
     		
 
@@ -135,6 +138,7 @@
 
   </body>
 </html>
+
 </div>
 
 <?php include('footer.php'); ?>
