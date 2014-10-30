@@ -62,7 +62,7 @@
 						  <thead>
 							  <tr>
 									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
-									<!--<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>-->
+									<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		

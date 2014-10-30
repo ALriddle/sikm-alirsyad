@@ -41,7 +41,7 @@ $u = $_SESSION['USERNAME_PEGAWAI'];
 
 <script type="text/javascript">
 $(document).ready(function() {  
-        $("#KODE_PEMASUKAN").autocomplete("log_proses_auto_kategory.php", {
+        $("#KODE_PEMASUKAN").autocomplete("log_proses_auto_kategory_pemasukan.php", {
                 width: 150
         });
         
@@ -50,10 +50,10 @@ $(document).ready(function() {
                 $.ajax({
                         type    : "POST",
                         data    : "kode="+kode,
-                        url     : "log_cari_auto_kategory.php",
+                        url     : "log_cari_auto_kategory_pemasukan.php",
                         dataType: "json",
                         success: function(data){
-                                $("#NAMA_PEMASUKAN").val(data.NAMA_KODE);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
@@ -64,10 +64,10 @@ $(document).ready(function() {
                 $.ajax({
                         type    : "POST",
                         data    : "kode="+kode,
-                        url     : "log_cari_auto_kategory.php",
+                        url     : "log_cari_auto_kategory_pemasukan.php",
                         dataType: "json",
                         success: function(data){
-                                $("#NAMA_PEMASUKAN").val(data.NAMA_KODE);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
@@ -91,6 +91,65 @@ $(document).ready(function() {
                                         //jika data sukses diambil dari server kita tampilkan
                                         //di <select id=kota>
                                         $("#KODE_PEMASUKAN").html(msg);
+                                }
+                        });
+                  });
+                });
+        </script>
+		
+		
+<script type="text/javascript">
+$(document).ready(function() {  
+        $("#KODE_PENGELUARAN").autocomplete("log_proses_auto_kategory_pengeluaran.php", {
+                width: 150
+        });
+        
+        $("#KODE_PENGELUARAN").result(function(event, data, formatted) {
+                var kode        = formatted;
+                $.ajax({
+                        type    : "POST",
+                        data    : "kode="+kode,
+                        url     : "log_cari_auto_kategory_pengeluaran.php",
+                        dataType: "json",
+                        success: function(data){
+                                $("#NAMA_PENGELUARAN").val(data.NAMA_PENGELUARAN);
+                                //$("#STREET").val(data.STREET);
+                                //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
+                        }
+                });
+        });
+        $("#KODE_PENGELUARAN").keyup(function() {
+                var kode        = $('#KODE_PENGELUARAN').val();
+                $.ajax({
+                        type    : "POST",
+                        data    : "kode="+kode,
+                        url     : "log_cari_auto_kategory_pengeluaran.php",
+                        dataType: "json",
+                        success: function(data){
+                                $("#NAMA_PENGELUARAN").val(data.NAMA_PENGELUARAN);
+                                //$("#STREET").val(data.STREET);
+                                //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
+                        }
+                });
+        });
+        
+});
+</script>
+		
+		<script type="text/javascript">
+                var htmlobjek;
+                $(document).ready(function(){
+                  //apabila terjadi event onchange terhadap object <select id=propinsi>
+                  $("#NAMA_PENGELUARAN").change(function(){
+                        var NAMA_PENGELUARAN = $("#NAMA_PENGELUARAN").val();
+                        $.ajax({
+                                //url: "log_get_city.php",
+                                data: "NAMA_PENGELUARAN="+NAMA_PENGELUARAN,
+                                cache: false,
+                                success: function(msg){
+                                        //jika data sukses diambil dari server kita tampilkan
+                                        //di <select id=kota>
+                                        $("#KODE_PENGELUARAN").html(msg);
                                 }
                         });
                   });
