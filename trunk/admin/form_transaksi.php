@@ -20,7 +20,7 @@
 			?>
 			<label class="control-label" for="appendedPrependedInput"><h4>Saldo Total:</h4></label>
 				<div class="input-prepend input-append">
-					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo $data_pemasukan_kas1["saldototal"]; } ?>" readonly><span class="add-on">.00</span>
+					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas1["saldototal"]); } ?>" readonly><span class="add-on">.00</span>
 					</div>
 			<?php 
 			include('DB_driver.php');
@@ -47,7 +47,7 @@
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Kas:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo $data_pemasukan_kas["total1"]; } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas["total1"]); } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
@@ -62,7 +62,7 @@
 						  <thead>
 							  <tr>
 									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
-									<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>
+									<!--<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>-->
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		

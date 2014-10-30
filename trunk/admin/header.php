@@ -41,11 +41,11 @@ $u = $_SESSION['USERNAME_PEGAWAI'];
 
 <script type="text/javascript">
 $(document).ready(function() {  
-        $("#ID_KAT_PEMASUKAN").autocomplete("log_proses_auto_kategory.php", {
+        $("#KODE_PEMASUKAN").autocomplete("log_proses_auto_kategory.php", {
                 width: 150
         });
         
-        $("#ID_KAT_PEMASUKAN").result(function(event, data, formatted) {
+        $("#KODE_PEMASUKAN").result(function(event, data, formatted) {
                 var kode        = formatted;
                 $.ajax({
                         type    : "POST",
@@ -53,21 +53,21 @@ $(document).ready(function() {
                         url     : "log_cari_auto_kategory.php",
                         dataType: "json",
                         success: function(data){
-                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_KODE);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
                 });
         });
-        $("#ID_KAT_PEMASUKAN").keyup(function() {
-                var kode        = $('#ID_KAT_PEMASUKAN').val();
+        $("#KODE_PEMASUKAN").keyup(function() {
+                var kode        = $('#KODE_PEMASUKAN').val();
                 $.ajax({
                         type    : "POST",
                         data    : "kode="+kode,
                         url     : "log_cari_auto_kategory.php",
                         dataType: "json",
                         success: function(data){
-                                $("#NAMA_PEMASUKAN").val(data.NAMA_PEMASUKAN);
+                                $("#NAMA_PEMASUKAN").val(data.NAMA_KODE);
                                 //$("#STREET").val(data.STREET);
                                 //$("#HOUSE_NUMBER").val(data.HOUSE_NUMBER);
                         }
@@ -90,7 +90,7 @@ $(document).ready(function() {
                                 success: function(msg){
                                         //jika data sukses diambil dari server kita tampilkan
                                         //di <select id=kota>
-                                        $("#ID_KAT_PEMASUKAN").html(msg);
+                                        $("#KODE_PEMASUKAN").html(msg);
                                 }
                         });
                   });

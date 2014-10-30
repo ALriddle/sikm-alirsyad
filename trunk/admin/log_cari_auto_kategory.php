@@ -3,7 +3,7 @@ include 'DB_driver.php';
 
 $kode	= $_POST[kode];
 
-$sql 	= mysql_query("select * from kategory_pemasukan where ID_KAT_PEMASUKAN='$kode'");
+$sql 	= mysql_query("select * from kategory_pemasukan where KODE_PEMASUKAN='$kode'");
 $row	= mysql_num_rows($sql);
 if($row>0){
 	$r = mysql_fetch_array($sql);

@@ -25,7 +25,7 @@
 					 <div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pemasukan Kas dan Bank:</label>
 								<div class="controls">
-								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="choosen">
+								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="chosen">
 								  <option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
@@ -63,7 +63,7 @@
 							  	  <div class="control-group">
 								<label class="control-label" for="KATEGORI_PEMASUKAN">Kategori Pemasukan Kas dan Bank</label>
 								<div class="controls">
-								  <select id="KATEGORI_PEMASUKAN" name="KATEGORI PEMASUKAN" data-rel="choosen">
+								  <select id="KATEGORI_PEMASUKAN" name="KATEGORI PEMASUKAN" data-rel="chosen">
 								  <?php
 									//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT * FROM kategory_pemasukan "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'
@@ -155,7 +155,7 @@
 							  	  <div class="control-group">
 								<label class="control-label" for="KATEGORI_PEMASUKAN">Kategori Pengeluaran Kas dan Bank</label>
 								<div class="controls">
-								  <select id="KATEGORI_PENGELUARAN" name="KATEGORI PENGELUARAN" data-rel="choosen">
+								  <select id="KATEGORI_PENGELUARAN" name="KATEGORI PENGELUARAN" data-rel="chosen">
 								  <?php
 									//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'

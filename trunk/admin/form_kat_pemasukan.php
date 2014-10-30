@@ -33,9 +33,9 @@
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
 						  <thead>
 							  <tr>
-									<td rowspan="1" valign="middle"><b><center>Nomor Kategori</center></b></td>
-									<td rowspan="1" valign="middle"><b><center>Nama Kategori</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>Kode Kategori</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>Nama Kategori</center></b></td>
+									<!--<td rowspan="1" valign="middle"><b><center>Kode Kategori</center></b></td>-->
 									<td rowspan="1" valign="middle"><b><center>Pengelolaan Kategori</center></b></td>		
 								</td>
 									</tr>

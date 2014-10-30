@@ -15,22 +15,25 @@ mysql_connect($host,$user,$password) or die("Koneksi server gagal");
 mysql_select_db($database);
 
 //Queri untuk Menampilkan data
-$query1 = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as saldototal from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$query1 = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as saldototal from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas1 = mysql_fetch_array($query1);
 
-$query2 = mysql_query("Select sum(MASUK_KAS) as pemasukan from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$query2 = mysql_query("Select sum(MASUK_KAS) as pemasukan from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas2 = mysql_fetch_array($query2);
 
-$query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas3 = mysql_fetch_array($query3);
 
-$query4 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
+$query4 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori'") or die(mysql_error());
 $detail_pemasukan_kas = mysql_fetch_array($query4); 
 
-$query5 = mysql_query("Select sum(MASUK_KAS) as totaldetil from data_transaksi_kas, kategory_pemasukan WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
-$detail_pemasukan_kas1 = mysql_fetch_array($query5); 
+$query5 = mysql_query("Select sum(MASUK_KAS) as totaldetil from data_transaksi_kas, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori'") or die(mysql_error());
+$detail_pemasukan_kas1 = mysql_fetch_array($query5);
 
-$query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_KAS between '$tgl_awal' and '$tgl_akhir'";
+$query6 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori'") or die(mysql_error());
+$detail_pemasukan_kas = mysql_fetch_array($query6);  
+
+$query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'";
 $db_query = mysql_query($query) or die("Query gagal");
 
 //Variabel untuk iterasi

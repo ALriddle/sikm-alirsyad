@@ -33,16 +33,38 @@
 								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['NO_TRANSAKSI_KAS'];?>" readonly="readonly">
 								</div>
 							  </div>
-							 <div class="control-group">
-								<label class="control-label" for="KODE_KAS">KODE KAS</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_KAS" type="text" value="<?php echo $data_pemasukan_kas['KODE_KAS'];?>" readonly="readonly" >
-								</div>
-							  </div>
+							 
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL TRANSAKSI</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="TANGGAL_KAS" name="TANGGAL_KAS" type="date" value="<?php echo $data_pemasukan_kas['TANGGAL_KAS'];?>">
+								  <input class="input-xlarge focused" id="TANGGAL_LAPORAN" name="TANGGAL_LAPORAN" type="date" value="<?php echo $data_pemasukan_kas['TANGGAL_LAPORAN'];?>">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="TANGGAL_KAS">BULAN TRANSAKSI</label>
+								<div class="controls">
+								  <select name="BULAN_LAPORAN" size="1" id="BULAN_LAPORAN" value="<?php ?>">
+									<?php
+								 $bulan=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+								 for ($i=1;$i<=12;$i++)
+								 {
+								   echo "<option value=".$i.">".$bulan[$i]."</option>";
+								 }
+							  ?>
+								  </select>
+								  </div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="TAHUN_LAPORAN">TAHUN TRANSAKSI</label>
+								<div class="controls">
+								  <select name="TAHUN_LAPORAN" size="1" id="TAHUN_LAPORAN" value="<?php echo $data_pemasukan_kas['TAHUN_LAPORAN'];?>">
+									<?php
+								 for ($i=2014;$i<=2150;$i++)
+								 {
+								   echo "<option value=".$i.">".$i."</option>";
+								 }
+							  ?> 
+								  </select>
 								</div>
 							  </div>
 							 <div class="control-group">
