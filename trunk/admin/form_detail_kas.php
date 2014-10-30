@@ -33,12 +33,12 @@
 								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['NO_TRANSAKSI_KAS'];?>" readonly="readonly">
 								</div>
 							  </div>
-							 <!--<div class="control-group">
+							 <div class="control-group">
 								<label class="control-label" for="KODE_KAS">KODE KAS</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_PEMASUKAN" type="text" value="<?php echo $data_pemasukan_kas['KODE_PEMASUKAN'];?>" readonly="readonly" >
+								  <input class="input-xlarge focused" name="KODE_KAS" type="text" value="<?php echo $data_pemasukan_kas['KODE_KAS'];?>" readonly="readonly" >
 								</div>
-							  </div>-->
+							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL TRANSAKSI</label>
 								<div class="controls">

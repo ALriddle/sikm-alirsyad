@@ -39,8 +39,8 @@
 								<div class="control-group">
 								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
 								<div class="controls">
-								 <!--<input class="input-xlarge focused" id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" type="text" value="">-->
-									<select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
+								 <input class="input-xlarge focused" id="KODE_PENGELUARAN" name="kode_pengeluaran" type="text" value="">
+									<!--<select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
 										<?php
 										//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY NAMA_PENGELUARAN");
@@ -48,13 +48,13 @@
 										echo "<option value=\"$p[KODE_PENGELUARAN]\">$p[NAMA_PENGELUARAN]</option>\n";
 										}
 									?>
-									</select>
+									</select>-->
 								</div>
 							  </div>
 							  <div class="control-group">
 							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
 							<div class="controls">
-							    <input class="input-xlarge focused" id="NAMA_PENGELUARAN" name="NAMA_PENGELUARAN" type="text" value="">
+							    <input class="input-xlarge focused" id="NAMA_PENGELUARAN" name="nama_pengeluaran" type="text" value="">
 							</div>
 							</div>
 							  <div class="control-group">

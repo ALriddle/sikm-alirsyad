@@ -40,22 +40,22 @@
 						<div class="control-group">
 							<label class="control-label" for="KODE_KAS">KODE KAS:</label>
 								<div class="controls">
-									<!--<input class="input-xlarge focused" id="KODE_PEMASUKAN" name="KODE_PEMASUKAN" type="text" value="">-->
-									<select id="KODE_PEMASUKAN" name="KODE_PEMASUKAN" data-rel="chosen">
+									<input class="input-xlarge focused" id="KODE_PEMASUKAN" name="kode_pemasukan" type="text" value="">
+									<!--<select id="KODE_PEMASUKAN" name="kode_pemasukan" data-rel="chosen">
 										<?php
 										//mengambil nama-nama propinsi yang ada di database
 										$CITY = mysql_query("SELECT DISTINCT NAMA_PEMASUKAN, KODE_PEMASUKAN FROM kategory_pemasukan ORDER BY NAMA_PEMASUKAN");
 										while($p=mysql_fetch_array($CITY)){
-										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[NAMA_PEMASUKAN]</option>\n";
+										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[KODE_PEMASUKAN]</option>\n";
 										}
 									?>
-									</select>
+									</select>-->
 								</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
 							<div class="controls">
-							    <input class="input-xlarge focused" id="NAMA_PEMASUKAN" name="NAMA_PEMASUKAN" type="text" value="">
+							    <input class="input-xlarge focused" id="NAMA_PEMASUKAN" name="nama_pemasukan" type="text" value="">
 							</div>
 						</div>
 							  <div class="control-group">

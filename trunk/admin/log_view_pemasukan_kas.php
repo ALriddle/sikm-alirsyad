@@ -5,7 +5,7 @@ $query = "SELECT * FROM data_transaksi_kas ORDER BY NO_TRANSAKSI_KAS";
 $hasil = mysql_query($query);
 while ($data = mysql_fetch_array($hasil)) {
     $NO_TRANSAKSI_KAS=$data['NO_TRANSAKSI_KAS'];
-	$KODE_PEMASUKAN=$data['KODE_PEMASUKAN'];
+	$KODE_PEMASUKAN=$data['KODE_KAS'];
 	$KODE_PENGELUARAN=$data['KODE_PENGELUARAN'];
 	$TANGGAL_LAPORAN=$data['TANGGAL_LAPORAN'];
 	$MASUK_KAS=$data['MASUK_KAS'];
@@ -15,9 +15,9 @@ while ($data = mysql_fetch_array($hasil)) {
 	$KETERANGAN=$data['KETERANGAN'];
 	echo "
 	<tr>
-	<td align=right><center>$data[NO_TRANSAKSI_KAS]</center></td>";
-	//<td><center>$data[KODE_PEMASUKAN] </center></td>
-	echo "<td><center>$data[TANGGAL_LAPORAN]</center></td>
+	<td align=right><center>$data[NO_TRANSAKSI_KAS]</center></td>
+	<td><center>$data[KODE_KAS] </center></td>
+	<td><center>$data[TANGGAL_LAPORAN]</center></td>
 	<td><center>$data[MASUK_KAS]</center></td>
 	<td><center>$data[KELUAR_KAS]</center></td>";
 	//<td><center>$data[SALDO_KAS]</center></td>

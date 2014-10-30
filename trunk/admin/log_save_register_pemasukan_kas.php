@@ -3,8 +3,8 @@
 include 'DB_driver.php';
 
 $no_transaksi_kas= $_POST['NO_TRANSAKSI_KAS'];
-$kode_pemasukan= $_POST['KODE_PEMASUKAN'];
-$nama_pemasukan= $_POST['NAMA_PEMASUKAN'];
+$kode_kas= $_POST['kode_pemasukan'];
+$nama_pemasukan= $_POST['nama_pemasukan'];
 $tanggal_laporan= $_POST['TANGGAL_LAPORAN'];
 $bulan_laporan= $_POST['BULAN_LAPORAN'];
 $tahun_laporan=$_POST['TAHUN_LAPORAN'];
@@ -12,7 +12,7 @@ $masuk_laporan= $_POST['MASUK_KAS'];
 $keterangan= $_POST['KETERANGAN'];
 $set= true;
 
-	if($no_transaksi_kas=='' || $kode_pemasukan=='' || $nama_pemasukan=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_laporan=='' || $keterangan=='')
+	if($no_transaksi_kas=='' || $kode_kas=='' || $nama_pemasukan=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_laporan=='' || $keterangan=='')
 		{
 	echo "<script language = 'JavaScript'>alert('Data yang Anda masukkan tidak lengkap');
 			document.location='form_register_pemasukan_kas.php';
@@ -20,7 +20,7 @@ $set= true;
 	}else{
 	$query="INSERT INTO data_transaksi_kas(
 			NO_TRANSAKSI_KAS,
-			KODE_PEMASUKAN,
+			KODE_KAS,
 			NAMA_PEMASUKAN,
 			TANGGAL_LAPORAN,
 			BULAN_LAPORAN,
@@ -28,7 +28,7 @@ $set= true;
 			MASUK_KAS,
 			KETERANGAN) VALUES
 			('$no_transaksi_kas',
-			'$kode_pemasukan',
+			'$kode_kas',
 			'$nama_pemasukan',
 			'$tanggal_laporan',
 			'$bulan_laporan',
