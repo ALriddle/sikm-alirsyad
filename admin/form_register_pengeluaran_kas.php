@@ -39,21 +39,55 @@
 								<div class="control-group">
 								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
 								<div class="controls">
-								  <select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
-									<?php
-									//mengambil nama-nama propinsi yang ada di database
-										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, ID_KAT_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY NAMA_PENGELUARAN");
+								 <!--<input class="input-xlarge focused" id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" type="text" value="">-->
+									<select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
+										<?php
+										//mengambil nama-nama propinsi yang ada di database
+										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY NAMA_PENGELUARAN");
 										while($p=mysql_fetch_array($CITY)){
 										echo "<option value=\"$p[KODE_PENGELUARAN]\">$p[NAMA_PENGELUARAN]</option>\n";
 										}
 									?>
-                                </select>
-					</div>
+									</select>
+								</div>
 							  </div>
+							  <div class="control-group">
+							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
+							<div class="controls">
+							    <input class="input-xlarge focused" id="NAMA_PENGELUARAN" name="NAMA_PENGELUARAN" type="text" value="">
+							</div>
+							</div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL KELUAR:</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="TANGGAL_KAS" type="date" value="">
+								  <input class="input-xlarge focused" name="TANGGAL_LAPORAN" type="date" value="">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="BULAN_KAS">BULAN KELUAR:</label>
+								<div class="controls">
+								  <select name="BULAN_LAPORAN" size="1" id="BULAN_LAPORAN">
+									<?php
+								 $bulan=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+								 for ($i=1;$i<=12;$i++)
+								 {
+								   echo "<option value=".$i.">".$bulan[$i]."</option>";
+								 }
+							  ?>
+								  </select>
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="TAHUN_KAS">TAHUN KELUAR:</label>
+								<div class="controls">
+								  <select name="TAHUN_LAPORAN" size="1" id="TAHUN_LAPORAN">
+									<?php
+								 for ($i=2014;$i<=2150;$i++)
+								 {
+								   echo "<option value=".$i.">".$i."</option>";
+								 }
+							  ?> 
+								  </select>
 								</div>
 							  </div>
 							   <div class="control-group">

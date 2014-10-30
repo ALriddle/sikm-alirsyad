@@ -22,30 +22,23 @@
 					<?php 
 					include('DB_driver.php');
 					$id = $_GET['id'];
-					$query = mysql_query("select * from kategory_pengeluaran where ID_KAT_PENGELUARAN='$id' LIMIT 1") or die(mysql_error());
+					$query = mysql_query("select * from kategory_pengeluaran where KODE_PENGELUARAN='$id' LIMIT 1") or die(mysql_error());
 					$data_tim = mysql_fetch_array($query);
 					{ 
 					?>
 					<div class="box-content">
 						<form class="form-horizontal" action="log_edit_kat_pengeluaran.php" method="post">
 							<fieldset>
-							  
-							 <div class="control-group">
-								<label class="control-label" for="ID_KAT_PENGELUARAN">ID PENGELUARAN</label>
+							<div class="control-group">
+								<label class="control-label" for="KODE PENGELUARAN">KODE PENGELUARAN</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_KAT_PENGELUARAN" type="text" value="<?php echo $data_tim['ID_KAT_PENGELUARAN'];?>" readonly="readonly">
+								  <input class="input-large focused" name="KODE_PENGELUARAN" type="text" value="<?php echo $data_tim['KODE_PENGELUARAN'];?>" readonly="readonly">
 								</div>
 							  </div>
 							   <div class="control-group">
 								<label class="control-label" for="NAMA PENGELUARAN">NAMA PENGELUARAN</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NAMA_PENGELUARAN" type="text" value="<?php echo $data_tim['NAMA_PENGELUARAN'];?>">
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="KODE PENGELUARAN">KODE PENGELUARAN</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_PENGELUARAN" type="text" value="<?php echo $data_tim['KODE_PENGELUARAN'];?>">
+								  <input class="input-large focused" name="NAMA_PENGELUARAN" type="text" value="<?php echo $data_tim['NAMA_PENGELUARAN'];?>">
 								</div>
 							  </div>
 							  <div class="form-actions" align="right" >
