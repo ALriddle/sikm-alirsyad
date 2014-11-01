@@ -6,7 +6,6 @@ $hasil = mysql_query($query);
 while ($data = mysql_fetch_array($hasil)) {
     $NO_TRANSAKSI_KAS=$data['NO_TRANSAKSI_KAS'];
 	$KODE_PEMASUKAN=$data['KODE_KAS'];
-	$KODE_PENGELUARAN=$data['KODE_PENGELUARAN'];
 	$TANGGAL_LAPORAN=$data['TANGGAL_LAPORAN'];
 	$MASUK_KAS=$data['MASUK_KAS'];
 	$KELUAR_KAS=$data['KELUAR_KAS'];
