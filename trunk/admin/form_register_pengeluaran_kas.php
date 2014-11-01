@@ -23,7 +23,7 @@
 				{ 
 			?>
 			<div class="row-fluid sortable">
-				<div class="box span10">
+				<div class="box span6">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Tambah Pengeluaran</h2>
 					</div>
@@ -33,13 +33,13 @@
 							  <div class="control-group">
 								<label class="control-label" for="NO_TRANSAKSI_KAS">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pengeluaran_kas['ID_KAS']+1; }?>">
+								  <input class="input-large focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pengeluaran_kas['ID_KAS']+1; }?>">
 								</div>
 							  </div>
 								<div class="control-group">
 								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
 								<div class="controls">
-								 <input class="input-xlarge focused" id="KODE_PENGELUARAN" name="kode_pengeluaran" type="text" value="">
+								 <input class="input-large focused" id="KODE_PENGELUARAN" name="kode_pengeluaran" type="text" value="">
 									<!--<select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
 										<?php
 										//mengambil nama-nama propinsi yang ada di database
@@ -54,13 +54,13 @@
 							  <div class="control-group">
 							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
 							<div class="controls">
-							    <input class="input-xlarge focused" id="NAMA_PENGELUARAN" name="nama_pengeluaran" type="text" value="">
+							    <input class="input-large focused" id="NAMA_PENGELUARAN" name="nama_pengeluaran" type="text" value="">
 							</div>
 							</div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL KELUAR:</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="TANGGAL_LAPORAN" type="date" value="">
+								  <input class="input-large focused" name="TANGGAL_LAPORAN" type="date" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -93,13 +93,13 @@
 							   <div class="control-group">
 								<label class="control-label" for="KELUAR_KAS">KELUAR :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KELUAR_KAS" type="text" value="">
+								  <input class="input-large focused" name="KELUAR_KAS" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="KETERANGAN">KETERANGAN :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="">
+								  <input class="input-large focused" name="KETERANGAN" type="text" value="">
 								</div>
 							  </div>
 							  <div class="form-actions"  >
@@ -112,10 +112,28 @@
 					</div>
 				</div><!--/span-->
 			
-			</div><!--/row-->
+			<div class="box span6">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-book"></i> Keterangan </h2>
+					</div>
+					<div class="box-content">
+						<div class="span7">
+						  <label class="control-label" for="activity_status"><h4>Kode Kas Pengeluaran:</h4>
+								<label class="control-label" for="activity_status">5101 = Gaji Karyawan</label>
+								<label class="control-label" for="activity_status">5102 = Insentif</label>
+								<label class="control-label" for="activity_status">5103 = Keperluan Kantor</label>
+								<label class="control-label" for="activity_status">5104 = Transportasi</label>
+								<label class="control-label" for="activity_status">5105 = Renovasi</label>
+								<label class="control-label" for="activity_status">5106 = Dakwah</label>
+								<label class="control-label" for="activity_status">5107 = Akomodasi</label>
+								<label class="control-label" for="activity_status">5108 = Konsumsi</label>
+								<label class="control-label" for="activity_status">5109 = Listrik Dan Telepon</label>
+								<label class="control-label" for="activity_status">5110 = Biaya Administrasi Bank</label>
+								<label class="control-label" for="activity_status">5111 = Biaya Lain-lain</label>
+							</label>
+						</div>
+</div>
 			
 				</div><!--/span-->
-
-			</div><!--/row-->
     
 <?php include('footer.php'); ?>

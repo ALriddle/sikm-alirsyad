@@ -29,7 +29,7 @@
 					<div class="row-fluid sortable">
 					<div class="box span12">
 					<div class="box-content">
-					<form method=POST action=log_view_kat_donatur.php>
+					<form method="POST" action="log_view_kat_donatur.php">
 						<table class="table table-striped table-bordered bootstrap-datatable datatable" border="1" cellpadding="3">
 						  <thead>
 							  <tr>

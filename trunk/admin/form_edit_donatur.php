@@ -42,7 +42,7 @@
 							   <div class="control-group">
 								<label class="control-label" for="NAMA_DONATUR">NAMA DONATUR</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>">
+								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>" readonly="readonly">
 								</div>
 							  </div>
 							   <div class="control-group">
@@ -60,7 +60,7 @@
 							  <div class="control-group">
 								<label class="control-label" for="KODE_DONATUR">KODE DONATUR</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="<?php echo $data_tim['KODE_DONATUR'];?>">
+								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="<?php echo $data_tim['KODE_DONATUR'];?>" readonly="readonly">
 								</div>
 							  </div>
 							   <div class="control-group">

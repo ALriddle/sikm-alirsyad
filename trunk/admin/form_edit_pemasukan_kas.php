@@ -34,11 +34,29 @@
 								</div>
 							  </div>
 							 <div class="control-group">
-								<label class="control-label" for="KODE_KAS">KODE KAS</label>
+								<label class="control-label" for="KODE_BANK">KODE PEMASUKAN :</label>
 								<div class="controls">
-								  <input class="input-large focused" id="KODE_KAS" name="kode_kas" type="text" value="<?php echo $data_pemasukan_kas['KODE_KAS'];?>">
+								  <input class="input-medium focused" id="KODE_PEMASUKAN" name="kode_pemasukan" type="text" value="" >
+								  </div>
+								  </div>
+								   <div class="control-group">
+								  <label class="control-label" for="KODE_BANK">KODE PENGELUARAN :</label>
+								  <div class="controls">
+								  <input class="input-medium focused" id="KODE_PENGELUARAN" name="kode_pengeluaran" type="text" value="" >
 								</div>
 							  </div>
+							  <div class="control-group">
+							<label class="control-label" for="NAMA_KODE">NAMA KODE PEMASUKAN:</label>
+							<div class="controls">
+							    <input class="input-large focused" id="NAMA_PEMASUKAN" name="nama_pemasukan" type="text" value="<?php echo $data_pemasukan_bank['NAMA_PEMASUKAN'];?>">
+							</div>
+						</div>
+						 <div class="control-group">
+							<label class="control-label" for="NAMA_KODE">NAMA KODE PENGELUARAN:</label>
+							<div class="controls">
+							    <input class="input-large focused" id="NAMA_PENGELUARAN" name="nama_pengeluaran" type="text" value="<?php echo $data_pemasukan_bank['NAMA_PENGELUARAN'];?>">
+							</div>
+						</div>
 							  <div class="control-group">
 								<label class="control-label" for="TANGGAL_KAS">TANGGAL TRANSAKSI</label>
 								<div class="controls">

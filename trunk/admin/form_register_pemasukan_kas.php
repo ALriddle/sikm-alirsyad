@@ -23,7 +23,7 @@
 				{ 
 			?>
 			<div class="row-fluid sortable">
-				<div class="box span10">
+				<div class="box span6">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-edit"></i> Form Input Data Tambah Pemasukan</h2>
 					</div>
@@ -113,10 +113,22 @@
 					</div>
 				</div><!--/span-->
 			
-			</div><!--/row-->
+			<div class="box span6">
+					<div class="box-header well" data-original-title>
+						<h2><i class="icon-book"></i> Keterangan </h2>
+					</div>
+					<div class="box-content">
+						<div class="span7">
+						  <label class="control-label" for="activity_status"><h4>Kode Kas Pemasukan:</h4>
+								<label class="control-label" for="activity_status">4000 = Saldo Awal</label>
+								<label class="control-label" for="activity_status">4200 = Infaq Dari Donatur Tetap</label>
+								<label class="control-label" for="activity_status">4300 = Sumbangan Dari Donatur Tidak Tetap</label>
+								<label class="control-label" for="activity_status">4400 = Infaq Untuk Program</label>
+								<label class="control-label" for="activity_status">4500 = Pendapatan Lain-lain</label>
+							</label>
+						</div>
+</div>
 			
 				</div><!--/span-->
-
-			</div><!--/row-->
     
 <?php include('footer.php'); ?>

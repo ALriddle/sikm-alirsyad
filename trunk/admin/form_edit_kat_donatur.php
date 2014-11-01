@@ -22,7 +22,7 @@
 					<?php 
 					include('DB_driver.php');
 					$id = $_GET['id'];
-					$query = mysql_query("select * from kategory_donatur where ID_KAT_DONATUR='$id' LIMIT 1") or die(mysql_error());
+					$query = mysql_query("select * from kategory_donatur where KODE_DONATUR='$id' LIMIT 1") or die(mysql_error());
 					$data_tim = mysql_fetch_array($query);
 					{ 
 					?>
@@ -30,16 +30,16 @@
 						<form class="form-horizontal" action="log_edit_kat_donatur.php" method="post">
 							<fieldset>
 							  
-							 <div class="control-group">
-								<label class="control-label" for="ID_KAT_DONATUR">ID KAT. DONATUR</label>
+							  <div class="control-group">
+								<label class="control-label" for="KODE_DONATUR">KODE DONATUR</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_KAT_DONATUR" type="text" value="<?php echo $data_tim['ID_KAT_DONATUR'];?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="<?php echo $data_tim['KODE_DONATUR'];?>" readonly="readonly">
 								</div>
 							  </div>
 							   <div class="control-group">
 								<label class="control-label" for="NAMA_DONATUR">NAMA DONATUR</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>">
+								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>" readonly="readonly">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -49,12 +49,6 @@
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="KODE_DONATUR">KODE DONATUR</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="<?php echo $data_tim['KODE_DONATUR'];?>">
-								</div>
-							  </div>
-							  <div class="control-group">
 								<label class="control-label" for="KETERANGAN">KETERANGAN</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="KETERANGAN" type="text" value="<?php echo $data_tim['KETERANGAN'];?>">
