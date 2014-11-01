@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select MAX(ID_KAT_DONATUR) as ID_KATEGORI from kategory_donatur") or die(mysql_error());
+				$query = mysql_query("select MAX(KODE_DONATUR) as ID_KATEGORI from kategory_donatur") or die(mysql_error());
 				$data_donatur_kategori = mysql_fetch_array($query);
 				{ 
 			?>
@@ -30,10 +30,11 @@
 					<div class="box-content">
 						<form class="form-horizontal" action="log_save_kat_donatur.php" method="post">
 							<fieldset>
+							  
 							  <div class="control-group">
-								<label class="control-label" for="ID_KAT_DONATUR">ID KATEGORI :</label>
+								<label class="control-label" for="KODE_DONATUR">KODE DONATUR :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="ID_KAT_DONATUR" type="text" value="<?php echo $data_donatur_kategori['ID_KATEGORI']+1; }?>" readonly="readonly">
+								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="<?php echo $data_donatur_kategori['ID_KATEGORI']+1; }?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">
@@ -46,12 +47,6 @@
 								<label class="control-label" for="JUMLAH_DONASI">JUMLAH DONASI :</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="JUMLAH_DONASI" type="text" value="">
-								</div>
-							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="KODE_DONATUR">KODE DONATUR :</label>
-								<div class="controls">
-								  <input class="input-xlarge focused" name="KODE_DONATUR" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">

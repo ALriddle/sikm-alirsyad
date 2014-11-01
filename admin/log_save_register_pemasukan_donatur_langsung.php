@@ -6,7 +6,6 @@ $no_transaksi= $_POST['ID_TRANSAKSI'];
 $nama_donatur= $_POST['NAMA_DONATUR'];
 $tanggal_transaksi= $_POST['TANGGAL_TRANSAKSI'];
 $jumlah_donasi_l= $_POST['JUMLAH_DONASI_L'];
-$kode_donatur= $_POST['KODE_DONATUR'];
 $keterangan= $_POST['KETERANGAN'];
 $set= true;
 

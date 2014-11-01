@@ -2,7 +2,7 @@
 include 'DB_driver.php';
 
 $del=$_GET['id'];
-$query1 = mysql_query("DELETE FROM kategory_donatur where ID_KAT_DONATUR = '$del'");			
+$query1 = mysql_query("DELETE FROM kategory_donatur where KODE_DONATUR = '$del'");			
 ?>
 <script language = "JavaScript">
 			document.location='form_kat_donatur.php';

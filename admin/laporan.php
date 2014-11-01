@@ -38,6 +38,29 @@
 					
 					<div class="box span6">
 					<div class="box-header well">
+						<h2><i class="icon-list-alt"></i> LAPORAN KESELURUHAN BANK</h2>
+						<div class="box-icon">
+						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+					<form method="post" action="table_pdf/index_bank_keseluruhan.php">
+					<div>
+					<label for="tgl_awal" name="tgl_awal"> Dari Tanggal </label><input type="date" id="tgl_awal1" name="tgl_awal1">
+					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir1" name="tgl_akhir1">				
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">Print Laporan</button>
+					</div>
+					</form>
+					</div>
+					
+					</div>
+					
+
+					<div class="row-fluid sortable">
+					<div class="box span6">
+					<div class="box-header well">
 						<h2><i class="icon-list-alt"></i> LAPORAN DETAIL KAS</h2>
 						<div class="box-icon">
 						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -71,28 +94,6 @@
 					<button type="submit" class="btn btn-primary">Print Laporan</button>
 					</form>
 					</div>
-					</div>
-					</div>
-					
-
-					<div class="row-fluid sortable">
-					<div class="box span6">
-					<div class="box-header well">
-						<h2><i class="icon-list-alt"></i> LAPORAN KESELURUHAN BANK</h2>
-						<div class="box-icon">
-						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-					<form method="post" action="table_pdf/index_bank_keseluruhan.php">
-					<div>
-					<label for="tgl_awal" name="tgl_awal"> Dari Tanggal </label><input type="date" id="tgl_awal1" name="tgl_awal1">
-					<label for="tgl_akhir" name="tgl_akhir"> Sampai Tanggal </label><input type="date" id="tgl_akhir1" name="tgl_akhir1">				
-					</div>
-					<br>
-					<button type="submit" class="btn btn-primary">Print Laporan</button>
-					</div>
-					</form>
 					</div>
 					
 					<div class="box span6">

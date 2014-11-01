@@ -59,7 +59,7 @@
 								  <select id="KODE_DONATUR" name="KODE_DONATUR" data-rel="chosen">
 									<?php
 									//mengambil nama-nama propinsi yang ada di database
-										$CITY = mysql_query("SELECT DISTINCT NAMA_DONATUR, ID_KAT_DONATUR, KODE_DONATUR FROM kategory_donatur "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'
+										$CITY = mysql_query("SELECT DISTINCT NAMA_DONATUR, KODE_DONATUR FROM kategory_donatur "); //WHERE NAMA_PEMASUKAN LIKE '%Donatur%'
 										while($p=mysql_fetch_array($CITY)){
 										echo "<option value=\"$p[KODE_DONATUR]\">$p[NAMA_DONATUR]</option>\n";
 										}
