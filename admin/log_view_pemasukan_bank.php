@@ -6,7 +6,7 @@ $hasil = mysql_query($query);
 while ($data = mysql_fetch_array($hasil)) {
     $NO_TRANSAKSI_BANK=$data['NO_TRANSAKSI_BANK'];
 	$KODE_BANK=$data['KODE_BANK'];
-	$TANGGAL_BANK=$data['TANGGAL_BANK'];
+	$TANGGAL_BANK=$data['TANGGAL_LAPORAN'];
 	$MASUK_BANK=$data['MASUK_BANK'];
 	$KELUAR_BANK=$data['KELUAR_BANK'];
 	$SALDO_BANK=$data['SALDO_BANK'];
@@ -16,7 +16,7 @@ while ($data = mysql_fetch_array($hasil)) {
 	<tr>
 	<td align=right><center>$data[NO_TRANSAKSI_BANK]</center></td>
 	<td><center>$data[KODE_BANK]</center></td>
-	<td><center>$data[TANGGAL_BANK]</center></td>
+	<td><center>$data[TANGGAL_LAPORAN]</center></td>
 	<td><center>$data[MASUK_BANK]</center></td>
 	<td><center>$data[KELUAR_BANK]</center></td>";
 	//<td><center>$data[SALDO_BANK]</center></td>
