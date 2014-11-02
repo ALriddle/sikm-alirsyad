@@ -13,13 +13,13 @@
 	$keluar_kas= $_POST['KELUAR_KAS'];
 	$keterangan= $_POST['KETERANGAN'];
 	
-	if($no_transaksi_kas=='' || $kode_kas=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_kas=='' || $keluar_kas=='' || $keterangan=='')
+	if($no_transaksi_kas=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_kas=='' || $keluar_kas=='' || $keterangan=='')
 		{
 	echo "<script language = 'JavaScript'>alert('Data yang Anda masukan tidak lengkap silahkan pilih kembali lagi');
 			document.location='form_transaksi.php';
 					  </script>"; 
 	}else{
-	$query = "UPDATE data_transaksi_kas SET	NO_TRANSAKSI_KAS='$no_transaksi_kas', KODE_KAS='$kode_kas', KODE_KAS='$kode_kas2', NAMA_PEMASUKAN='$nama_pemasukan',  NAMA_PENGELUARAN='$nama_pengeluaran', TANGGAL_LAPORAN='$tanggal_laporan', BULAN_LAPORAN='$bulan_laporan', TAHUN_LAPORAN='$tahun_laporan', MASUK_KAS='$masuk_kas', KELUAR_KAS='$keluar_kas', KETERANGAN='$keterangan' 
+	$query = "UPDATE data_transaksi_kas SET	NO_TRANSAKSI_KAS='$no_transaksi_kas', KODE_KAS='$kode_kas2', KODE_KAS='$kode_kas', NAMA_PEMASUKAN='$nama_pemasukan',  NAMA_PENGELUARAN='$nama_pengeluaran', TANGGAL_LAPORAN='$tanggal_laporan', BULAN_LAPORAN='$bulan_laporan', TAHUN_LAPORAN='$tahun_laporan', MASUK_KAS='$masuk_kas', KELUAR_KAS='$keluar_kas', KETERANGAN='$keterangan' 
 			  WHERE NO_TRANSAKSI_KAS='$no_transaksi_kas'";
 			
 			$result= mysql_query($query) or die(mysql_error());}

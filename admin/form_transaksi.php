@@ -111,7 +111,7 @@ include"log_view_pemasukan_kas.php";
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Bank:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo $data_pemasukan_bank["total2"] ; } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo number_format($data_pemasukan_bank["total2"]) ; } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
