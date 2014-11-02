@@ -4,30 +4,36 @@ $user="root";
 $password="";
 $database="sales_act2";
 include('fungsi_indotgl.php');
-$tgl_awal1=$_POST['tgl_awal1'];
-$tgl_akhir1=$_POST['tgl_akhir1'];
+$tgl_awal=$_POST['tgl_awal_detil_bank4'];
+$tgl_akhir=$_POST['tgl_akhir_detil_bank4'];
+
 $tgl1=tgl_indo($tgl_awal1);
 $tgl2=tgl_indo($tgl_akhir1);
+$kategori3=$_POST['kategori3'];
 
 mysql_connect($host,$user,$password) or die("Koneksi server gagal");
 mysql_select_db($database);
 
 //Queri untuk Menampilkan data
-$query1 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as saldototal from data_transaksi_bank WHERE TANGGAL_BANK between '$tgl_awal1' and '$tgl_akhir1'") or die(mysql_error());
-$data_pemasukan_BANK1 = mysql_fetch_array($query1);
+$query1 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as saldototal from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$data_pemasukan_bank1 = mysql_fetch_array($query1);
 
-$query2 = mysql_query("Select sum(MASUK_BANK) as pemasukan from data_transaksi_bank WHERE TANGGAL_BANK between '$tgl_awal1' and '$tgl_akhir1'") or die(mysql_error());
-$data_pemasukan_BANK2 = mysql_fetch_array($query2);
+$query2 = mysql_query("Select sum(MASUK_BANK) as pemasukan from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$data_pemasukan_bank2 = mysql_fetch_array($query2);
 
-$query3 = mysql_query("Select sum(KELUAR_BANK) as pengeluaran from data_transaksi_bank WHERE TANGGAL_BANK between '$tgl_awal1' and '$tgl_akhir1'") or die(mysql_error());
-$data_pemasukan_BANK3 = mysql_fetch_array($query3);
+$query3 = mysql_query("Select sum(KELUAR_BANK) as pengeluaran from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
+$data_pemasukan_bank3 = mysql_fetch_array($query3);
 
-$query ="SELECT * FROM data_transaksi_bank WHERE TANGGAL_BANK between '$tgl_awal1' and '$tgl_akhir1'";
-$db_query = mysql_query($query) or die("Query gagal");
+$query4 = mysql_query("Select * from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_BANK='$kategori3'") or die(mysql_error());
+$detail_pemasukan_bank = mysql_fetch_array($query4); 
+
+$query5 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as totaldetil from data_transaksi_bank, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori3'") or die(mysql_error());
+$detail_pemasukan_bank1 = mysql_fetch_array($query5);
+
 //Variabel untuk iterasi
 $i = 0;
 //Mengambil nilai dari query database
-while($data=mysql_fetch_array($db_query))
+while($data=mysql_fetch_array($query4))
 {
 $cell[$i][0] = $data[0];
 $cell[$i][1] = $data[1];
@@ -38,6 +44,7 @@ $cell[$i][5] = $data[5];
 $cell[$i][6] = $data[6];
 $cell[$i][7] = $data[7];
 $cell[$i][8] = $data[8];
+$cell[$i][9] = $data[9];
 $i++;
 }
 require('fpdf.php');
@@ -68,6 +75,7 @@ function Footer()
     //$this->Cell(0,10,'Halaman ke : '.$this->PageNo(),0,0,'C');
 }
 }
+##########################################################################################################################################
 
 $pdf = new PDF('P','cm','A4');
 $pdf->Open();
@@ -84,37 +92,34 @@ $pdf->SetFont("Arial","B",12);
 $pdf->Cell(19,1,'Periode :'.$tgl1.' s/d '.$tgl2,0,0,'C');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'1. LAPORAN REKAPITULASI BANK',0,0,'L');
-$pdf->SetFont("Arial","B",10);
+$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori3,0,0,'L');
 $pdf->Ln();
-$pdf->Cell(1,1,'No','LRTB',0,'C');
-$pdf->Cell(4,1,'Kode Trans.','LRTB',0,'C');
-$pdf->Cell(3,1,'Tanggal','LRTB',0,'C');
-$pdf->Cell(3.5,1,'Masuk','LRTB',0,'C');
-$pdf->Cell(3.5,1,'Keluar','LRTB',0,'C');
-$pdf->Cell(4,1,'Keterangan','LRTB',0,'C');
+$pdf->SetFont("Arial","B",10);
+$pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Tanggal','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Kode Trans.','LRTB',0,'C');
+$pdf->Cell(7,1,'Keterangan','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Masuk','LRTB',0,'C');
+$pdf->Cell(2.5,1,'Keluar','LRTB',0,'C');
 $pdf->Ln();
 
 $pdf->SetFont('Times','',10);
 for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
-$pdf->Cell(1,1,$j+1,'LBTR',0,'C');
-$pdf->Cell(4,1,$cell[$j][1],'LBTR',0,'C');
-$pdf->Cell(3,1,$cell[$j][2],'LBTR',0,'C');
-$pdf->Cell(3.5,1,$cell[$j][3],'LBTR',0,'C');
-$pdf->Cell(3.5,1,$cell[$j][4],'LBTR',0,'C');
-$pdf->Cell(4,1,$cell[$j][7],'LBTR',0,'C');
+$pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell[$j][4],'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell[$j][1],'LBTR',0,'C');
+$pdf->Cell(7,1,$cell[$j][7],'LBTR',0,'C');
+$pdf->Cell(2.5,1,number_format($cell[$j][5]),'LBTR',0,'C');
+$pdf->Cell(2.5,1,number_format($cell[$j][6]),'LBTR',0,'C');
 $pdf->Ln();
 }
+
 $pdf->SetFont("Arial","B",12);
-$pdf->Cell(19,1,'Total Pemasukan : Rp. '.$data_pemasukan_BANK2[pemasukan],'LBTR',0,'R');
+$pdf->Cell(18.7,1,'Total Masuk : Rp. '.number_format($detail_pemasukan_bank1[totaldetil]),'LBTR',0,'R');
 $pdf->Ln();
-$pdf->Cell(19,1,'Total Pengeluaran : Rp. '.$data_pemasukan_BANK3[pengeluaran],'LBTR',0,'R');
-$pdf->Ln();
-$pdf->Cell(19,1,'Saldo Akhir : Rp. '.$data_pemasukan_BANK1[saldototal],'LBTR',0,'R');
-$pdf->Ln();
-$pdf->Ln();
+
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(17,1,'Pengelola Dana Umat',0,0,'R');
 $pdf->Ln();

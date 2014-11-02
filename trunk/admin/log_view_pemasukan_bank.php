@@ -17,8 +17,8 @@ while ($data = mysql_fetch_array($hasil)) {
 	<td align=right><center>$data[NO_TRANSAKSI_BANK]</center></td>
 	<td><center>$data[KODE_BANK]</center></td>
 	<td><center>$data[TANGGAL_LAPORAN]</center></td>
-	<td><center>$data[MASUK_BANK]</center></td>
-	<td><center>$data[KELUAR_BANK]</center></td>";
+	<td><center>";echo number_format($data[MASUK_BANK]);echo "</center></td>
+	<td><center>";echo number_format($data[KELUAR_BANK]);echo "</center></td>";
 	//<td><center>$data[SALDO_BANK]</center></td>
 	//<td><center>$data[SALDO_TOTAL_BANK]</center></td>
 	echo "

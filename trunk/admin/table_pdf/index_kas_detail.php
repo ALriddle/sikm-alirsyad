@@ -4,12 +4,12 @@ $user="root";
 $password="";
 $database="sales_act2";
 include('fungsi_indotgl.php');
-$tgl_awal=$_POST['tgl_awal'];
-$tgl_akhir=$_POST['tgl_akhir'];
-$kategori=$_POST['kategori'];
+$tgl_awal=$_POST['tgl_awal_detil_kas3'];
+$tgl_akhir=$_POST['tgl_akhir_detil_kas3'];
 
 $tgl1=tgl_indo($tgl_awal);
 $tgl2=tgl_indo($tgl_akhir);
+$kategori2=$_POST['kategori2'];
 
 mysql_connect($host,$user,$password) or die("Koneksi server gagal");
 mysql_select_db($database);
@@ -24,34 +24,13 @@ $data_pemasukan_kas2 = mysql_fetch_array($query2);
 $query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas3 = mysql_fetch_array($query3);
 
-$query4 = mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori'") or die(mysql_error());
-$detail_pemasukan_kas = mysql_fetch_array($query4); 
+$query4 =mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori2'") or die(mysql_error());
+$detail_pemasukan_kas = mysql_fetch_array($query4);
 
-$query5 = mysql_query("Select sum(MASUK_KAS) as totaldetil from data_transaksi_kas, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori'") or die(mysql_error());
+$query5 = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as totaldetil from data_transaksi_kas, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori2'") or die(mysql_error());
 $detail_pemasukan_kas1 = mysql_fetch_array($query5);
 
-$query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'";
-$db_query = mysql_query($query) or die("Query gagal");
-
 //Variabel untuk iterasi
-$i = 0;
-//Mengambil nilai dari query database
-while($data=mysql_fetch_array($db_query))
-{
-$cell1[$i][0] = $data[0];
-$cell1[$i][1] = $data[1];
-$cell1[$i][2] = $data[2];
-$cell1[$i][3] = $data[3];
-$cell1[$i][4] = $data[4];
-$cell1[$i][5] = $data[5];
-$cell1[$i][6] = $data[6];
-$cell1[$i][7] = $data[7];
-$cell1[$i][8] = $data[8];
-$cell1[$i][9] = $data[9];
-$cell1[$i][10] = $data[10];
-$i++;
-}
-
 $i = 0;
 //Mengambil nilai dari query database
 while($data=mysql_fetch_array($query4))
@@ -110,49 +89,11 @@ $pdf->Ln();
 $pdf->SetFont("Arial","B",8);
 $pdf->Cell(19,1,'Jl. Sultan Iskandar Muda No. 46 Surabaya. Email : masjidalirsyadsurabaya@gmail.com',0,0,'C');
 $pdf->Ln();
-$pdf->SetFont("Arial","B",14);
-$pdf->Cell(19,1,'BUKU BESAR',0,0,'C');
-$pdf->Ln();
 $pdf->SetFont("Arial","B",12);
 $pdf->Cell(19,1,'Periode :'.$tgl1.' s/d '.$tgl2,0,0,'C');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'1. LAPORAN REKAPITULASI KAS',0,0,'L');
-$pdf->SetFont("Arial","B",10);
-$pdf->Ln();
-$pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
-$pdf->Cell(2.5,1,'Tanggal','LRTB',0,'C');
-$pdf->Cell(2.3,1,'Kode Trans.','LRTB',0,'C');
-$pdf->Cell(7.5,1,'Keterangan','LRTB',0,'C');
-$pdf->Cell(2.5,1,'Masuk','LRTB',0,'C');
-$pdf->Cell(2.5,1,'Keluar','LRTB',0,'C');
-$pdf->Ln();
-
-$pdf->SetFont('Times','',10);
-for($j=0;$j<$i;$j++)
-{
-//menampilkan data dari hasil query database
-$pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell1[$j][4],'LBTR',0,'C');
-$pdf->Cell(2.3,1,$cell1[$j][3],'LBTR',0,'C');
-$pdf->Cell(7.5,1,$cell1[$j][5],'LBTR',0,'L');
-$pdf->Cell(2.5,1,$cell1[$j][3],'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell1[$j][4],'LBTR',0,'C');
-
-$pdf->Ln();
-}
-$pdf->SetFont("Arial","B",12);
-$pdf->Cell(19,1,'Total Pemasukan Kas: Rp. '.$data_pemasukan_kas2[pemasukan],'LBTR',0,'R');
-$pdf->Ln();
-$pdf->Cell(19,1,'Total Pengeluaran Kas: Rp. '.$data_pemasukan_kas3[pengeluaran],'LBTR',0,'R');
-$pdf->Ln();
-$pdf->Cell(19,1,'Saldo Kas Akhir: Rp. '.$data_pemasukan_kas1[saldototal],'LBTR',0,'R');
-$pdf->Ln();
-
-//#######################################################################################################################################
-$pdf->Ln();
-$pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori,0,0,'L');
+$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori2,0,0,'L');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
@@ -162,23 +103,24 @@ $pdf->Cell(7,1,'Keterangan','LRTB',0,'C');
 $pdf->Cell(2.5,1,'Masuk','LRTB',0,'C');
 $pdf->Cell(2.5,1,'Keluar','LRTB',0,'C');
 $pdf->Ln();
+
 $pdf->SetFont('Times','',10);
 for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
 $pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell2[$j][2],'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell2[$j][1],'LBTR',0,'C');
-$pdf->Cell(7,1,$cell2[$j][5],'LBTR',0,'L');
-$pdf->Cell(2.5,1,$cell2[$j][3],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell2[$j][4],'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell2[$j][1],'LBTR',0,'C');
+$pdf->Cell(7,1,$cell2[$j][7],'LBTR',0,'L');
+$pdf->Cell(2.5,1,number_format($cell2[$j][5]),'LBTR',0,'C');
+$pdf->Cell(2.5,1,number_format($cell2[$j][6]),'LBTR',0,'C');
 $pdf->Ln();
 }
 
 $pdf->SetFont("Arial","B",12);
-$pdf->Cell(18.7,1,'Total Masuk : Rp. '.$detail_pemasukan_kas1[totaldetil],'LBTR',0,'R');
+$pdf->Cell(18.7,1,'Total Masuk : Rp. '.number_format($detail_pemasukan_kas1[totaldetil]),'LBTR',0,'R');
 $pdf->Ln();
-$pdf->Ln();
+
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(17,1,'Pengelola Dana Umat',0,0,'R');
 $pdf->Ln();

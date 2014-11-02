@@ -93,13 +93,13 @@
 							 <div class="control-group">
 								<label class="control-label" for="MASUK_KAS">MASUK</label>
 								<div class="controls">
-								  <input class="input-large focused" id="MASUK_KAS" name="MASUK_KAS" type="text" value="<?php echo $data_pemasukan_kas['MASUK_KAS'];?>">
+								  <input class="input-large focused" id="MASUK_KAS" name="MASUK_KAS" type="text" value="<?php echo number_format($data_pemasukan_kas['MASUK_KAS']);?>">
 								</div>
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="KELUAR_KAS">KELUAR</label>
 								<div class="controls">
-								  <input class="input-large focused" id="KELUAR_KAS" name="KELUAR_KAS" type="text" value="<?php echo $data_pemasukan_kas['KELUAR_KAS'];?>">
+								  <input class="input-large focused" id="KELUAR_KAS" name="KELUAR_KAS" type="text" value="<?php echo number_format($data_pemasukan_kas['KELUAR_KAS']);?>">
 								</div>
 							  </div>
 							 <div class="control-group">
@@ -127,7 +127,7 @@
 					<div class="box-content">
 						<div class="span7">
 						  <label class="control-label" for="activity_status"><h4>Kode Kas Pemasukan:</h4>
-								<label class="control-label" for="activity_status">4000 = Saldo Awal</label>
+								<label class="control-label" for="activity_status">1101 = Saldo Awal</label>
 								<label class="control-label" for="activity_status">4200 = Infaq Dari Donatur Tetap</label>
 								<label class="control-label" for="activity_status">4300 = Sumbangan Dari Donatur Tidak Tetap</label>
 								<label class="control-label" for="activity_status">4400 = Infaq Untuk Program</label>
@@ -136,6 +136,7 @@
 						</div>
 						<div class="span5">
 							<label class="control-label" for="activity_status"><h4>Kode Kas Pengeluaran:</h4>
+								<label class="control-label" for="activity_status">1101 = Saldo Awal</label>
 								<label class="control-label" for="activity_status">5101 = Gaji Karyawan</label>
 								<label class="control-label" for="activity_status">5102 = Insentif</label>
 								<label class="control-label" for="activity_status">5103 = Keperluan Kantor</label>

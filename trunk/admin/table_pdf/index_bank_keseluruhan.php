@@ -4,8 +4,8 @@ $user="root";
 $password="";
 $database="sales_act2";
 include('fungsi_indotgl.php');
-$tgl_awal=$_POST['tgl_awal'];
-$tgl_akhir=$_POST['tgl_akhir'];
+$tgl_awal=$_POST['tgl_awal_bank2'];
+$tgl_akhir=$_POST['tgl_akhir_bank2'];
 
 $tgl1=tgl_indo($tgl_awal);
 $tgl2=tgl_indo($tgl_akhir);
