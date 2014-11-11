@@ -25,11 +25,10 @@ while ($data = mysql_fetch_array($hasil)) {
 	<td><center>$data[KETERANGAN]</center></td>
 	<td align=center>
 		<div class='btn-group' >
-			<a class='btn btn-primary' href=form_edit_pemasukan_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-book icon-white'></i>Edit</a>
+			<a class='btn btn-primary' href=form_detail_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-book icon-white'></i>Detail</a>
 			<a class='btn btn-primary dropdown-toggle' data-toggle='dropdown'><span class='caret'></span></a>
 				<ul class='dropdown-menu'></center>
 					<li>
-						<a href=form_detail_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-tags'></i> Detail</a>
 						<a href=log_delete_pemasukan_kas.php?id=$data[NO_TRANSAKSI_KAS]><i class='icon-trash'></i> Delete</a>
 					</li>
 				</ul>
