@@ -119,9 +119,9 @@
 								  <select id="kategori3" name="kategori3" data-rel="chosen">
 									<?php
 									//mengambil nama-nama propinsi yang ada di database
-										$CITY = mysql_query("SELECT DISTINCT NAMA_PEMASUKAN, KODE_PEMASUKAN FROM kategory_pemasukan ORDER BY KODE_PEMASUKAN");
+										$CITY = mysql_query("SELECT DISTINCT NAMA_PENGELUARAN, KODE_PENGELUARAN FROM kategory_pengeluaran ORDER BY KODE_PENGELUARAN");
 										while($p=mysql_fetch_array($CITY)){
-										echo "<option value=\"$p[KODE_PEMASUKAN]\">$p[NAMA_PEMASUKAN]</option>\n";
+										echo "<option value=\"$p[KODE_PENGELUARAN]\">$p[NAMA_PENGELUARAN]</option>\n";
 										}
 									?>
 								  </select>
