@@ -7,8 +7,8 @@ include('fungsi_indotgl.php');
 $tgl_awal=$_POST['tgl_awal_detil_bank4'];
 $tgl_akhir=$_POST['tgl_akhir_detil_bank4'];
 
-$tgl1=tgl_indo($tgl_awal1);
-$tgl2=tgl_indo($tgl_akhir1);
+$tgl1=tgl_indo($tgl_awal);
+$tgl2=tgl_indo($tgl_akhir);
 $kategori3=$_POST['kategori3'];
 
 mysql_connect($host,$user,$password) or die("Koneksi server gagal");
@@ -24,7 +24,14 @@ $data_pemasukan_bank2 = mysql_fetch_array($query2);
 $query3 = mysql_query("Select sum(KELUAR_BANK) as pengeluaran from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_bank3 = mysql_fetch_array($query3);
 
-$query4 = mysql_query("Select * from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_BANK='$kategori3'") or die(mysql_error());
+//$query4 = mysql_query("Select * from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_BANK='$kategori3'") or die(mysql_error());
+//$detail_pemasukan_bank = mysql_fetch_array($query4); 
+
+$query4 = mysql_query("SELECT no_transaksi_kas, kode_kas, tanggal_laporan, data_transaksi_kas.keterangan, masuk_kas, keluar_kas
+FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND KODE_KAS ='$kategori3'
+UNION 
+SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
+FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND KODE_BANK ='$kategori3'") or die(mysql_error());
 $detail_pemasukan_bank = mysql_fetch_array($query4); 
 
 $query5 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as totaldetil from data_transaksi_bank, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori3'") or die(mysql_error());
@@ -108,11 +115,11 @@ for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
 $pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
-$pdf->Cell(2.5,1,$cell[$j][4],'LBTR',0,'C');
+$pdf->Cell(2.5,1,$cell[$j][2],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell[$j][1],'LBTR',0,'C');
-$pdf->Cell(7,1,$cell[$j][7],'LBTR',0,'C');
+$pdf->Cell(7,1,$cell[$j][3],'LBTR',0,'C');
+$pdf->Cell(2.5,1,number_format($cell[$j][4]),'LBTR',0,'C');
 $pdf->Cell(2.5,1,number_format($cell[$j][5]),'LBTR',0,'C');
-$pdf->Cell(2.5,1,number_format($cell[$j][6]),'LBTR',0,'C');
 $pdf->Ln();
 }
 
