@@ -35,8 +35,8 @@ FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tg
 $detail_pemasukan_kas = mysql_fetch_array($query4);
 
 $query5 = mysql_query("SELECT totalmasukkategorykas + totalmasukkategorykbank as totaldetail 
-from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '2014-04-30' AND KODE_KAS='$tgl_akhir') totalmasukkategorykas, 
-(SELECT sum(MASUK_BANK)-sum(KELUAR_BANK) as totalmasukkategorykbank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '2014-04-01' and '2014-04-30' AND KODE_BANK='4400')totalmasukkategorybank") or die(mysql_error());
+from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$tgl_akhir') totalmasukkategorykas, 
+(SELECT sum(MASUK_BANK)-sum(KELUAR_BANK) as totalmasukkategorykbank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_BANK='$tgl_akhir')totalmasukkategorybank") or die(mysql_error());
 $detail_pemasukan_kas1 = mysql_fetch_array($query5);
 
 //Variabel untuk iterasi
