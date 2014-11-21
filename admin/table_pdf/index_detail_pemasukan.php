@@ -28,10 +28,10 @@ $data_pemasukan_kas3 = mysql_fetch_array($query3);
 //$detail_pemasukan_kas = mysql_fetch_array($query4);
 
 $query4 =mysql_query("SELECT no_transaksi_kas, kode_kas, tanggal_laporan, data_transaksi_kas.keterangan, masuk_kas, keluar_kas
-FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND KODE_KAS ='$kategori2'
+FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND NAMA_PEMASUKAN ='$kategori2'
 UNION 
-SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
-FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND KODE_BANK =  '$kategori2'") or die(mysql_error());
+(SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
+FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND NAMA_PEMASUKAN =  '$kategori2') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
 $detail_pemasukan_kas = mysql_fetch_array($query4);
 
 $query5 = mysql_query("SELECT totalmasukkategorykas + totalmasukkategorykbank as totaldetail 
@@ -102,7 +102,7 @@ $pdf->SetFont("Arial","B",12);
 $pdf->Cell(19,1,'Periode :'.$tgl1.' s/d '.$tgl2,0,0,'C');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori2,0,0,'L');
+$pdf->Cell(19,1,'LAPORAN REKAPITULASI DETIL '.$kategori2,0,0,'L');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
