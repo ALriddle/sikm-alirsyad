@@ -28,13 +28,15 @@ $data_pemasukan_bank3 = mysql_fetch_array($query3);
 //$detail_pemasukan_bank = mysql_fetch_array($query4); 
 
 $query4 = mysql_query("SELECT no_transaksi_kas, kode_kas, tanggal_laporan, data_transaksi_kas.keterangan, masuk_kas, keluar_kas
-FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND KODE_KAS ='$kategori3'
+FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN ='$kategori3'
 UNION 
-SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
-FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND KODE_BANK ='$kategori3'") or die(mysql_error());
+(SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
+FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND NAMA_PENGELUARAN ='$kategori3') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
 $detail_pemasukan_bank = mysql_fetch_array($query4); 
 
-$query5 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as totaldetil from data_transaksi_bank, kategory_pemasukan WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_PEMASUKAN='$kategori3'") or die(mysql_error());
+$query5 = mysql_query("SELECT totalkeluarkategorykas + totalkeluarkategorykbank as totaldetail 
+from (SELECT sum(KELUAR_KAS) as totalkeluarkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3') totalmasukkategorykas, 
+(SELECT sum(KELUAR_BANK) as totalkeluarkategorykbank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3')totalmasukkategorybank") or die(mysql_error());
 $detail_pemasukan_bank1 = mysql_fetch_array($query5);
 
 //Variabel untuk iterasi
@@ -99,7 +101,7 @@ $pdf->SetFont("Arial","B",12);
 $pdf->Cell(19,1,'Periode :'.$tgl1.' s/d '.$tgl2,0,0,'C');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'2. LAPORAN REKAPITULASI DETIL '.$kategori3,0,0,'L');
+$pdf->Cell(19,1,'LAPORAN REKAPITULASI DETIL '.$kategori3,0,0,'L');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",10);
 $pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
