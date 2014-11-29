@@ -1,0 +1,16 @@
+KEluar
+SELECT totalmasukkategorykas + totalmasukkategorybank as totaldetail 
+from (SELECT sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3') totalmasukkategorykas, 
+(SELECT sum(KELUAR_BANK) as totalmasukkategorybank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3')totalmasukkategorybank
+
+
+SELECT totalkeluarkategorykas + totalkeluarkategorybank as totaldetail 
+from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalkeluarkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '2014-04-01' and '2014-04-30' AND NAMA_PENGELUARAN='INSENTIF') totalkeluarkategorykas, 
+(SELECT sum(MASUK_BANK)-sum(KELUAR_BANK) as totalkeluarkategorybank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '2014-04-01' and '2014-04-30' AND NAMA_PENGELUARAN='INSENTIF')totalkeluarkategorybank
+
+
+
+MAsuk
+SELECT totalmasukkategorykas + totalmasukkategorybank as totaldetail 
+from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '2014-04-01' and '2014-04-30' AND NAMA_PEMASUKAN='INFAQ DARI CELENGAN') totalmasukkategorykas, 
+(SELECT sum(MASUK_BANK)-sum(KELUAR_BANK) as totalmasukkategorybank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '2014-04-01' and '2014-04-30' AND NAMA_PEMASUKAN='INFAQ DARI CELENGAN')totalmasukkategorybank
