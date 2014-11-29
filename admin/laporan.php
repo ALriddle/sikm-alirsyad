@@ -110,7 +110,7 @@
 					<div>
 					
 					<label for="tgl_awal4" name="tgl_awal4"> Dari Tanggal </label>
-						<input type="date" id="tgl_awal_detil bank4" name="tgl_awal_detil_bank4">
+						<input type="date" id="tgl_awal_detil_bank4" name="tgl_awal_detil_bank4">
 					<label for="tgl_akhir4" name="tgl_akhir4"> Sampai Tanggal </label>
 						<input type="date" id="tgl_akhir_detil_bank4" name="tgl_akhir_detil_bank4">
 						<label for="kategori" name="kategori">Kategori Pengeluaran</label>
