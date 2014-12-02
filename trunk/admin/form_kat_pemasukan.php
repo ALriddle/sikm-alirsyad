@@ -7,7 +7,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_pegawai.php">Manajemen Kategori Pemasukan </a>
+						<a href="form_kat_pemasukan.php">Manajemen Kategori Pemasukan </a>
 					</li>
 				</ul>
 			</div>

@@ -7,7 +7,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_tim.php">Manajemen Transaksi</a>
+						<a href="form_transaksi.php">Manajemen Transaksi</a>
 					</li>
 				</ul>
 			</div>

@@ -7,7 +7,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_tim.php">Manajemen Transaksi</a>
+						<a href="form_transaksi.php">Manajemen Transaksi</a>
 					</li>
 				</ul>
 			</div>
@@ -48,13 +48,13 @@
 							 <div class="control-group">
 								<label class="control-label" for="MASUK_KAS">MASUK</label>
 								<div class="controls">
-								  <input class="input-large focused" id="MASUK_KAS" name="MASUK_KAS" type="text" value="<?php echo $data_pemasukan_kas['MASUK_KAS'];?>" readonly="readonly">
+								  <input class="input-large focused" id="MASUK_KAS" name="MASUK_KAS" type="text" value="<?php echo number_format($data_pemasukan_kas['MASUK_KAS']);?>" readonly="readonly">
 								</div>
 							  </div>
 							  <div class="control-group">
 								<label class="control-label" for="KELUAR_KAS">KELUAR</label>
 								<div class="controls">
-								  <input class="input-large focused" id="KELUAR_KAS" name="KELUAR_KAS" type="text" value="<?php echo $data_pemasukan_kas['KELUAR_KAS'];?>" readonly="readonly">
+								  <input class="input-large focused" id="KELUAR_KAS" name="KELUAR_KAS" type="text" value="<?php echo number_format($data_pemasukan_kas['KELUAR_KAS']);?>" readonly="readonly">
 								</div>
 							  </div>
 							 <div class="control-group">

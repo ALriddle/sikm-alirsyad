@@ -15,14 +15,6 @@ mysql_connect($host,$user,$password) or die("Koneksi server gagal");
 mysql_select_db($database);
 
 //Queri untuk Menampilkan data
-$query1 = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as saldototal from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_kas1 = mysql_fetch_array($query1);
-
-$query2 = mysql_query("Select sum(MASUK_KAS) as pemasukan from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_kas2 = mysql_fetch_array($query2);
-
-$query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_kas3 = mysql_fetch_array($query3);
 
 //$query4 =mysql_query("Select * from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_KAS='$kategori2'") or die(mysql_error());
 //$detail_pemasukan_kas = mysql_fetch_array($query4);
@@ -32,9 +24,8 @@ FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN '$tgl_a
 UNION 
 (SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
 FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN '$tgl_awal' AND  '$tgl_akhir' AND data_transaksi_bank.NAMA_PEMASUKAN ='$kategori2') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
-$detail_pemasukan_kas = mysql_fetch_array($query4);
 
-$query5 = mysql_query("SELECT totalmasukkategorykas + totalmasukkategorybank as totaldetail 
+$query5 = mysql_query("SELECT IFNULL((totalmasukkategorykas),0) + IFNULL((totalmasukkategorybank),0) as totaldetail 
 from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PEMASUKAN='$kategori2') totalmasukkategorykas, 
 (SELECT sum(MASUK_BANK)-sum(KELUAR_BANK) as totalmasukkategorybank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PEMASUKAN='$kategori2')totalmasukkategorybank") or die(mysql_error());
 $detail_pemasukan_kas1 = mysql_fetch_array($query5);

@@ -6,7 +6,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_tim.php">Manajemen Pendaftaran Donatur</a> <span class="divider">/</span>
+						<a href="form_transaksi_donatur.php">Manajemen Transaksi</a> <span class="divider">/</span>
 					</li>
 				</ul>
 			</div>
