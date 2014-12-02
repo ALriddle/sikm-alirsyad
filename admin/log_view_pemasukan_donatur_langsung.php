@@ -15,7 +15,7 @@ while ($data = mysql_fetch_array($hasil)) {
 	<td align=right><center>$data[ID_TRANSAKSI]</center></td>
 	<td><center>$data[TANGGAL_TRANSAKSI]</center></td>
 	<td><center>$data[NAMA_DONATUR]</center></td>
-	<td><center>$data[JUMLAH_DONASI_L]</center></td>
+	<td><center>"; echo number_format($data[JUMLAH_DONASI_L]); echo "</center></td>
 	<td><center>$data[KODE_DONATUR]</center></td>";
 	echo "
 	<td><center>$data[KETERANGAN]</center></td>

@@ -58,7 +58,7 @@
   $FC1->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam1="caption=Grafik Pemasukan Kas Per Kategory $; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam1="caption=Grafik Pemasukan Kas Per Kategory ; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC1->setChartParams($strParam1);

@@ -15,28 +15,19 @@ mysql_connect($host,$user,$password) or die("Koneksi server gagal");
 mysql_select_db($database);
 
 //Queri untuk Menampilkan data
-$query1 = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as saldototal from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_bank1 = mysql_fetch_array($query1);
-
-$query2 = mysql_query("Select sum(MASUK_BANK) as pemasukan from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_bank2 = mysql_fetch_array($query2);
-
-$query3 = mysql_query("Select sum(KELUAR_BANK) as pengeluaran from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
-$data_pemasukan_bank3 = mysql_fetch_array($query3);
 
 //$query4 = mysql_query("Select * from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND KODE_BANK='$kategori3'") or die(mysql_error());
 //$detail_pemasukan_bank = mysql_fetch_array($query4); 
 
 $query4 = mysql_query("SELECT no_transaksi_kas, kode_kas, tanggal_laporan, data_transaksi_kas.KETERANGAN, masuk_kas, keluar_kas
-FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN ='$kategori3'
+FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' and '$tgl_akhir' AND data_transaksi_kas.NAMA_PENGELUARAN ='$kategori3'
 UNION 
 (SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.KETERANGAN, masuk_bank, keluar_bank
-FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND NAMA_PENGELUARAN ='$kategori3') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
-$detail_pemasukan_bank = mysql_fetch_array($query4); 
+FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN  '$tgl_awal' AND  '$tgl_akhir' AND data_transaksi_bank.NAMA_PENGELUARAN ='$kategori3') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
 
-$query5 = mysql_query("SELECT totalmasukkategorykas + totalmasukkategorybank as totaldetail 
-from (SELECT sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3') totalmasukkategorykas, 
-(SELECT sum(KELUAR_BANK) as totalmasukkategorybank from data_transaksi_bank WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3')totalmasukkategorybank") or die(mysql_error());
+$query5 = mysql_query("SELECT IFNULL((totalkeluarkategorikas),0) + IFNULL((totalkeluarkategoribank),0) as totaldetail 
+from (SELECT sum(KELUAR_KAS) as totalkeluarkategorikas from data_transaksi_kas  WHERE data_transaksi_kas.TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3') totalkeluarkategorikas, 
+(SELECT sum(KELUAR_BANK) as totalkeluarkategoribank from data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PENGELUARAN='$kategori3')totalkeluarkategoribank") or die(mysql_error());
 $detail_pengeluaran_bank1 = mysql_fetch_array($query5);
 
 //Variabel untuk iterasi

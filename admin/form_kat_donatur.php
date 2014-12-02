@@ -7,7 +7,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_pegawai.php">Manajemen Kategori Donatur</a>
+						<a href="form_kat_donatur.php">Manajemen Kategori Donatur</a>
 					</li>
 				</ul>
 			</div>

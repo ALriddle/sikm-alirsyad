@@ -7,7 +7,7 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_tim.php">Manajemen Kategori Pengeluaran</a> <span class="divider">/</span>
+						<a href="form_kat_pengeluaran.php">Manajemen Kategori Pengeluaran</a> <span class="divider">/</span>
 					</li>
 					<li>
 						<a href="#">Form Edit Kategori Pengeluaran</a>

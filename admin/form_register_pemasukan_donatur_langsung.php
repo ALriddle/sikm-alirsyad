@@ -7,10 +7,10 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#####">Manajemen Pendaftaran Donatur</a> <span class="divider">/</span>
+						<a href="form_transaksi_donatur.php">Manajemen Transaksi</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#####">Input Data Donatur</a>
+						<a href="form_register_pemasukan_donatur_langsung.php">Input Data Donatur</a>
 					</li>
 				</ul>
 			</div>

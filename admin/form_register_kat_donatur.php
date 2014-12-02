@@ -7,10 +7,10 @@
 						<a href="index.php">Home</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_pegawai.php">Manajemen Kategori Donatur</a> <span class="divider">/</span>
+						<a href="form_kat_donatur.php">Manajemen Kategori Donatur</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="form_register_pegawai.php">Input Data Kategori Donatur</a>
+						<a href="form_register_kat_donatur.php">Input Data Kategori Donatur</a>
 					</li>
 				</ul>
 			</div>

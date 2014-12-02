@@ -7,7 +7,7 @@
                                                 <a href="index.php">Home</a> <span class="divider">/</span>
                                         </li>
                                         <li>
-                                                <a href="grafik.php">Charts</a>
+                                                <a href="laporan.php">Laporan</a>
                                         </li>
 										
                                 </ul>
