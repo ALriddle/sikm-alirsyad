@@ -24,7 +24,7 @@
 	<?php
 	include('DB_driver.php');
 	include("class/FusionCharts_Gen.php");
-	$tahun_laporan=$_POST['TAHUN_LAPORAN'];
+	$tahun_laporan=$_POST['TAHUN_LAPORAN2'];
 	$kode_kas=$_POST['KATEGORI_PEMASUKAN'];
 	$query="select NAMA_PEMASUKAN from kategory_pemasukan WHERE KODE_PEMASUKAN='$kode_kas'";
 	$result=mysql_query($query);

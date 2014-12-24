@@ -23,7 +23,7 @@ $query4 =mysql_query("SELECT no_transaksi_kas, kode_kas, tanggal_laporan, data_t
 FROM data_transaksi_kas WHERE data_transaksi_kas.TANGGAL_LAPORAN BETWEEN '$tgl_awal' and '$tgl_akhir' AND data_transaksi_kas.NAMA_PEMASUKAN ='$kategori2'
 UNION 
 (SELECT no_transaksi_bank, kode_bank, tanggal_laporan, data_transaksi_bank.keterangan, masuk_bank, keluar_bank
-FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN '$tgl_awal' AND  '$tgl_akhir' AND data_transaksi_bank.NAMA_PEMASUKAN ='$kategori2') ORDER BY TANGGAL_LAPORAN") or die(mysql_error());
+FROM data_transaksi_bank WHERE data_transaksi_bank.TANGGAL_LAPORAN BETWEEN '$tgl_awal' AND  '$tgl_akhir' AND data_transaksi_bank.NAMA_PEMASUKAN ='$kategori2')ORDER BY NO_TRANSAKSI_KAS") or die(mysql_error());
 
 $query5 = mysql_query("SELECT IFNULL((totalmasukkategorykas),0) + IFNULL((totalmasukkategorybank),0) as totaldetail 
 from (SELECT sum(MASUK_KAS)-sum(KELUAR_KAS) as totalmasukkategorykas from data_transaksi_kas  WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' AND NAMA_PEMASUKAN='$kategori2') totalmasukkategorykas, 

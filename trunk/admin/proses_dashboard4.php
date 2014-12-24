@@ -24,7 +24,7 @@
 	<?php
 	include('DB_driver.php');
 	include("class/FusionCharts_Gen.php");
-	$tahun_laporan=$_POST['TAHUN_LAPORAN'];
+	$tahun_laporan=$_POST['TAHUN_LAPORAN4'];
 	$kode_kas=$_POST['KATEGORI_PENGELUARAN'];
 	$query="select NAMA_PENGELUARAN from kategory_pengeluaran WHERE KODE_PENGELUARAN='$kode_kas'";
 	$result=mysql_query($query);
@@ -59,7 +59,7 @@
   $FC1->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam1="caption=Grafik Pengeluaran Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam1="caption=Grafik Pengeluaran Kas ; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC1->setChartParams($strParam1);
@@ -107,7 +107,7 @@
   $FC->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam="caption=Grafik Pengeluaran Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam="caption=Grafik Pengeluaran Bank; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC->setChartParams($strParam1);
