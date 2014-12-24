@@ -120,6 +120,8 @@
 					<div class="box-content">
 						<div class="span7">
 						  <label class="control-label" for="activity_status"><h4>Kode Kas Pemasukan:</h4>
+								<label class="control-label" for="activity_status">1101 = Tarikan Tunai</label>
+								<label class="control-label" for="activity_status">1102 = Setoran Bank</label>
 								<label class="control-label" for="activity_status">4000 = Saldo Awal</label>
 								<label class="control-label" for="activity_status">4200 = Infaq Dari Donatur Tetap</label>
 								<label class="control-label" for="activity_status">4300 = Sumbangan Dari Donatur Tidak Tetap</label>

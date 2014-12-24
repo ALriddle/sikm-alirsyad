@@ -135,6 +135,28 @@
 					</div>
 					</div>
 					
+			<div class="row-fluid sortable">
+				<div class="box span6">
+					<div class="box-header well">
+						<h2><i class="icon-list-alt"></i> LAPORAN KESELURUHAN DONATUR TETAP</h2>
+						<div class="box-icon">
+						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+						<form method="post" action="table_pdf/index_donatur_tetap_keseluruhan.php">
+							<div>
+								<label for="tgl_awal5" name="tgl_awal5"> Dari Tanggal </label>
+									<input type="date" id="tgl_awal_donatur" name="tgl_awal_donatur">
+								<label for="tgl_akhir5" name="tgl_akhir5"> Sampai Tanggal </label>
+									<input type="date" id="tgl_akhir_donatur" name="tgl_akhir_donatur">
+							</div>
+							<br>
+							<button type="submit" class="btn btn-primary">Print Laporan</button>
+						</form>
+					</div>
+				</div>
+					
 				
 
                 

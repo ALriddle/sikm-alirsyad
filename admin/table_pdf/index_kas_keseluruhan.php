@@ -23,7 +23,7 @@ $data_pemasukan_kas2 = mysql_fetch_array($query2);
 $query3 = mysql_query("Select sum(KELUAR_KAS) as pengeluaran from data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir'") or die(mysql_error());
 $data_pemasukan_kas3 = mysql_fetch_array($query3);
 
-$query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' ORDER BY TANGGAL_LAPORAN";
+$query ="SELECT * FROM data_transaksi_kas WHERE TANGGAL_LAPORAN between '$tgl_awal' and '$tgl_akhir' ORDER BY NO_TRANSAKSI_KAS";
 $db_query = mysql_query($query) or die("Query gagal");
 
 //Variabel untuk iterasi
@@ -93,7 +93,7 @@ $pdf->SetFont("Arial","B",12);
 $pdf->Cell(19,1,'Periode :'.$tgl1.' s/d '.$tgl2,0,0,'C');
 $pdf->Ln();
 $pdf->SetFont("Arial","B",11);
-$pdf->Cell(19,1,'1. LAPORAN REKAPITULASI KAS',0,0,'L');
+$pdf->Cell(19,1,'LAPORAN REKAPITULASI KAS',0,0,'L');
 $pdf->SetFont("Arial","B",10);
 $pdf->Ln();
 $pdf->Cell(1.7,1,'Bukti TR','LRTB',0,'C');
@@ -108,7 +108,7 @@ $pdf->SetFont('Times','',10);
 for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
-$pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
+$pdf->Cell(1.7,1,$cell1[$j][0],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell1[$j][4],'LBTR',0,'C');
 $pdf->Cell(2.3,1,$cell1[$j][1],'LBTR',0,'C');
 $pdf->Cell(7.5,1,$cell1[$j][7],'LBTR',0,'L');

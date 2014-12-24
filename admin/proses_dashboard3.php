@@ -24,7 +24,7 @@
 	<?php
 	include('DB_driver.php');
 	include("class/FusionCharts_Gen.php");
-	$tahun_laporan=$_POST['TAHUN_LAPORAN'];
+	$tahun_laporan=$_POST['TAHUN_LAPORAN3'];
 	?>
 	<h2><center>Periode Dashboard Tahun : <?php echo"$tahun_laporan"; ?></h2>
 	

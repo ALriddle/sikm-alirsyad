@@ -107,7 +107,7 @@ $pdf->SetFont('Times','',10);
 for($j=0;$j<$i;$j++)
 {
 //menampilkan data dari hasil query database
-$pdf->Cell(1.7,1,$j+1,'LBTR',0,'C');
+$pdf->Cell(1.7,1,$cell[$j][0],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell[$j][2],'LBTR',0,'C');
 $pdf->Cell(2.5,1,$cell[$j][1],'LBTR',0,'C');
 $pdf->Cell(7,1,$cell[$j][3],'LBTR',0,'C');

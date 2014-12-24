@@ -26,7 +26,7 @@
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pemasukan Kas dan Bank:</label>
 								<div class="controls">
 								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="chosen">
-								  <option>2014</option>
+									<option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
 									<option>2017</option>
@@ -52,8 +52,8 @@
 					 <div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pengeluaran Kas dan Bank:</label>
 								<div class="controls">
-								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="choosen">
-								  <option>2014</option>
+								  <select id="TAHUN_LAPORAN3" name="TAHUN_LAPORAN3" data-rel="chosen">
+									<option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
 									<option>2017</option>
@@ -81,7 +81,7 @@
 					<div class="control-group">
 						<label class="control-label" for="TAHUN_LAPORAN">Data Pemasukan Kas dan Bank:</label>
 							<div class="controls">
-								<select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="choosen">
+								<select id="TAHUN_LAPORAN2" name="TAHUN_LAPORAN2" data-rel="chosen">
 									<option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
@@ -121,8 +121,8 @@
 					 <div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pengeluaran Kas dan Bank:</label>
 								<div class="controls">
-								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="choosen">
-								  <option>2014</option>
+								  <select id="TAHUN_LAPORAN4" name="TAHUN_LAPORAN4" data-rel="chosen">
+									<option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
 									<option>2017</option>
@@ -166,8 +166,8 @@
 					 <div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pemasukan Donatur Tetap:</label>
 								<div class="controls">
-								  <select id="TAHUN_LAPORAN" name="TAHUN_LAPORAN" data-rel="choosen">
-								  <option>2014</option>
+								  <select id="TAHUN_LAPORAN5" name="TAHUN_LAPORAN5" data-rel="chosen">
+									<option>2014</option>
 									<option>2015</option>
 									<option>2016</option>
 									<option>2017</option>
