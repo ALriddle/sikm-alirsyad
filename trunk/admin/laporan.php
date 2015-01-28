@@ -135,7 +135,7 @@
 					</div>
 					</div>
 					
-			<div class="row-fluid sortable">
+			<!--<div class="row-fluid sortable">
 				<div class="box span6">
 					<div class="box-header well">
 						<h2><i class="icon-list-alt"></i> LAPORAN KESELURUHAN DONATUR TETAP</h2>
@@ -156,8 +156,5 @@
 						</form>
 					</div>
 				</div>
-					
-				
-
-                
+			</div>-->
 <?php include('footer.php'); ?>

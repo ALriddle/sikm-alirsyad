@@ -71,7 +71,7 @@
 					<div class="row-fluid sortable">
 					<div class="box span6">
 					<div class="box-header well">
-						<h2><i class="icon-list-alt"></i>Pemasukan Kas dan Bank Berdasarkan Kategory</h2>
+						<h2><i class="icon-list-alt"></i>Pemasukan Kas dan Bank Berdasarkan Kategori</h2>
 						<div class="box-icon">
 						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 						</div>
@@ -89,6 +89,7 @@
 									<option>2018</option>
 								</select>
 							</div>
+					</div>		
 					<div class="control-group">
 						<label class="control-label" for="KATEGORI_PEMASUKAN">Kategori Pemasukan Kas dan Bank</label>
 							<div class="controls">
@@ -102,7 +103,7 @@
 									?>
 								</select>
 							</div>
-					</div>
+					
 					<button type="submit" class="btn btn-primary">Print Dashboard</button>
 					</div>
 					</form>
@@ -111,16 +112,16 @@
 					
 					<div class="box span6">
 					<div class="box-header well">
-						<h2><i class="icon-list-alt"></i>Pengeluaran Kas dan Bank Berdasarkan Kategory</h2>
+						<h2><i class="icon-list-alt"></i>Pengeluaran Kas dan Bank Berdasarkan Kategori</h2>
 						<div class="box-icon">
 						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 						</div>
 					</div>
 					<div class="box-content">
 					<form method="post" action="proses_dashboard4.php">
-					 <div class="control-group">
+						<div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pengeluaran Kas dan Bank:</label>
-								<div class="controls">
+							<div class="controls">
 								  <select id="TAHUN_LAPORAN4" name="TAHUN_LAPORAN4" data-rel="chosen">
 									<option>2014</option>
 									<option>2015</option>
@@ -128,9 +129,8 @@
 									<option>2017</option>
 									<option>2018</option>
 								</select>
-					</div>
-					
-							  </div>
+							</div>
+						</div>
 							  
 							  	  <div class="control-group">
 								<label class="control-label" for="KATEGORI_PEMASUKAN">Kategori Pengeluaran Kas dan Bank</label>
@@ -153,33 +153,32 @@
 					</div>
 					</div>
 					
-					<div class="row-fluid sortable">
-					<div class="box span6">
-					<div class="box-header well">
-						<h2><i class="icon-list-alt"></i>Rekapitulasi Pemasukan Donatur Tetap</h2>
-						<div class="box-icon">
-						<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-						</div>
-					</div>
-					<div class="box-content">
-					<form method="post" action="proses_dashboard5.php">
-					 <div class="control-group">
+					<!--<div class="row-fluid sortable">
+						<div class="box span6">
+							<div class="box-header well">
+								<h2><i class="icon-list-alt"></i>Rekapitulasi Pemasukan Donatur Tetap</h2>
+								<div class="box-icon">
+									<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+								</div>
+							</div>
+						<div class="box-content">
+							<form method="post" action="proses_dashboard5.php">
+							<div class="control-group">
 								<label class="control-label" for="TAHUN_LAPORAN">Data Pemasukan Donatur Tetap:</label>
 								<div class="controls">
-								  <select id="TAHUN_LAPORAN5" name="TAHUN_LAPORAN5" data-rel="chosen">
-									<option>2014</option>
-									<option>2015</option>
-									<option>2016</option>
-									<option>2017</option>
-									<option>2018</option>
-								</select>
-					</div>
-					
-							  </div>
-					<button type="submit" class="btn btn-primary">Print Dashboard</button>
-					</div>
-					</form>
-					</div>
-					</div>
+									<select id="TAHUN_LAPORAN5" name="TAHUN_LAPORAN5" data-rel="chosen">
+										<option>2014</option>
+										<option>2015</option>
+										<option>2016</option>
+										<option>2017</option>
+										<option>2018</option>
+									</select>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Print Dashboard</button>
+							</form>
+						</div>
+						</div>
+					</div>-->
 					
 <?php include('footer.php'); ?>
