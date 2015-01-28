@@ -257,9 +257,9 @@ $(document).ready(function() {
                                                 <li><a class="ajax-link" href="index.php"><i class="icon32 icon-color icon-home"></i><span class="hidden-tablet"> Home</span></a></li>
                                                 <li><a class="ajax-link" href="form_kat_pemasukan.php"><i class="icon32 icon-color icon-square-plus"></i><span class="hidden-tablet">Kategori Pemasukan</span></a></li>
                                                 <li><a class="ajax-link" href="form_kat_pengeluaran.php"><i class="icon32 icon-color icon-square-minus"></i><span class="hidden-tablet">Kategori Pengeluaran</span></a></li>
-												<li><a class="ajax-link" href="form_kat_donatur.php"><i class="icon32 icon-color icon-suitcase"></i><span class="hidden-tablet">Kategori Donatur Tetap</span></a></li>
+												<!--<li><a class="ajax-link" href="form_kat_donatur.php"><i class="icon32 icon-color icon-suitcase"></i><span class="hidden-tablet">Kategori Donatur Tetap</span></a></li>-->
                                                 <li><a class="ajax-link" href="form_transaksi.php"><i class="icon32 icon-color icon-envelope-open"></i><span class="hidden-tablet">Donatur Tidak Tetap</span></a></li>
-                                                <li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-envelope-closed"></i><span class="hidden-tablet">Donatur Tetap</span></a></li>
+                                                <!--<li><a class="ajax-link" href="form_transaksi_donatur.php"><i class="icon32 icon-color icon-envelope-closed"></i><span class="hidden-tablet">Donatur Tetap</span></a></li>-->
                                                 <li><a class="ajax-link" href="grafik.php"><i class="icon32 icon-color icon-image"></i><span class="hidden-tablet"> Graphics</span></a></li>
 												<li><a class="ajax-link" href="laporan.php"><i class="icon32 icon-color icon-pdf"></i><span class="hidden-tablet"> Laporan</span></a></li>
                                                 <li><a class="ajax-link" href="logout.php"><i class="icon32 icon-color icon-replyall"></i><span class="hidden-tablet"> Exit</span></a></li>

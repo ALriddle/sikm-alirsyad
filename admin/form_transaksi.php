@@ -14,17 +14,24 @@
 			
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select totalkas + totalbank as saldototal from (Select sum(MASUK_KAS)-sum(KELUAR_KAS) as totalkas from data_transaksi_kas)totalkas,(Select sum(MASUK_BANK)-sum(KELUAR_BANK) as totalbank from data_transaksi_bank)totalbank") or die(mysql_error());
+				$query = mysql_query("Select totalkas + totalbank as totalseluruh from (select saldokas-saldoawal as totalkas from 
+				(select Sum(MASUK_KAS)-Sum(KELUAR_KAS) as saldokas from data_transaksi_kas)saldokas, 
+				(select Sum(MASUK_KAS) as saldoawal from data_transaksi_kas Where KODE_KAS = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal)totalkas, 
+				(select saldobank-saldoawal as totalbank from 
+				(select Sum(MASUK_BANK)-Sum(KELUAR_BANK) as saldobank from data_transaksi_bank)saldobank, 
+				(select Sum(MASUK_BANK) as saldoawal from data_transaksi_bank Where KODE_BANK = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal)totalbank") or die(mysql_error());
 				$data_pemasukan_kas1 = mysql_fetch_array($query);
 				{ 
 			?>
 			<label class="control-label" for="appendedPrependedInput"><h4>Saldo Total:</h4></label>
 				<div class="input-prepend input-append">
-					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas1["saldototal"]); } ?>" readonly><span class="add-on">.00</span>
+					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas1["totalseluruh"]); } ?>" readonly><span class="add-on">.00</span>
 					</div>
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select sum(MASUK_KAS)-sum(KELUAR_KAS) as total1 from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select saldokas-saldoawal as totalkas from 
+				(select Sum(MASUK_KAS)-Sum(KELUAR_KAS) as saldokas from data_transaksi_kas)saldokas, 
+				(select Sum(MASUK_KAS) as saldoawal from data_transaksi_kas Where KODE_KAS = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal") or die(mysql_error());
 				$data_pemasukan_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -47,7 +54,7 @@
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Kas:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas["total1"]); } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_kas" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas["totalkas"]); } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
@@ -88,7 +95,9 @@ include"log_view_pemasukan_kas.php";
 			
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select sum(MASUK_BANK)-sum(KELUAR_BANK) as total2 from data_transaksi_bank") or die(mysql_error());
+				$query = mysql_query("select saldobank-saldoawal as totalbank from 
+				(select Sum(MASUK_BANK)-Sum(KELUAR_BANK) as saldobank from data_transaksi_bank)saldobank, 
+				(select Sum(MASUK_BANK) as saldoawal from data_transaksi_bank Where KODE_BANK = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal") or die(mysql_error());
 				$data_pemasukan_bank = mysql_fetch_array($query);
 				{ 
 			?>
@@ -111,7 +120,7 @@ include"log_view_pemasukan_kas.php";
 								<label class="control-label" for="appendedPrependedInput"><h4>Saldo Bank:</h4></label>
 								<div class="controls">
 								  <div class="input-prepend input-append">
-									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo number_format($data_pemasukan_bank["total2"]) ; } ?>" readonly=readonly><span class="add-on">.00</span>
+									<span class="add-on">Rp</span><input id="saldo_bank" size="12" type="text" value="<?php echo number_format($data_pemasukan_bank["totalbank"]) ; } ?>" readonly=readonly><span class="add-on">.00</span>
 								  </div>
 								</div>
 					</div>
