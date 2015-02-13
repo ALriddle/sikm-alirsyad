@@ -68,14 +68,14 @@
 	$counter1 = 0;
 			 //$total = mysql_num_rows(mysql_query("SELECT IdKat,TglTerjual FROM penjualan_buku WHERE IdKat='$kat' AND LEFT(TglTerjual,4)='2012' AND  MID(TglTerjual,6,2)='02'"));
 			 //$total = mysql_query("SELECT MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat'");
-			 $total_q = mysql_query("SELECT SUM(MASUK_KAS) AS MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan'");
+			 $total_q = mysql_query("SELECT SUM(KELUAR_KAS) AS KELUAR_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan'");
 			 $counter1++;
     		
 
 	//$persentase = ($total!=0 || $review !=0)?($review / $total) *100:0;
 	//$total = mysql_num_rows($total);
 	$total=0;
-	while($test=mysql_fetch_array($total_q)){$total = $test['MASUK_KAS'];}
+	while($test=mysql_fetch_array($total_q)){$total = $test['KELUAR_KAS'];}
 
   # add chart values and category names
   $FC1->addChartData("$total","name=$kat");
