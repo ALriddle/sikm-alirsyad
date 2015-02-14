@@ -107,10 +107,10 @@
   $FC->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam="caption=Grafik Pengeluaran Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam="caption=Grafik Pengeluaran Bank $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
-  $FC->setChartParams($strParam1);
+  $FC->setChartParams($strParam);
   include('DB_driver.php');
   $bulan= mysql_query(" SELECT ID_TIME, BULAN FROM dim_time ") or die(mysql_error());
   //$tracking = mysql_query("SELECT Nama_Karyawan FROM master_karyawan WHERE Kode_Nama_Cabang='SRJ' AND Category_Tracking='sales'");
