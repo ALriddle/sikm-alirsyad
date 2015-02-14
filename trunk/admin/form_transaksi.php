@@ -14,24 +14,32 @@
 			
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("Select totalkas + totalbank as totalseluruh from (select saldokas-saldoawal as totalkas from 
-				(select Sum(MASUK_KAS)-Sum(KELUAR_KAS) as saldokas from data_transaksi_kas)saldokas, 
-				(select Sum(MASUK_KAS) as saldoawal from data_transaksi_kas Where KODE_KAS = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal)totalkas, 
-				(select saldobank-saldoawal as totalbank from 
-				(select Sum(MASUK_BANK)-Sum(KELUAR_BANK) as saldobank from data_transaksi_bank)saldobank, 
-				(select Sum(MASUK_BANK) as saldoawal from data_transaksi_bank Where KODE_BANK = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal)totalbank") or die(mysql_error());
+				$query = mysql_query("Select IFNULL(totalkas,0) + IFNULL(totalbank,0) as saldototal from 
+									(select saldoawaljanuari + saldokas as totalkas from 
+									(select Sum(MASUK) as saldoawaljanuari from data_transaksi Where KODE_KATEGORI='4000' AND NO_TRANSAKSI='0114K')saldoawaljanuari,
+									(select semua - awal as saldokas from 
+									(Select Sum(MASUK)-Sum(Keluar) as semua from data_transaksi Where FLAG='0')semua,
+									(Select Sum(MASUK) as awal from data_transaksi Where KODE_KATEGORI='4000' AND FLAG='0')awal)saldokas)totalkas,
+									
+									(select saldoawaljanuari + saldobank as totalbank from 
+									(select Sum(MASUK) as saldoawaljanuari from data_transaksi Where KODE_KATEGORI='4000' AND NO_TRANSAKSI='0114B')saldoawaljanuari,
+									(select semua - awal as saldobank from 
+									(Select Sum(MASUK)-Sum(Keluar) as semua from data_transaksi Where FLAG='1')semua,
+									(Select Sum(MASUK) as awal from data_transaksi Where KODE_KATEGORI='4000' AND FLAG='1')awal)saldobank)totalbank") or die(mysql_error());
 				$data_pemasukan_kas1 = mysql_fetch_array($query);
 				{ 
 			?>
 			<label class="control-label" for="appendedPrependedInput"><h4>Saldo Total:</h4></label>
 				<div class="input-prepend input-append">
-					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas1["totalseluruh"]); } ?>" readonly><span class="add-on">.00</span>
+					<span class="add-on">Rp</span><input id="saldo_total" size="12" type="text" value="<?php echo number_format($data_pemasukan_kas1["saldototal"]); } ?>" readonly><span class="add-on">.00</span>
 					</div>
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("select saldokas-saldoawal as totalkas from 
-				(select Sum(MASUK_KAS)-Sum(KELUAR_KAS) as saldokas from data_transaksi_kas)saldokas, 
-				(select Sum(MASUK_KAS) as saldoawal from data_transaksi_kas Where KODE_KAS = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal") or die(mysql_error());
+				$query = mysql_query("select saldoawaljanuari + saldokas as totalkas from 
+									(select Sum(MASUK) as saldoawaljanuari from data_transaksi Where KODE_KATEGORI='4000' AND NO_TRANSAKSI='0114K')saldoawaljanuari,
+									(select semua - awal as saldokas from 
+									(Select Sum(MASUK)-Sum(Keluar) as semua from data_transaksi Where FLAG='0')semua,
+									(Select Sum(MASUK) as awal from data_transaksi Where KODE_KATEGORI='4000' AND FLAG='0')awal)saldokas") or die(mysql_error());
 				$data_pemasukan_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -70,6 +78,7 @@
 							  <tr>
 									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>PEGAWAI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		
@@ -95,9 +104,11 @@ include"log_view_pemasukan_kas.php";
 			
 			<?php 
 			include('DB_driver.php');
-				$query = mysql_query("select saldobank-saldoawal as totalbank from 
-				(select Sum(MASUK_BANK)-Sum(KELUAR_BANK) as saldobank from data_transaksi_bank)saldobank, 
-				(select Sum(MASUK_BANK) as saldoawal from data_transaksi_bank Where KODE_BANK = '4000' and BULAN_LAPORAN between '2' and '12')saldoawal") or die(mysql_error());
+				$query = mysql_query("select saldoawaljanuari + saldobank as totalbank from 
+									(select Sum(MASUK) as saldoawaljanuari from data_transaksi Where KODE_KATEGORI='4000' AND NO_TRANSAKSI='0114B')saldoawaljanuari,
+									(select semua - awal as saldobank from 
+									(Select Sum(MASUK)-Sum(Keluar) as semua from data_transaksi Where FLAG='1')semua,
+									(Select Sum(MASUK) as awal from data_transaksi Where KODE_KATEGORI='4000' AND FLAG='1')awal)saldobank") or die(mysql_error());
 				$data_pemasukan_bank = mysql_fetch_array($query);
 				{ 
 			?>
@@ -135,6 +146,7 @@ include"log_view_pemasukan_kas.php";
 							 <tr>
 									<td rowspan="1" valign="middle"><b><center>BUKTI TRANSAKSI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KODE</center></b></td>
+									<td rowspan="1" valign="middle"><b><center>PEGAWAI</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>TANGGAL</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>MASUK</center></b></td>
 									<td rowspan="1" valign="middle"><b><center>KELUAR</center></b></td>		

@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select max(NO_TRANSAKSI_KAS) as ID_KAS from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select max(NO_TRANSAKSI) as ID from data_transaksi") or die(mysql_error());
 				$data_pengeluaran_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -31,15 +31,21 @@
 						<form class="form-horizontal" action="log_save_register_pengeluaran_kas.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="NO_TRANSAKSI_KAS">BUKTI TRANSAKSI :</label>
+								<label class="control-label" for="NO_TRANSAKSI">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-large focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pengeluaran_kas['ID_KAS']+1; }?>">
+								  <input class="input-large focused" name="NO_TRANSAKSI" type="text" value="<?php echo $data_pengeluaran_kas['ID']+1; }?>">
+								</div>
+							  </div>
+							  <div class="control-group">
+								<label class="control-label" for="USER_ID">PEGAWAI :</label>
+								<div class="controls">
+								  <input class="input-large focused" id="USER_ID" name="user_id" type="text" value="<?php echo $_SESSION['USERNAME_PEGAWAI']; ?>" readonly="readonly">
 								</div>
 							  </div>
 								<div class="control-group">
 								<label class="control-label" for="KODE_PENGELUARAN">KODE KAS:</label>
 								<div class="controls">
-								 <input class="input-large focused" id="KODE_PENGELUARAN" name="kode_pengeluaran" type="text" value="">
+								 <input class="input-large focused" id="KODE_KATEGORI" name="KODE_KATEGORI" type="text" value="">
 									<!--<select id="KODE_PENGELUARAN" name="KODE_PENGELUARAN" data-rel="chosen">
 										<?php
 										//mengambil nama-nama propinsi yang ada di database
@@ -54,13 +60,13 @@
 							  <div class="control-group">
 							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
 							<div class="controls">
-							    <input class="input-large focused" id="NAMA_PENGELUARAN" name="nama_pengeluaran" type="text" value="">
+							    <input class="input-large focused" id="NAMA_PENGELUARAN" name="NAMA_PENGELUARAN" type="text" value="">
 							</div>
 							</div>
 							  <div class="control-group">
-								<label class="control-label" for="TANGGAL_KAS">TANGGAL KELUAR:</label>
+								<label class="control-label" for="TANGGAL">TANGGAL KELUAR:</label>
 								<div class="controls">
-								  <input class="input-large focused" name="TANGGAL_LAPORAN" type="date" value="">
+								  <input class="input-large focused" name="TANGGAL" type="date" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -91,9 +97,9 @@
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="KELUAR_KAS">KELUAR :</label>
+								<label class="control-label" for="KELUAR">KELUAR :</label>
 								<div class="controls">
-								  <input class="input-large focused" name="KELUAR_KAS" type="text" value="">
+								  <input class="input-large focused" name="KELUAR" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -119,17 +125,15 @@
 					<div class="box-content">
 						<div class="span7">
 						  <label class="control-label" for="activity_status"><h4>Kode Kas Pengeluaran:</h4>
-								<label class="control-label" for="activity_status">5101 = Gaji Karyawan</label>
-								<label class="control-label" for="activity_status">5102 = Insentif</label>
-								<label class="control-label" for="activity_status">5103 = Keperluan Kantor</label>
-								<label class="control-label" for="activity_status">5104 = Transportasi</label>
-								<label class="control-label" for="activity_status">5105 = Renovasi</label>
-								<label class="control-label" for="activity_status">5106 = Dakwah</label>
-								<label class="control-label" for="activity_status">5107 = Akomodasi</label>
-								<label class="control-label" for="activity_status">5108 = Konsumsi</label>
-								<label class="control-label" for="activity_status">5109 = Listrik Dan Telepon</label>
-								<label class="control-label" for="activity_status">5110 = Biaya Administrasi Bank</label>
-								<label class="control-label" for="activity_status">5111 = Biaya Lain-lain</label>
+							<?php 
+							include('DB_driver.php');
+							$query2 = mysql_query("select * from kategory_pengeluaran") or die(mysql_error());
+							While($daftarkode = mysql_fetch_array($query2))
+							{
+								$KODE_PENGELUARAN=$daftarkode['KODE_PENGELUARAN'];
+								$NAMA_PENGELUARAN=$daftarkode['NAMA_PENGELUARAN'];					
+							?>
+								<label class="control-label" for="activity_status"><?php echo "$daftarkode[KODE_PENGELUARAN]";?> = <?php echo "$daftarkode[NAMA_PENGELUARAN]";}?></label>
 							</label>
 						</div>
 </div>

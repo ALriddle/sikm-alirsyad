@@ -15,12 +15,16 @@ include('header.php');
 			<div class="row-fluid">
 				<div class="box span12">
 					<div class="box-header well">
-						<h2><i class="icon-info-sign"></i> Introduction</h2>
+						<h2><i class="icon-info-sign"></i>Tentang Mas-Maal</h2>
 					</div>
 					<div class="box-content">
-						<h1>SIKM - Sistem Informasi Keuangan Masjid<small></small></h1>
-						<p>Sistem ini merupakan sebuah integrasi informasi untuk Masjid Al-Irsyad dalam melakukan pengelolaan keuangan masjid</p>
-						<p><b>Provided for Masjid Al-Irsyad Surabaya</b></p>
+					<div class="page-header">
+					<h1>MAS-MAAL <small>Pengelolaan Keuangan Masjid</small></h1>
+					</div>
+						<p>Aplikasi keuangan yang dibuat dan didesain dalam memberikan laporan keuangan khususnya Masjid. 
+						Aplikasi ini mampu menampilkan laporan secara detail dan juga grafik. Sehingga masjid dapat melihat, membandingkan serta 
+						mempertimbangkan keadaan dan rencana keuangan selanjutnya.</p>
+						<p><blockquote><b>When Operating, Editing, and Publishing Become Easy</b></blockquote></p>
 						<div class="clearfix"></div>
 					</div>
 				</div>

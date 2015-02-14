@@ -1,0 +1,51 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Feb 14, 2015 at 10:27 AM
+-- Server version: 5.1.41
+-- PHP Version: 5.3.1
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `sales_act2`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategory_pemasukan`
+--
+
+CREATE TABLE IF NOT EXISTS `kategory_pemasukan` (
+  `KODE_PEMASUKAN` varchar(50) NOT NULL,
+  `NAMA_PEMASUKAN` varchar(50) NOT NULL,
+  PRIMARY KEY (`KODE_PEMASUKAN`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kategory_pemasukan`
+--
+
+INSERT INTO `kategory_pemasukan` (`KODE_PEMASUKAN`, `NAMA_PEMASUKAN`) VALUES
+('1102', 'SETORAN BANK'),
+('4200', 'INFAQ DARI CELENGAN JUMAT'),
+('4300', 'INFAQ DARI CELENGAN RENOVASI'),
+('4400', 'INFAQ UNTUK PROGRAM'),
+('4500', 'PEMASUKAN LAIN-LAIN'),
+('4100', 'INFAQ DARI CELENGAN KAMIS'),
+('1101', 'TARIKAN TUNAI'),
+('4600', 'INFAQ DARI DONATUR TETAP'),
+('4000', 'SALDO AWAL');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

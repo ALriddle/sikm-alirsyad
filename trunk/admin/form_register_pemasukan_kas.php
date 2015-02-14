@@ -18,7 +18,7 @@
 			<?php 
 				include('DB_driver.php');
 				$id = $_GET['id'];
-				$query = mysql_query("select MAX(NO_TRANSAKSI_KAS) as ID_KAS from data_transaksi_kas") or die(mysql_error());
+				$query = mysql_query("select MAX(NO_TRANSAKSI) as ID from data_transaksi") or die(mysql_error());
 				$data_pemasukan_kas = mysql_fetch_array($query);
 				{ 
 			?>
@@ -32,15 +32,21 @@
 						<form class="form-horizontal" action="log_save_register_pemasukan_kas.php" method="post">
 							<fieldset>
 							  <div class="control-group">
-								<label class="control-label" for="NO_TRANSAKSI_KAS">BUKTI TRANSAKSI :</label>
+								<label class="control-label" for="NO_TRANSAKSI">BUKTI TRANSAKSI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NO_TRANSAKSI_KAS" type="text" value="<?php echo $data_pemasukan_kas['ID_KAS']+1; }?>">
+								  <input class="input-xlarge focused" name="NO_TRANSAKSI" type="text" value="<?php echo $data_pemasukan_kas['ID']+1; }?>">
 								</div>
 							  </div>
 						<div class="control-group">
-							<label class="control-label" for="KODE_KAS">KODE KAS:</label>
+								<label class="control-label" for="USER_ID">PEGAWAI :</label>
 								<div class="controls">
-									<input class="input-xlarge focused" id="KODE_PEMASUKAN" name="kode_pemasukan" type="text" value="">
+								  <input class="input-xlarge focused" id="USER_ID" name="user_id" type="text" value="<?php echo $_SESSION['USERNAME_PEGAWAI']; ?>" readonly="readonly">
+								</div>
+							  </div>
+						<div class="control-group">
+							<label class="control-label" for="KODE_KAS">KODE KATEGORI:</label>
+								<div class="controls">
+									<input class="input-xlarge focused" id="KODE_KATEGORI" name="KODE_KATEGORI" type="text" value="">
 									<!--<select id="KODE_PEMASUKAN" name="kode_pemasukan" data-rel="chosen">
 										<?php
 										//mengambil nama-nama propinsi yang ada di database
@@ -55,13 +61,13 @@
 						<div class="control-group">
 							<label class="control-label" for="NAMA_KODE">NAMA KODE :</label>
 							<div class="controls">
-							    <input class="input-xlarge focused" id="NAMA_PEMASUKAN" name="nama_pemasukan" type="text" value="">
+							    <input class="input-xlarge focused" id="NAMA_PEMASUKAN" name="NAMA_PEMASUKAN" type="text" value="">
 							</div>
 						</div>
 							  <div class="control-group">
-								<label class="control-label" for="TANGGAL_KAS">TANGGAL MASUK:</label>
+								<label class="control-label" for="TANGGAL">TANGGAL MASUK:</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" id="TANGGAL_LAPORAN" name="TANGGAL_LAPORAN" type="date" value="">
+								  <input class="input-xlarge focused" id="TANGGAL" name="TANGGAL" type="date" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -92,9 +98,9 @@
 								</div>
 							  </div>
 							   <div class="control-group">
-								<label class="control-label" for="MASUK_KAS">MASUK :</label>
+								<label class="control-label" for="MASUK">MASUK :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="MASUK_KAS" type="text" value="">
+								  <input class="input-xlarge focused" name="MASUK" type="text" value="">
 								</div>
 							  </div>
 							  <div class="control-group">
@@ -120,16 +126,18 @@
 					<div class="box-content">
 						<div class="span7">
 						  <label class="control-label" for="activity_status"><h4>Kode Kas Pemasukan:</h4>
-								<label class="control-label" for="activity_status">1101 = Tarikan Tunai</label>
-								<label class="control-label" for="activity_status">1102 = Setoran Bank</label>
-								<label class="control-label" for="activity_status">4000 = Saldo Awal</label>
-								<label class="control-label" for="activity_status">4200 = Infaq Dari Donatur Tetap</label>
-								<label class="control-label" for="activity_status">4300 = Sumbangan Dari Donatur Tidak Tetap</label>
-								<label class="control-label" for="activity_status">4400 = Infaq Untuk Program</label>
-								<label class="control-label" for="activity_status">4500 = Pendapatan Lain-lain</label>
+							<?php 
+							include('DB_driver.php');
+							$query2 = mysql_query("select * from kategory_pemasukan") or die(mysql_error());
+							While($daftarkode = mysql_fetch_array($query2))
+							{
+								$KODE_PEMASUKAN=$daftarkode['KODE_PEMASUKAN'];
+								$NAMA_PEMASUKAN=$daftarkode['NAMA_PEMASUKAN'];					
+							?>
+								<label class="control-label" for="activity_status"><?php echo "$daftarkode[KODE_PEMASUKAN]";?> = <?php echo "$daftarkode[NAMA_PEMASUKAN]";}?></label>
 							</label>
 						</div>
-</div>
+					</div>
 			
 				</div><!--/span-->
     

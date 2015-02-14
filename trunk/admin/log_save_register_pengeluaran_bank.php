@@ -2,38 +2,43 @@
 //session_start();
 include 'DB_driver.php';
 
-$no_transaksi_bank= $_POST['NO_TRANSAKSI_BANK'];
-$kode_bank= $_POST['kode_pengeluaran'];
-$nama_pengeluaran= $_POST['nama_pengeluaran'];
-$tanggal_laporan= $_POST['TANGGAL_LAPORAN'];
+$no_transaksi= $_POST['NO_TRANSAKSI'];
+$user_id= $_POST['user_id'];
+$kode_pengeluaran= $_POST['KODE_KATEGORI'];
+$nama_pengeluaran= $_POST['NAMA_PENGELUARAN'];
+$tanggal= $_POST['TANGGAL'];
 $bulan_laporan= $_POST['BULAN_LAPORAN'];
 $tahun_laporan= $_POST['TAHUN_LAPORAN'];
-$keluar_bank= $_POST['KELUAR_BANK'];
+$keluar= $_POST['KELUAR'];
 $keterangan= $_POST['KETERANGAN'];
 $set= true;
 
-	if($no_transaksi_bank=='' || $kode_bank=='' || $nama_pengeluaran=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $keluar_bank=='' || $keterangan=='')
+	if($no_transaksi=='' || $kode_pengeluaran=='' || $nama_pengeluaran=='' || $tanggal=='' || $bulan_laporan=='' || $tahun_laporan=='' || $keluar=='' || $keterangan=='')
 		{
 	echo "<script language = 'JavaScript'>alert('Data yang Anda masukkan tidak lengkap');
 			document.location='form_register_pengeluaran_bank.php';
 					  </script>"; 
 	}else{
-	$query="INSERT INTO data_transaksi_bank(
-			NO_TRANSAKSI_BANK,
-			KODE_BANK,
+	$query="INSERT INTO data_transaksi(
+			FLAG,
+			NO_TRANSAKSI,
+			USER_ID,
+			KODE_KATEGORI,
 			NAMA_PENGELUARAN,
-			TANGGAL_LAPORAN,
+			TANGGAL,
 			BULAN_LAPORAN,
 			TAHUN_LAPORAN,
-			KELUAR_BANK,
+			KELUAR,
 			KETERANGAN) VALUES
-			('$no_transaksi_bank',
-			'$kode_bank',
+			('1',
+			'$no_transaksi',
+			'$user_id',
+			'$kode_pengeluaran',
 			'$nama_pengeluaran',
-			'$tanggal_laporan',
+			'$tanggal',
 			'$bulan_laporan',
 			'$tahun_laporan',					
-			'$keluar_bank', 
+			'$keluar', 
 			'$keterangan')";
 		
 	$result=@mysql_query($query)or die(mysql_error());

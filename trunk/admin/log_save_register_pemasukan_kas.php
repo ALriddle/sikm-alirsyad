@@ -2,35 +2,40 @@
 //session_start();
 include 'DB_driver.php';
 
-$no_transaksi_kas= $_POST['NO_TRANSAKSI_KAS'];
-$kode_kas= $_POST['kode_pemasukan'];
-$nama_pemasukan= $_POST['nama_pemasukan'];
-$tanggal_laporan= $_POST['TANGGAL_LAPORAN'];
+$no_transaksi= $_POST['NO_TRANSAKSI'];
+$user_id= $_POST['user_id'];
+$kode_pemasukan= $_POST['KODE_KATEGORI'];
+$nama_pemasukan= $_POST['NAMA_PEMASUKAN'];
+$tanggal= $_POST['TANGGAL'];
 $bulan_laporan= $_POST['BULAN_LAPORAN'];
 $tahun_laporan=$_POST['TAHUN_LAPORAN'];
-$masuk_laporan= $_POST['MASUK_KAS'];
+$masuk_laporan= $_POST['MASUK'];
 $keterangan= $_POST['KETERANGAN'];
 $set= true;
 
-	if($no_transaksi_kas=='' || $kode_kas=='' || $nama_pemasukan=='' || $tanggal_laporan=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_laporan=='' || $keterangan=='')
+	if($no_transaksi=='' || $kode_pemasukan=='' || $nama_pemasukan=='' || $tanggal=='' || $bulan_laporan=='' || $tahun_laporan=='' || $masuk_laporan=='' || $keterangan=='')
 		{
 	echo "<script language = 'JavaScript'>alert('Data yang Anda masukkan tidak lengkap');
 			document.location='form_register_pemasukan_kas.php';
 					  </script>"; 
 	}else{
-	$query="INSERT INTO data_transaksi_kas(
-			NO_TRANSAKSI_KAS,
-			KODE_KAS,
+	$query="INSERT INTO data_transaksi(
+			FLAG,
+			NO_TRANSAKSI,
+			USER_ID,
+			KODE_KATEGORI,
 			NAMA_PEMASUKAN,
-			TANGGAL_LAPORAN,
+			TANGGAL,
 			BULAN_LAPORAN,
 			TAHUN_LAPORAN,
-			MASUK_KAS,
+			MASUK,
 			KETERANGAN) VALUES
-			('$no_transaksi_kas',
-			'$kode_kas',
+			('0',
+			'$no_transaksi',
+			'$user_id',
+			'$kode_pemasukan',
 			'$nama_pemasukan',
-			'$tanggal_laporan',
+			'$tanggal',
 			'$bulan_laporan',
 			'$tahun_laporan',
 			'$masuk_laporan',
