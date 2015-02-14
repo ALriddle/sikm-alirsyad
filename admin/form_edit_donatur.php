@@ -34,9 +34,9 @@
 								</div>
 							  </div>
 							  <div class="control-group">
-								<label class="control-label" for="NAMA_DONATUR">NAMA DONATUR</label>
+								<label class="control-label" for="USER_ID">PEGAWAI :</label>
 								<div class="controls">
-								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>" readonly="readonly">
+								  <input class="input-large focused" id="USER_ID" name="user_id" type="text" value="<?php echo $_SESSION['USERNAME_PEGAWAI']; ?>" readonly="readonly">
 								</div>
 							  </div>
 							   <div class="control-group">
@@ -45,34 +45,13 @@
 								  <input class="input-xlarge focused" name="TANGGAL TRANSAKSI" type="date" value="<?php echo $data_tim['TANGGAL_TRANSAKSI'];?>">
 								</div>
 							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="BULAN_KAS">BULAN MASUK:</label>
+							   <div class="control-group">
+								<label class="control-label" for="NAMA_DONATUR">NAMA DONATUR</label>
 								<div class="controls">
-								  <select name="BULAN_LAPORAN" size="1" id="BULAN_LAPORAN">
-									<?php
-								 $bulan=array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-								 for ($i=1;$i<=12;$i++)
-								 {
-								   echo "<option value=".$i.">".$bulan[$i]."</option>";
-								 }
-							  ?>
-								  </select>
+								  <input class="input-xlarge focused" name="NAMA_DONATUR" type="text" value="<?php echo $data_tim['NAMA_DONATUR'];?>" readonly="readonly">
 								</div>
 							  </div>
-							  <div class="control-group">
-								<label class="control-label" for="TAHUN_KAS">TAHUN MASUK:</label>
-								<div class="controls">
-								  <select name="TAHUN_LAPORAN" size="1" id="TAHUN_LAPORAN">
-									<?php
-								 for ($i=2014;$i<=2150;$i++)
-								 {
-								   echo "<option value=".$i.">".$i."</option>";
-								 }
-							  ?> 
-								  </select>
-								</div>
-							  </div>
-							    <div class="control-group">
+							   <div class="control-group">
 								<label class="control-label" for="JUMLAH_DONASI_L">JUMLAH DONASI LANGSUNG</label>
 								<div class="controls">
 								  <input class="input-xlarge focused" name="JUMLAH_DONASI_L" type="text" value="<?php echo $data_tim['JUMLAH_DONASI_L'];?>">

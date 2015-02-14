@@ -59,7 +59,7 @@
   $FC1->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam1="caption=Grafik Pengeluaran Kas ; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam1="caption=Grafik Pengeluaran Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
   $FC1->setChartParams($strParam1);
@@ -72,7 +72,7 @@
 	$counter1 = 0;
 			 //$total = mysql_num_rows(mysql_query("SELECT IdKat,TglTerjual FROM penjualan_buku WHERE IdKat='$kat' AND LEFT(TglTerjual,4)='2012' AND  MID(TglTerjual,6,2)='02'"));
 			 //$total = mysql_query("SELECT MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat'");
-			 $total_q = mysql_query("SELECT SUM(KELUAR_KAS) AS KELUAR_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_KAS='$kode_kas'" );
+			 $total_q = mysql_query("SELECT SUM(KELUAR) AS KELUAR_KAS FROM data_transaksi WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_KATEGORI='$kode_kas' AND FLAG='0'" );
 			 $counter1++;
     		
 
@@ -107,10 +107,10 @@
   $FC->setSwfPath("Charts/");
 
   # Store chart attributes in a variable
-  $strParam="caption=Grafik Pengeluaran Bank; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
+  $strParam="caption=Grafik Pengeluaran Kas $bulan $tahun; xAxisName=Periode Bulan ;yAxisName=Jumlah Uang;decimalPrecision=0; formatNumberScale=9";
 
   # Set chart attributes
-  $FC->setChartParams($strParam);
+  $FC->setChartParams($strParam1);
   include('DB_driver.php');
   $bulan= mysql_query(" SELECT ID_TIME, BULAN FROM dim_time ") or die(mysql_error());
   //$tracking = mysql_query("SELECT Nama_Karyawan FROM master_karyawan WHERE Kode_Nama_Cabang='SRJ' AND Category_Tracking='sales'");
@@ -120,7 +120,7 @@
 	$counter1 = 0;
 			 //$total = mysql_num_rows(mysql_query("SELECT IdKat,TglTerjual FROM penjualan_buku WHERE IdKat='$kat' AND LEFT(TglTerjual,4)='2012' AND  MID(TglTerjual,6,2)='02'"));
 			 //$total = mysql_query("SELECT MASUK_KAS FROM data_transaksi_kas WHERE BULAN_LAPORAN='$id_kat'");
-			 $total_q = mysql_query("SELECT SUM(KELUAR_BANK) AS KELUAR_BANK FROM data_transaksi_bank WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_BANK='$kode_kas'" );
+			 $total_q = mysql_query("SELECT SUM(KELUAR) AS KELUAR_BANK FROM data_transaksi WHERE BULAN_LAPORAN='$id_kat' AND TAHUN_LAPORAN='$tahun_laporan' AND KODE_KATEGORI='$kode_kas' AND FLAG='1'" );
 			 $counter1++;
     		
 

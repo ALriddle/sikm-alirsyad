@@ -23,7 +23,7 @@
                 </div>
 
                 <footer>
-                        <p class="pull-left">&copy; <a href="http://masjidalirsyadsurabaya.com/" target="_blank">Masjid Al Irsyad Surabaya</a> <?php echo date('Y') ?></p>
+                        <p class="pull-left">&copy; <a href="http://masmaal.com/" target="_blank">MASMAAL</a> <?php echo date('Y') ?></p>
                         <p class="pull-right">Powered by: <a href="http://si.its.ac.id" target="_blank">M.F. Team</a></p>
                 </footer>
                 <?php } ?>
